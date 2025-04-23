@@ -1,0 +1,285 @@
+/*
+ * printer.css
+ *
+ * This stylesheet defines the core styles for the printer monitoring dashboard.
+ * It includes styles for:
+ *   - Printer status cards (`.status-card`)
+ *   - Modal overlays (`.more-details`, `.loading-container`, etc.)
+ *   - Data value presentation (`.data-value`, `.progress-bar`, etc.)
+ *   - Icon styling and layout structure
+ *
+ * Theme:
+ *   - Dark background with soft gradients for modern UI feel
+ *   - Uses flexbox for layout and consistent alignment
+ *   - Includes responsive considerations for card spacing and overflow
+ *
+ * Animations:
+ *   - Slide-down transition for `.more-details` section using `max-height`
+ *   - Spinner animation using `@keyframes spin`
+ *
+ * This file complements the component-level structure by ensuring consistent visual
+ * presentation across different printer states and UI interactions.
+ */
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  background-color: #e8e8e8;
+  margin: 0;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+#cardsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.status-card {
+  background-image: linear-gradient(145deg, #3f3f3f, #212121);
+  color: #b0b0b0;
+  padding: 20px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 360px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35), 0 4px 8px rgba(0, 0, 0, 0.2),
+    inset 0 1px 1px rgba(255, 255, 255, 0.1),
+    inset 0 -1px 1px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+  transition: padding-bottom 0.5s ease-in-out;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.toggle-button {
+  background: none;
+  border: none;
+  color: #b0b0b0;
+  font-size: 1.5em;
+  font-weight: 500;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0 0 5px 0;
+  margin: 0;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.2s ease;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+.toggle-button::after {
+  content: " ▼";
+  font-size: 0.6em;
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.3s ease-in-out;
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.5));
+}
+
+.status-card.expanded-extra .toggle-button::after {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.card-subtitle {
+  text-align: center;
+  color: #c0c0c0;
+  font-size: 1.1em;
+  margin-bottom: 15px;
+  font-weight: 500;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.status-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px 10px;
+  padding-top: 15px;
+  margin-bottom: 35px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  box-sizing: border-box;
+}
+
+.data-item {
+  text-align: center;
+  padding: 2px;
+  border-radius: 4px;
+}
+
+.icon {
+  filter: invert(90%) sepia(10%) saturate(100%) hue-rotate(180deg)
+    brightness(100%) contrast(90%);
+}
+
+.icon-block {
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin: 0 auto 5px auto;
+}
+
+.icon-inline {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  margin-right: 0.3em;
+}
+
+.data-value {
+  white-space: pre-wrap;
+  word-break: break-word;
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+  color: #b0b0b0;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.progress-section {
+  grid-column: span 2;
+  text-align: center;
+  margin: 8px 0;
+}
+
+.layer-info {
+  font-size: 0.85em;
+  color: #b0b0b0;
+  margin-bottom: 8px;
+  font-weight: 500;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.progress-percentage {
+  font-size: 0.9em;
+  color: #c0c0c0;
+  margin-bottom: 8px;
+  display: block;
+  font-weight: 500;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+}
+
+.progress-bar-container {
+  background-color: #333;
+  border-radius: 8px;
+  height: 14px;
+  overflow: hidden;
+  width: 100%;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.progress-bar-fill {
+  background-image: linear-gradient(to right, #0069d9, #007bff);
+  height: 100%;
+  border-radius: 7px;
+  transition: width 0.5s ease-in-out;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2);
+}
+
+.full-span {
+  grid-column: 1 / -1;
+}
+
+.status-row-3-col {
+  grid-column: 1 / -1;
+  margin-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 15px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 15px 10px;
+}
+
+.status-row-3-col .data-item {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  min-height: 56px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.status-row-3-col .data-value {
+  font-size: 16px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 6;
+
+  line-height: 1.3em;
+  max-height: calc(1.3em * 3);
+  white-space: normal;
+}
+
+.more-details {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.status-card.expanded-extra .more-details {
+  max-height: 500px;
+}
+
+.collapsible-section {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out, padding 0.3s ease-out;
+}
+
+.collapsible-section.expanded {
+  overflow-y: auto;
+}
+
+.collapsible-section {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+
+.device-stream-name {
+  font-size: 0.85rem;
+  color: #888;
+  margin-top: 4px;
+}
+
+.icon-button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  color: inherit;
+}
+
+.job-name {
+  word-break: break-word;
+  white-space: pre-line;
+}
+
+.job-data-json {
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-family: monospace;
+  font-size: 0.85em;
+  margin: 0;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,155 @@
+/**
+ * xmlUtils.js
+ *
+ * Utility functions for parsing MTConnect XML into usable data structures for the frontend.
+ *
+ * Core Functions:
+ *  - formatTimeToHHMM: Converts ISO or numeric timestamp to human-readable "HH:MM" format
+ *  - getJsonJobData: Safely parses a JSON string into an object, or returns fallback value
+ *  - parsePrinterXML: Converts <DeviceStream> XML nodes into structured printer objects
+ *    including modalDataItems and field-based key-value extraction.
+ *
+ * Field Mapping:
+ *  - Uses `fieldNamesByKey` from `printerFieldMappings.js` to determine which dataItemIds
+ *    map to which display fields (e.g. jobName, chamberTemp, material, etc.)
+ *
+ * This file serves as the primary XML -> JS parser layer for MTConnect integration in the UI.
+ */
+
+import {
+  singleValueFieldNamesByKey,
+  multiValueFieldNamesByKey,
+  printerModelByCode,
+} from "./printerFieldMappings";
+
+export const formatStatusText = (text) => {
+  return text?.replace(/_/g, "_\n") ?? text;
+};
+
+export const formatTimeToHHMM = (timeString) => {
+  if (!timeString || timeString === "0") return timeString;
+
+  let parsed;
+  if (/^\d+$/.test(timeString)) {
+    const seconds = parseInt(timeString, 10);
+    if (seconds === 0) return timeString;
+    parsed = new Date(seconds * 1000);
+  } else {
+    parsed = new Date(timeString);
+  }
+
+  return isNaN(parsed)
+    ? timeString
+    : parsed.toLocaleTimeString([], {
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: false,
+      });
+};
+
+export const formatUnderscoreText = (text) => {
+  return text?.split("_").join("_\n") ?? "";
+};
+
+export const getJsonJobData = (msgValue) => {
+  try {
+    return msgValue ? JSON.parse(msgValue) : null;
+  } catch {
+    return msgValue ?? "Invalid JSON";
+  }
+};
+
+// parsePrinterXML transforms MTConnect XML data into a usable array of printer objects
+export const parsePrinterXML = (xmlText) => {
+  const parser = new DOMParser();
+  const xml = parser.parseFromString(xmlText, "application/xml");
+  const deviceStreams = xml.querySelectorAll("DeviceStream");
+
+  return [...deviceStreams]
+    .map((stream) => {
+      const deviceStreamName = stream.getAttribute("name") || "Unknown Device";
+      const printerCodeMatch = deviceStreamName.match(/asset_(\d+)-/);
+      const printerCode = printerCodeMatch?.[1] || "Unknown";
+
+      if (!printerModelByCode[printerCode]) return null;
+
+      const printerModel = printerModelByCode[printerCode];
+
+      const componentStreams = [...stream.querySelectorAll("ComponentStream")];
+      const modalDataItems = componentStreams.map((cs) => {
+        const component = cs.getAttribute("component");
+        const name = cs.getAttribute("name");
+
+        const messages = [...cs.querySelectorAll("[dataItemId]")].map((el) => {
+          const dataItemId = el.getAttribute("dataItemId");
+          const key = dataItemId.split(".").slice(1).join(".");
+          return {
+            component,
+            name,
+            key,
+            dataItemId,
+            value: el.textContent?.trim(),
+            tag: el.tagName,
+            category: el.parentElement?.tagName || "Unknown",
+          };
+        });
+
+        return { component, name, messages };
+      });
+
+      const flatMessages = modalDataItems.flatMap((cs) => cs.messages);
+      const dataItemMap = Object.fromEntries(
+        flatMessages.map((item) => [item.key, item])
+      );
+
+      // getFieldValue returns the first matching value for a given field key
+      const getFieldValue = (field) => {
+        const validKeys = singleValueFieldNamesByKey[field] || [];
+        for (const key of validKeys) {
+          for (const itemKey in dataItemMap) {
+            if (itemKey === key) return dataItemMap[itemKey].value;
+          }
+        }
+        return "";
+      };
+
+      // getAllFieldValues returns an array of values matching field keys
+      const getAllFieldValues = (field) => {
+        const validKeys = multiValueFieldNamesByKey[field] || [];
+        const values = [];
+
+        for (const key of validKeys) {
+          for (const itemKey in dataItemMap) {
+            if (itemKey === key) {
+              values.push(dataItemMap[itemKey].value);
+            }
+          }
+        }
+
+        return values.length === 1 ? values[0] : values;
+      };
+
+      return {
+        printerModel,
+        printerName: getFieldValue("printerName"),
+        deviceStreamName,
+        jobName: getFieldValue("jobName"),
+        resinTemp: getFieldValue("resinTemp"),
+        chamberTemp: getFieldValue("chamberTemp"),
+        startTime: formatTimeToHHMM(getFieldValue("startTime")),
+        timeRemaining: formatTimeToHHMM(getFieldValue("timeRemaining")),
+        endTime: formatTimeToHHMM(getFieldValue("endTime")),
+        buildState: getFieldValue("buildState"),
+        printerState: getFieldValue("printerState"),
+        manualOpState: getFieldValue("manualOpState"),
+        material: getAllFieldValues("material"),
+        currentLayer: getFieldValue("currentLayer"),
+        totalLayers: getFieldValue("totalLayers"),
+        progress: getFieldValue("progress"),
+        jobData: getJsonJobData(getFieldValue("jobData")),
+        modalDataItems,
+        dataItemMap,
+      };
+    })
+    .filter(Boolean);
+};
