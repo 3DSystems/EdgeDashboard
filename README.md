@@ -1,6 +1,47 @@
-# React Printer Monitoring App
+# 🖨️ 3D Printer Monitoring Dashboard
 
-This application displays the status of multiple 3D printers using data from an MTConnect Agent. It visualizes build state, temperatures, material info, and job progress using cards and modals.
+Monitoring dashboard that displays the real-time status of 3D printers using MTConnect XML data.
+
+---
+
+## 🚀 Development Setup
+
+Follow the steps below to set up the project for local development.
+
+### 1. **Clone the Repository**
+```bash
+git clone <your-repo-url>
+cd <project-directory>
+```
+
+---
+
+### 2. **Install Dependencies**
+Make sure you have **Node.js (v16+)** and **npm** installed.
+
+```bash
+npm install
+```
+
+---
+
+### 3. **Set Environment Variables**
+Set the MTCONNECT agent HOST and PORT in .env file
+
+```
+REACT_APP_MTCONNECT_HOST=<ip>
+REACT_APP_MTCONNECT_PORT=<port>
+REACT_APP_API_POLLING_IN_SEC=5000
+```
+
+### 4. **Start the Development Server**
+```bash
+npm start
+```
+
+This will launch the React app at [http://localhost:3000](http://localhost:3000).
+
+---
 
 ## Project Structure
 
@@ -15,22 +56,6 @@ public/
 ├── icons/                # Local SVG icon assets
 ├── index.html            # App root HTML
 ```
-
-## Environment Variables
-
-Set the MTCONNECT agent HOST and PORT in .env file
-
-```
-REACT_APP_MTCONNECT_HOST=http://<ip>
-REACT_APP_MTCONNECT_PORT=<port>
-REACT_APP_API_POLLING_IN_SEC=5000
-```
-
-## Available Scripts
-
-- `npm install` – Install dependencies
-- `npm start` – Start development server at http://localhost:3000
-- `npm run build` – Create optimized production build
 
 ## Features
 
