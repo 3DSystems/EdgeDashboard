@@ -53,6 +53,7 @@ REACT_APP_MTCONNECT_HOST=<ip>
 REACT_APP_MTCONNECT_PORT=<port>
 REACT_APP_API_POLLING_IN_MS=5000
 ```
+---
 
 ### 5. **Start the Development Server**
 ```bash
