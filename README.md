@@ -1,6 +1,6 @@
-# 🖨️ 3D Printer Monitoring Dashboard
+# 🖨️ Printer Monitoring Dashboard
 
-Monitoring dashboard that displays the real-time status of 3D printers using MTConnect XML data.
+This application displays the real-time status of Printers using MTConnect XML data.
 
 ---
 
@@ -8,7 +8,28 @@ Monitoring dashboard that displays the real-time status of 3D printers using MTC
 
 Follow the steps below to set up the project for local development.
 
-### 1. **Clone the Repository**
+### 1. **Install Node.js and npm**
+
+Make sure you have **Node.js (v16+)** and **npm** installed.
+
+#### On macOS or Linux:
+```bash
+curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+sudo apt-get install -y nodejs
+```
+
+#### On Windows:
+1. Download the latest LTS version from: https://nodejs.org
+2. Run the installer (includes npm by default)
+
+#### Verify installation:
+```bash
+node -v
+npm -v
+```
+---
+
+### 2. **Clone the Repository**
 ```bash
 git clone <your-repo-url>
 cd <project-directory>
@@ -16,8 +37,7 @@ cd <project-directory>
 
 ---
 
-### 2. **Install Dependencies**
-Make sure you have **Node.js (v16+)** and **npm** installed.
+### 3. **Install Dependencies**
 
 ```bash
 npm install
@@ -25,7 +45,7 @@ npm install
 
 ---
 
-### 3. **Set Environment Variables**
+### 4. **Set Environment Variables**
 Set the MTCONNECT agent HOST and PORT in .env file
 
 ```
@@ -34,7 +54,7 @@ REACT_APP_MTCONNECT_PORT=<port>
 REACT_APP_API_POLLING_IN_SEC=5000
 ```
 
-### 4. **Start the Development Server**
+### 5. **Start the Development Server**
 ```bash
 npm start
 ```
@@ -59,9 +79,11 @@ public/
 
 ## Features
 
+```
 - Printer cards display real-time MTConnect metrics
 - Exclusive card expansion with animated slide-down
 - Modal view for complete ComponentStream data
 - Inline JSON modal for parsed job data
 - Auto-polling using custom `usePolling` hook
 - Full dark theme with gradient styles
+```
