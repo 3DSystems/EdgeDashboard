@@ -49,7 +49,7 @@ const App = () => {
     fetchData();
   }, []);
 
-  usePolling(fetchData, environment.API_POLLING_IN_SEC);
+  usePolling(fetchData, environment.API_POLLING_IN_MS);
 
   if (isLoading) {
     return (

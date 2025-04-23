@@ -51,7 +51,7 @@ Set the MTCONNECT agent HOST and PORT in .env file
 ```
 REACT_APP_MTCONNECT_HOST=<ip>
 REACT_APP_MTCONNECT_PORT=<port>
-REACT_APP_API_POLLING_IN_SEC=5000
+REACT_APP_API_POLLING_IN_MS=5000
 ```
 
 ### 5. **Start the Development Server**
@@ -62,6 +62,12 @@ npm start
 This will launch the React app at [http://localhost:3000](http://localhost:3000).
 
 ---
+
+### 6. **Development Tips**
+- Keep polling intervals reasonable (`REACT_APP_API_POLLING_IN_MS`) to avoid unnecessary load. By default its 5 second.
+- Use [Prettier](https://prettier.io/) for consistent formatting.
+- Commit in logical units with meaningful messages.
+
 
 ## Project Structure
 

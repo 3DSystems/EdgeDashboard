@@ -15,12 +15,7 @@
 const environment = {
   MTCONNECT_HOST: process.env.REACT_APP_MTCONNECT_HOST,
   MTCONNECT_PORT: process.env.REACT_APP_MTCONNECT_PORT,
-  API_POLLING_IN_SEC: parseInt(
-    process.env.REACT_APP_API_POLLING_IN_SEC || "5000"
-  ),
-  get BASE_URL() {
-    return `http://${this.MTCONNECT_HOST}:${this.MTCONNECT_PORT}`;
-  },
+  API_POLLING_IN_MS: process.env.REACT_APP_API_POLLING_IN_SEC,
 };
 
 export default environment;
