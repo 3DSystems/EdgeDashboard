@@ -1,4 +1,4 @@
-# 🖨️ Printer Monitoring Dashboard
+# 🖨️ Edge Dashboard
 
 This application displays the real-time status of Printers using MTConnect XML data.
 

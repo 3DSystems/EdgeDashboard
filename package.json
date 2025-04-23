@@ -1,6 +1,7 @@
 {
-  "name": "printer-dashboard-ui",
+  "name": "edge-dashboard",
   "version": "1.0.0",
+  "author": "singhk",
   "private": true,
   "dependencies": {
     "http-proxy-middleware": "^3.0.5",
