@@ -47,6 +47,21 @@ export const formatTimeToHHMM = (timeString) => {
       });
 };
 
+export const formatSecondsToHHMM = (timeString) => {
+  if (!timeString || timeString === "0") return "00:00";
+
+  const seconds = parseInt(timeString, 10);
+  if (isNaN(seconds) || seconds < 0) return "00:00";
+
+  const hours = Math.floor(seconds / 3600);
+  const minutes = Math.ceil((seconds % 3600) / 60);
+
+  return `${String(hours).padStart(2, "0")}:${String(minutes).padStart(
+    2,
+    "0"
+  )}`;
+};
+
 export const formatUnderscoreText = (text) => {
   return text?.split("_").join("_\n") ?? "";
 };
@@ -137,7 +152,7 @@ export const parsePrinterXML = (xmlText) => {
         resinTemp: getFieldValue("resinTemp"),
         chamberTemp: getFieldValue("chamberTemp"),
         startTime: formatTimeToHHMM(getFieldValue("startTime")),
-        timeRemaining: formatTimeToHHMM(getFieldValue("timeRemaining")),
+        timeRemaining: formatSecondsToHHMM(getFieldValue("timeRemaining")),
         endTime: formatTimeToHHMM(getFieldValue("endTime")),
         buildState: getFieldValue("buildState"),
         printerState: getFieldValue("printerState"),
