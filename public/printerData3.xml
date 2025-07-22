@@ -1,0 +1,1016 @@
+<MTConnectStreams xmlns:m="urn:mtconnect.org:MTConnectStreams:1.4" xmlns="urn:mtconnect.org:MTConnectStreams:1.4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:mtconnect.org:MTConnectStreams:1.4 http://schemas.mtconnect.org/schemas/MTConnectStreams_1.4.xsd">
+<Header creationTime="2025-07-22T02:29:15Z" sender="W-001-0139" instanceId="1748957097" version="2.4.0.4" bufferSize="1073741824" nextSequence="19089519" firstSequence="1" lastSequence="19089518"/>
+<Streams>
+<DeviceStream name="asset_30007-1071127724003" uuid="asset_30007-1071127724003">
+<ComponentStream component="Device" name="asset_30007-1071127724003" componentId="asset_30007-1071127724003">
+<Samples>
+<Temperature dataItemId="asset_30007-1071127724003.chamber_temperature" name="Chamber-Temperature" sequence="19089306" timestamp="2025-07-22T02:28:39Z">27.016701</Temperature>
+</Samples>
+<Events>
+<Message dataItemId="asset_30007-1071127724003.printer_name" name="Printer-Name" sequence="14715741" timestamp="2025-07-07T11:29:34Z">SLA750-08</Message>
+<SerialNumber dataItemId="asset_30007-1071127724003.serial_number" name="Serial-Number" sequence="14715742" timestamp="2025-07-07T11:29:34Z">1071127724003</SerialNumber>
+<Message dataItemId="asset_30007-1071127724003.sw_version_3dconnect" name="Sw-Version-3dconnect" sequence="14715738" timestamp="2025-07-07T11:23:43Z">2.0.30.0</Message>
+<AssetChanged assetType="UNAVAILABLE" dataItemId="asset_30007-1071127724003_asset_chg" sequence="329" timestamp="2025-06-03T13:24:57.470245Z">UNAVAILABLE</AssetChanged>
+<AssetRemoved assetType="UNAVAILABLE" dataItemId="asset_30007-1071127724003_asset_rem" sequence="330" timestamp="2025-06-03T13:24:57.470257Z">UNAVAILABLE</AssetRemoved>
+<Availability dataItemId="asset_30007-1071127724003_avail" sequence="14715526" timestamp="2025-07-14T05:54:14.823917Z">AVAILABLE</Availability>
+</Events>
+<Condition>
+<Unavailable dataItemId="asset_30007-1071127724003.fault.dsp_error" name="Fault-Dsp-Error" sequence="317" timestamp="2025-06-03T13:24:57.470072Z" type="HARDWARE"/>
+<Unavailable dataItemId="asset_30007-1071127724003.fault.dsp_not_found" name="Fault-Dsp-Not-Found" sequence="320" timestamp="2025-06-03T13:24:57.470109Z" type="HARDWARE"/>
+<Fault dataItemId="asset_30007-1071127724003.fault.enable" name="Fault-Enable" sequence="14717422" timestamp="2025-07-14T05:11:11Z" type="SYSTEM">User must enable machine</Fault>
+<Unavailable dataItemId="asset_30007-1071127724003.fault.fine_level_timeout" name="Fault-Fine-Level-Timeout" sequence="271" timestamp="2025-06-03T13:24:57.469389Z" type="SYSTEM"/>
+<Unavailable dataItemId="asset_30007-1071127724003.fault.laser_power_low" name="Fault-Laser-Power-Low" sequence="307" timestamp="2025-06-03T13:24:57.469843Z" type="SYSTEM"/>
+<Unavailable dataItemId="asset_30007-1071127724003.fault.mirror_indexing" name="Fault-Mirror-Indexing" sequence="309" timestamp="2025-06-03T13:24:57.46987Z" type="SYSTEM"/>
+<Unavailable dataItemId="asset_30007-1071127724003.fault.pinhole_shift" name="Fault-Pinhole-Shift" sequence="315" timestamp="2025-06-03T13:24:57.470046Z" type="SYSTEM"/>
+<Unavailable dataItemId="asset_30007-1071127724003.fault.sweep_error" name="Fault-Sweep-Error" sequence="312" timestamp="2025-06-03T13:24:57.469909Z" type="MOTION_PROGRAM"/>
+</Condition>
+</ComponentStream>
+<ComponentStream component="Path" name="Build" componentId="asset_30007-1071127724003.build">
+<Samples>
+<Displacement dataItemId="asset_30007-1071127724003.build.cure_depth" name="Build-Cure-Depth" sequence="19089497" timestamp="2025-07-22T02:29:14Z">0.018937</Displacement>
+<AccumulatedTime dataItemId="asset_30007-1071127724003.build.draw_time" name="Build-Draw-Time" sequence="19089293" timestamp="2025-07-22T02:28:37Z">31040.210938</AccumulatedTime>
+<Mass dataItemId="asset_30007-1071127724003.build.material_quantity" name="Build-Material-Quantity" sequence="18815972" timestamp="2025-07-21T14:12:46Z">2138.896484</Mass>
+<Velocity dataItemId="asset_30007-1071127724003.build.speed" name="Build-Speed" sequence="19089498" timestamp="2025-07-22T02:29:14Z">74.567642</Velocity>
+<AccumulatedTime dataItemId="asset_30007-1071127724003.build.time_remaining" name="Build-Time-Remaining" sequence="19089308" timestamp="2025-07-22T02:28:39Z">63086</AccumulatedTime>
+<Length dataItemId="asset_30007-1071127724003.build.z_height" name="Build-Z-Height" sequence="19089295" subType="STANDARD" timestamp="2025-07-22T02:28:39Z">71</Length>
+</Samples>
+<Events>
+<PartCount dataItemId="asset_30007-1071127724003.build.current_layer" name="Build-Current-Layer" sequence="19089296" subType="GOOD" timestamp="2025-07-22T02:28:39Z">709</PartCount>
+<Message dataItemId="asset_30007-1071127724003.build.filename" name="Build-FileName" sequence="18814929" timestamp="2025-07-21T14:09:15Z">C:\ProgramData\3D Systems\3D Print\jobs\FileMgr\Job55\250721_x8.sladdd</Message>
+<Message dataItemId="asset_30007-1071127724003.build.job_data" name="Build-Job-Data" nativeCode="JSON" sequence="19089309" timestamp="2025-07-22T02:28:39Z">{"build_filename":"250721_x8.sladdd","build_mode":"0","build_progress":0.212432,"build_state":"PRINT_STATE_BUILDING","build_time_estimate":107357,"completion_time":0,"current_layer":709,"extent_units":1,"material":["Accura Xtreme"],"material_estimate_total_volume":[2138.896484],"start_time":1753114155,"status":1,"status_change_time":1753114155,"submit_time":0,"time_remaining":63158,"total_layers":3342,"x_extent":721,"y_extent":693,"z_extent":334.223999}</Message>
+<MessageDiscrete dataItemId="asset_30007-1071127724003.build.progress" name="Build-Progress" sequence="19089305" timestamp="2025-07-22T02:28:39Z">0.212432</MessageDiscrete>
+<Message dataItemId="asset_30007-1071127724003.build.state" name="Build-State" sequence="18815664" timestamp="2025-07-21T14:11:44Z">PRINT_STATE_BUILDING</Message>
+<Message dataItemId="asset_30007-1071127724003.build.total_layers" name="Build-Total-Layers" sequence="18815971" timestamp="2025-07-21T14:12:46Z">3342</Message>
+</Events>
+</ComponentStream>
+<ComponentStream component="Chamber" name="Chamber" componentId="asset_30007-1071127724003.chamber">
+<Samples>
+<Temperature dataItemId="asset_30007-1071127724003.chamber.heater" name="Chamber-Heater" sequence="14715739" timestamp="2025-07-07T11:27:21Z">27</Temperature>
+<Temperature dataItemId="asset_30007-1071127724003.chamber.temperature" name="Chamber-Temperature" sequence="19089494" timestamp="2025-07-22T02:29:12Z">27.061899</Temperature>
+</Samples>
+</ComponentStream>
+<ComponentStream component="Laser" name="Laser-1" componentId="asset_30007-1071127724003.laser_1">
+<Samples>
+<Wattage dataItemId="asset_30007-1071127724003.laser_1.fad_power_large_spot" name="Laser-1-Fad-Power-Large-Spot" sequence="18815412" timestamp="2025-07-21T14:10:47Z">1595.300049</Wattage>
+<Wattage dataItemId="asset_30007-1071127724003.laser_1.fad_power_small_spot" name="Laser-1-Fad-Power-Small-Spot" sequence="18815294" timestamp="2025-07-21T14:10:23Z">899.700012</Wattage>
+<Concentration dataItemId="asset_30007-1071127724003.laser_1.large_pin_ratio" name="Laser-1-Large-Pin-Ratio" sequence="19089421" timestamp="2025-07-22T02:28:57Z">30.367083</Concentration>
+<Position dataItemId="asset_30007-1071127724003.laser_1.large_profile_center_x" name="Laser-1-Large-Profile-Center-X" sequence="19089419" subType="ACTUAL" timestamp="2025-07-22T02:28:57Z">49857.839844</Position>
+<Position dataItemId="asset_30007-1071127724003.laser_1.large_profile_center_y" name="Laser-1-Large-Profile-Center-Y" sequence="19089420" subType="ACTUAL" timestamp="2025-07-22T02:28:57Z">0.049341</Position>
+<Displacement dataItemId="asset_30007-1071127724003.laser_1.large_profile_drift_x" name="Laser-1-Large-Profile-Drift-X" sequence="19089424" timestamp="2025-07-22T02:28:57Z">-7.578125</Displacement>
+<Displacement dataItemId="asset_30007-1071127724003.laser_1.large_profile_drift_y" name="Laser-1-Large-Profile-Drift-Y" sequence="19089425" timestamp="2025-07-22T02:28:57Z">20702</Displacement>
+<Length dataItemId="asset_30007-1071127724003.laser_1.large_profile_width_x" name="Laser-1-Large-Profile-Width-X" sequence="19089422" subType="STANDARD" timestamp="2025-07-22T02:28:57Z">29.898655</Length>
+<Length dataItemId="asset_30007-1071127724003.laser_1.large_profile_width_y" name="Laser-1-Large-Profile-Width-Y" sequence="19089423" subType="STANDARD" timestamp="2025-07-22T02:28:57Z">1175</Length>
+<Wattage dataItemId="asset_30007-1071127724003.laser_1.power_large_spot" name="Laser-1-Power-Large-Spot" sequence="18815413" timestamp="2025-07-21T14:10:47Z">3473.08252</Wattage>
+<Wattage dataItemId="asset_30007-1071127724003.laser_1.power_small_spot" name="Laser-1-Power-Small-Spot" sequence="18815295" timestamp="2025-07-21T14:10:23Z">1944.687378</Wattage>
+<Concentration dataItemId="asset_30007-1071127724003.laser_1.small_pin_ratio" name="Laser-1-Small-Pin-Ratio" sequence="19089489" timestamp="2025-07-22T02:29:12Z">4.536562</Concentration>
+<Position dataItemId="asset_30007-1071127724003.laser_1.small_profile_center_x" name="Laser-1-Small-Profile-Center-X" sequence="19089487" subType="ACTUAL" timestamp="2025-07-22T02:29:12Z">49857.089844</Position>
+<Position dataItemId="asset_30007-1071127724003.laser_1.small_profile_center_y" name="Laser-1-Small-Profile-Center-Y" sequence="19089488" subType="ACTUAL" timestamp="2025-07-22T02:29:12Z">0.146231</Position>
+<Displacement dataItemId="asset_30007-1071127724003.laser_1.small_profile_drift_x" name="Laser-1-Small-Profile-Drift-X" sequence="19089492" timestamp="2025-07-22T02:29:12Z">-8.242188</Displacement>
+<Displacement dataItemId="asset_30007-1071127724003.laser_1.small_profile_drift_y" name="Laser-1-Small-Profile-Drift-Y" sequence="19089493" timestamp="2025-07-22T02:29:12Z">30812</Displacement>
+<Length dataItemId="asset_30007-1071127724003.laser_1.small_profile_width_x" name="Laser-1-Small-Profile-Width-X" sequence="19089490" subType="STANDARD" timestamp="2025-07-22T02:29:12Z">4.59793</Length>
+<Length dataItemId="asset_30007-1071127724003.laser_1.small_profile_width_y" name="Laser-1-Small-Profile-Width-Y" sequence="19089491" subType="STANDARD" timestamp="2025-07-22T02:29:12Z">3941</Length>
+</Samples>
+<Events>
+<SerialNumber dataItemId="asset_30007-1071127724003.laser_1.serial_number" name="Laser-1-Serial-Number" sequence="14715732" timestamp="2025-07-11T07:08:16Z">-</SerialNumber>
+</Events>
+</ComponentStream>
+<ComponentStream component="Laser" name="Laser-2" componentId="asset_30007-1071127724003.laser_2">
+<Samples>
+<Concentration dataItemId="asset_30007-1071127724003.laser_2.large_pin_ratio" name="Laser-2-Large-Pin-Ratio" sequence="19089426" timestamp="2025-07-22T02:28:57Z">30.242157</Concentration>
+<Position dataItemId="asset_30007-1071127724003.laser_2.large_profile_center_x" name="Laser-2-Large-Profile-Center-X" sequence="19088132" subType="ACTUAL" timestamp="2025-07-22T02:25:21Z">43591.546875</Position>
+<Position dataItemId="asset_30007-1071127724003.laser_2.large_profile_center_y" name="Laser-2-Large-Profile-Center-Y" sequence="19088970" subType="ACTUAL" timestamp="2025-07-22T02:27:46Z">0.051701</Position>
+<Displacement dataItemId="asset_30007-1071127724003.laser_2.large_profile_drift_x" name="Laser-2-Large-Profile-Drift-X" sequence="19088524" timestamp="2025-07-22T02:26:33Z">-12.867188</Displacement>
+<Displacement dataItemId="asset_30007-1071127724003.laser_2.large_profile_drift_y" name="Laser-2-Large-Profile-Drift-Y" sequence="19089429" timestamp="2025-07-22T02:28:57Z">17175</Displacement>
+<Length dataItemId="asset_30007-1071127724003.laser_2.large_profile_width_x" name="Laser-2-Large-Profile-Width-X" sequence="19089427" subType="STANDARD" timestamp="2025-07-22T02:28:57Z">27.486933</Length>
+<Length dataItemId="asset_30007-1071127724003.laser_2.large_profile_width_y" name="Laser-2-Large-Profile-Width-Y" sequence="19089428" subType="STANDARD" timestamp="2025-07-22T02:28:57Z">990</Length>
+<Concentration dataItemId="asset_30007-1071127724003.laser_2.small_pin_ratio" name="Laser-2-Small-Pin-Ratio" sequence="19089500" timestamp="2025-07-22T02:29:14Z">4.525393</Concentration>
+<Position dataItemId="asset_30007-1071127724003.laser_2.small_profile_center_x" name="Laser-2-Small-Profile-Center-X" sequence="19089080" subType="ACTUAL" timestamp="2025-07-22T02:28:01Z">43593.390625</Position>
+<Position dataItemId="asset_30007-1071127724003.laser_2.small_profile_center_y" name="Laser-2-Small-Profile-Center-Y" sequence="19089499" subType="ACTUAL" timestamp="2025-07-22T02:29:14Z">0.150886</Position>
+<Displacement dataItemId="asset_30007-1071127724003.laser_2.small_profile_drift_x" name="Laser-2-Small-Profile-Drift-X" sequence="19089503" timestamp="2025-07-22T02:29:14Z">-11.039063</Displacement>
+<Displacement dataItemId="asset_30007-1071127724003.laser_2.small_profile_drift_y" name="Laser-2-Small-Profile-Drift-Y" sequence="19089504" timestamp="2025-07-22T02:29:14Z">28727</Displacement>
+<Length dataItemId="asset_30007-1071127724003.laser_2.small_profile_width_x" name="Laser-2-Small-Profile-Width-X" sequence="19089501" subType="STANDARD" timestamp="2025-07-22T02:29:14Z">4.739497</Length>
+<Length dataItemId="asset_30007-1071127724003.laser_2.small_profile_width_y" name="Laser-2-Small-Profile-Width-Y" sequence="19089502" subType="STANDARD" timestamp="2025-07-22T02:29:14Z">3926</Length>
+</Samples>
+<Events>
+<Message dataItemId="asset_30007-1071127724003.laser_2.door" name="Laser-2-Door" sequence="14715740" timestamp="2025-07-07T11:29:30Z">1</Message>
+<SerialNumber dataItemId="asset_30007-1071127724003.laser_2.serial_number" name="Laser-2-Serial-Number" sequence="14715733" timestamp="2025-07-11T07:08:18Z">-</SerialNumber>
+</Events>
+</ComponentStream>
+<ComponentStream component="Vat" name="Vat" componentId="asset_30007-1071127724003.vat">
+<Samples>
+<Temperature dataItemId="asset_30007-1071127724003.vat.temperature" name="Vat-Temperature" sequence="18856660" timestamp="2025-07-21T16:13:03Z">31</Temperature>
+</Samples>
+<Events>
+<Material dataItemId="asset_30007-1071127724003.vat.material" name="Vat-Material" sequence="18946488" timestamp="2025-07-21T19:50:19Z">ACCURA XTREME</Material>
+</Events>
+</ComponentStream>
+</DeviceStream>
+<DeviceStream name="asset_30007-1071127724004" uuid="asset_30007-1071127724004">
+<ComponentStream component="Device" name="asset_30007-1071127724004" componentId="asset_30007-1071127724004">
+<Samples>
+<Temperature dataItemId="asset_30007-1071127724004.chamber_temperature" name="Chamber-Temperature" sequence="19089445" timestamp="2025-07-22T02:28:58Z">29.0194</Temperature>
+</Samples>
+<Events>
+<Message dataItemId="asset_30007-1071127724004.printer_name" name="Printer-Name" sequence="14715682" timestamp="2025-07-09T11:21:42Z">SLA750-06</Message>
+<SerialNumber dataItemId="asset_30007-1071127724004.serial_number" name="Serial-Number" sequence="14715683" timestamp="2025-07-09T11:21:42Z">1071127724004</SerialNumber>
+<Message dataItemId="asset_30007-1071127724004.sw_version_3dconnect" name="Sw-Version-3dconnect" sequence="15573054" timestamp="2025-07-15T14:28:18Z">2.0.30.0</Message>
+<AssetChanged assetType="UNAVAILABLE" dataItemId="asset_30007-1071127724004_asset_chg" sequence="386" timestamp="2025-06-03T13:24:57.470942Z">UNAVAILABLE</AssetChanged>
+<AssetRemoved assetType="UNAVAILABLE" dataItemId="asset_30007-1071127724004_asset_rem" sequence="344" timestamp="2025-06-03T13:24:57.470434Z">UNAVAILABLE</AssetRemoved>
+<Availability dataItemId="asset_30007-1071127724004_avail" sequence="14715759" timestamp="2025-07-14T05:54:15.762872Z">AVAILABLE</Availability>
+</Events>
+<Condition>
+<Unavailable dataItemId="asset_30007-1071127724004.fault.dsp_error" name="Fault-Dsp-Error" sequence="371" timestamp="2025-06-03T13:24:57.470762Z" type="HARDWARE"/>
+<Unavailable dataItemId="asset_30007-1071127724004.fault.dsp_not_found" name="Fault-Dsp-Not-Found" sequence="383" timestamp="2025-06-03T13:24:57.470906Z" type="HARDWARE"/>
+<Fault dataItemId="asset_30007-1071127724004.fault.enable" name="Fault-Enable" sequence="14716918" timestamp="2025-07-14T05:01:21Z" type="SYSTEM">User must enable machine</Fault>
+<Unavailable dataItemId="asset_30007-1071127724004.fault.fine_level_timeout" name="Fault-Fine-Level-Timeout" sequence="340" timestamp="2025-06-03T13:24:57.470383Z" type="SYSTEM"/>
+<Unavailable dataItemId="asset_30007-1071127724004.fault.laser_power_low" name="Fault-Laser-Power-Low" sequence="347" timestamp="2025-06-03T13:24:57.470469Z" type="SYSTEM"/>
+<Unavailable dataItemId="asset_30007-1071127724004.fault.mirror_indexing" name="Fault-Mirror-Indexing" sequence="373" timestamp="2025-06-03T13:24:57.470787Z" type="SYSTEM"/>
+<Fault dataItemId="asset_30007-1071127724004.fault.pinhole_shift" name="Fault-Pinhole-Shift" sequence="14717171" timestamp="2025-06-13T15:20:29Z" type="SYSTEM">Profiling Error</Fault>
+<Fault dataItemId="asset_30007-1071127724004.fault.sweep_error" name="Fault-Sweep-Error" sequence="14716552" timestamp="2025-07-01T12:28:34Z" type="MOTION_PROGRAM">Recoater stalled</Fault>
+</Condition>
+</ComponentStream>
+<ComponentStream component="Path" name="Build" componentId="asset_30007-1071127724004.build">
+<Samples>
+<Displacement dataItemId="asset_30007-1071127724004.build.cure_depth" name="Build-Cure-Depth" sequence="19089401" timestamp="2025-07-22T02:28:54Z">0.012937</Displacement>
+<AccumulatedTime dataItemId="asset_30007-1071127724004.build.draw_time" name="Build-Draw-Time" sequence="19089431" timestamp="2025-07-22T02:28:56Z">10648.676758</AccumulatedTime>
+<Mass dataItemId="asset_30007-1071127724004.build.material_quantity" name="Build-Material-Quantity" sequence="18837794" timestamp="2025-07-21T15:21:09Z">626.087708</Mass>
+<Velocity dataItemId="asset_30007-1071127724004.build.speed" name="Build-Speed" sequence="19089402" timestamp="2025-07-22T02:28:54Z">500</Velocity>
+<AccumulatedTime dataItemId="asset_30007-1071127724004.build.time_remaining" name="Build-Time-Remaining" sequence="19089288" timestamp="2025-07-22T02:28:30Z">35524</AccumulatedTime>
+<Length dataItemId="asset_30007-1071127724004.build.z_height" name="Build-Z-Height" sequence="19089434" subType="STANDARD" timestamp="2025-07-22T02:28:58Z">135.600006</Length>
+</Samples>
+<Events>
+<PartCount dataItemId="asset_30007-1071127724004.build.current_layer" name="Build-Current-Layer" sequence="19089435" subType="GOOD" timestamp="2025-07-22T02:28:58Z">1355</PartCount>
+<Message dataItemId="asset_30007-1071127724004.build.filename" name="Build-FileName" sequence="18837315" timestamp="2025-07-21T15:19:46Z">C:\ProgramData\3D Systems\3D Print\jobs\FileMgr\Job43\250721_hpc6.sladdd</Message>
+<Message dataItemId="asset_30007-1071127724004.build.job_data" name="Build-Job-Data" nativeCode="JSON" sequence="19089448" timestamp="2025-07-22T02:28:58Z">{"build_filename":"250721_hpc6.sladdd","build_mode":"0","build_progress":0.414849,"build_state":"PRINT_STATE_BUILDING","build_time_estimate":75576,"completion_time":0,"current_layer":1355,"extent_units":1,"job_id":"43","material":["Accura Composite PIV"],"material_estimate_total_volume":[626.087708],"start_time":1753118385,"status":1,"status_change_time":1753118385,"submit_time":0,"time_remaining":35524,"total_layers":3268,"x_extent":533.400024,"y_extent":179.734161,"z_extent":326.865753}</Message>
+<MessageDiscrete dataItemId="asset_30007-1071127724004.build.progress" name="Build-Progress" sequence="19089444" timestamp="2025-07-22T02:28:58Z">0.414849</MessageDiscrete>
+<Message dataItemId="asset_30007-1071127724004.build.state" name="Build-State" sequence="18838805" timestamp="2025-07-21T15:24:12Z">PRINT_STATE_BUILDING</Message>
+<Message dataItemId="asset_30007-1071127724004.build.total_layers" name="Build-Total-Layers" sequence="18837793" timestamp="2025-07-21T15:21:09Z">3268</Message>
+</Events>
+</ComponentStream>
+<ComponentStream component="Chamber" name="Chamber" componentId="asset_30007-1071127724004.chamber">
+<Samples>
+<Temperature dataItemId="asset_30007-1071127724004.chamber.heater" name="Chamber-Heater" sequence="15589926" timestamp="2025-07-15T14:55:16Z">29</Temperature>
+<Temperature dataItemId="asset_30007-1071127724004.chamber.temperature" name="Chamber-Temperature" sequence="19089484" timestamp="2025-07-22T02:29:08Z">28.9736</Temperature>
+</Samples>
+</ComponentStream>
+<ComponentStream component="Laser" name="Laser-1" componentId="asset_30007-1071127724004.laser_1">
+<Samples>
+<Wattage dataItemId="asset_30007-1071127724004.laser_1.fad_power_large_spot" name="Laser-1-Fad-Power-Large-Spot" sequence="18837750" timestamp="2025-07-21T15:21:02Z">1996.000122</Wattage>
+<Wattage dataItemId="asset_30007-1071127724004.laser_1.fad_power_small_spot" name="Laser-1-Fad-Power-Small-Spot" sequence="18837581" timestamp="2025-07-21T15:20:38Z">1357.099976</Wattage>
+<Concentration dataItemId="asset_30007-1071127724004.laser_1.large_pin_ratio" name="Laser-1-Large-Pin-Ratio" sequence="19089356" timestamp="2025-07-22T02:28:50Z">29.468315</Concentration>
+<Position dataItemId="asset_30007-1071127724004.laser_1.large_profile_center_x" name="Laser-1-Large-Profile-Center-X" sequence="19089354" subType="ACTUAL" timestamp="2025-07-22T02:28:50Z">49894.066406</Position>
+<Position dataItemId="asset_30007-1071127724004.laser_1.large_profile_center_y" name="Laser-1-Large-Profile-Center-Y" sequence="19089355" subType="ACTUAL" timestamp="2025-07-22T02:28:50Z">0.049867</Position>
+<Displacement dataItemId="asset_30007-1071127724004.laser_1.large_profile_drift_x" name="Laser-1-Large-Profile-Drift-X" sequence="19089358" timestamp="2025-07-22T02:28:50Z">1.417969</Displacement>
+<Displacement dataItemId="asset_30007-1071127724004.laser_1.large_profile_drift_y" name="Laser-1-Large-Profile-Drift-Y" sequence="19089359" timestamp="2025-07-22T02:28:50Z">17469</Displacement>
+<Length dataItemId="asset_30007-1071127724004.laser_1.large_profile_width_x" name="Laser-1-Large-Profile-Width-X" sequence="19089357" subType="STANDARD" timestamp="2025-07-22T02:28:50Z">28.865879</Length>
+<Length dataItemId="asset_30007-1071127724004.laser_1.large_profile_width_y" name="Laser-1-Large-Profile-Width-Y" sequence="19089062" subType="STANDARD" timestamp="2025-07-22T02:27:56Z">1032</Length>
+<Wattage dataItemId="asset_30007-1071127724004.laser_1.power_large_spot" name="Laser-1-Power-Large-Spot" sequence="18837751" timestamp="2025-07-21T15:21:02Z">4274.718262</Wattage>
+<Wattage dataItemId="asset_30007-1071127724004.laser_1.power_small_spot" name="Laser-1-Power-Small-Spot" sequence="18837582" timestamp="2025-07-21T15:20:38Z">2901.263428</Wattage>
+<Concentration dataItemId="asset_30007-1071127724004.laser_1.small_pin_ratio" name="Laser-1-Small-Pin-Ratio" sequence="19089404" timestamp="2025-07-22T02:28:54Z">4.457551</Concentration>
+<Position dataItemId="asset_30007-1071127724004.laser_1.small_profile_center_x" name="Laser-1-Small-Profile-Center-X" sequence="19089237" subType="ACTUAL" timestamp="2025-07-22T02:28:26Z">49894.945312</Position>
+<Position dataItemId="asset_30007-1071127724004.laser_1.small_profile_center_y" name="Laser-1-Small-Profile-Center-Y" sequence="19089403" subType="ACTUAL" timestamp="2025-07-22T02:28:54Z">0.148953</Position>
+<Displacement dataItemId="asset_30007-1071127724004.laser_1.small_profile_drift_x" name="Laser-1-Small-Profile-Drift-X" sequence="19089240" timestamp="2025-07-22T02:28:26Z">2.320313</Displacement>
+<Displacement dataItemId="asset_30007-1071127724004.laser_1.small_profile_drift_y" name="Laser-1-Small-Profile-Drift-Y" sequence="19089407" timestamp="2025-07-22T02:28:54Z">28436</Displacement>
+<Length dataItemId="asset_30007-1071127724004.laser_1.small_profile_width_x" name="Laser-1-Small-Profile-Width-X" sequence="19089405" subType="STANDARD" timestamp="2025-07-22T02:28:54Z">4.436972</Length>
+<Length dataItemId="asset_30007-1071127724004.laser_1.small_profile_width_y" name="Laser-1-Small-Profile-Width-Y" sequence="19089406" subType="STANDARD" timestamp="2025-07-22T02:28:54Z">3921</Length>
+</Samples>
+<Events>
+<SerialNumber dataItemId="asset_30007-1071127724004.laser_1.serial_number" name="Laser-1-Serial-Number" sequence="14716349" timestamp="2025-07-08T12:14:59Z">-</SerialNumber>
+</Events>
+</ComponentStream>
+<ComponentStream component="Laser" name="Laser-2" componentId="asset_30007-1071127724004.laser_2">
+<Samples>
+<Concentration dataItemId="asset_30007-1071127724004.laser_2.large_pin_ratio" name="Laser-2-Large-Pin-Ratio" sequence="19089362" timestamp="2025-07-22T02:28:50Z">32.464802</Concentration>
+<Position dataItemId="asset_30007-1071127724004.laser_2.large_profile_center_x" name="Laser-2-Large-Profile-Center-X" sequence="19089360" subType="ACTUAL" timestamp="2025-07-22T02:28:50Z">43546.332031</Position>
+<Position dataItemId="asset_30007-1071127724004.laser_2.large_profile_center_y" name="Laser-2-Large-Profile-Center-Y" sequence="19089361" subType="ACTUAL" timestamp="2025-07-22T02:28:50Z">0.048697</Position>
+<Displacement dataItemId="asset_30007-1071127724004.laser_2.large_profile_drift_x" name="Laser-2-Large-Profile-Drift-X" sequence="19089365" timestamp="2025-07-22T02:28:50Z">-0.492188</Displacement>
+<Displacement dataItemId="asset_30007-1071127724004.laser_2.large_profile_drift_y" name="Laser-2-Large-Profile-Drift-Y" sequence="19089366" timestamp="2025-07-22T02:28:50Z">13315</Displacement>
+<Length dataItemId="asset_30007-1071127724004.laser_2.large_profile_width_x" name="Laser-2-Large-Profile-Width-X" sequence="19089363" subType="STANDARD" timestamp="2025-07-22T02:28:50Z">28.849926</Length>
+<Length dataItemId="asset_30007-1071127724004.laser_2.large_profile_width_y" name="Laser-2-Large-Profile-Width-Y" sequence="19089364" subType="STANDARD" timestamp="2025-07-22T02:28:50Z">724</Length>
+<Concentration dataItemId="asset_30007-1071127724004.laser_2.small_pin_ratio" name="Laser-2-Small-Pin-Ratio" sequence="19089410" timestamp="2025-07-22T02:28:54Z">4.533966</Concentration>
+<Position dataItemId="asset_30007-1071127724004.laser_2.small_profile_center_x" name="Laser-2-Small-Profile-Center-X" sequence="19089408" subType="ACTUAL" timestamp="2025-07-22T02:28:54Z">43542.910156</Position>
+<Position dataItemId="asset_30007-1071127724004.laser_2.small_profile_center_y" name="Laser-2-Small-Profile-Center-Y" sequence="19089409" subType="ACTUAL" timestamp="2025-07-22T02:28:54Z">0.158033</Position>
+<Displacement dataItemId="asset_30007-1071127724004.laser_2.small_profile_drift_x" name="Laser-2-Small-Profile-Drift-X" sequence="19089413" timestamp="2025-07-22T02:28:54Z">-4.054688</Displacement>
+<Displacement dataItemId="asset_30007-1071127724004.laser_2.small_profile_drift_y" name="Laser-2-Small-Profile-Drift-Y" sequence="19089414" timestamp="2025-07-22T02:28:54Z">25744</Displacement>
+<Length dataItemId="asset_30007-1071127724004.laser_2.small_profile_width_x" name="Laser-2-Small-Profile-Width-X" sequence="19089411" subType="STANDARD" timestamp="2025-07-22T02:28:54Z">4.34205</Length>
+<Length dataItemId="asset_30007-1071127724004.laser_2.small_profile_width_y" name="Laser-2-Small-Profile-Width-Y" sequence="19089412" subType="STANDARD" timestamp="2025-07-22T02:28:54Z">3909</Length>
+</Samples>
+<Events>
+<Message dataItemId="asset_30007-1071127724004.laser_2.door" name="Laser-2-Door" sequence="14715681" timestamp="2025-07-09T11:21:38Z">1</Message>
+<SerialNumber dataItemId="asset_30007-1071127724004.laser_2.serial_number" name="Laser-2-Serial-Number" sequence="14715686" timestamp="2025-07-08T12:14:59Z">-</SerialNumber>
+</Events>
+</ComponentStream>
+<ComponentStream component="Vat" name="Vat" componentId="asset_30007-1071127724004.vat">
+<Samples>
+<Temperature dataItemId="asset_30007-1071127724004.vat.temperature" name="Vat-Temperature" sequence="17812693" timestamp="2025-07-19T02:17:17Z">30</Temperature>
+</Samples>
+<Events>
+<Material dataItemId="asset_30007-1071127724004.vat.material" name="Vat-Material" sequence="19013731" timestamp="2025-07-21T22:58:58Z">ACCURA COMPOSITE PIV</Material>
+</Events>
+</ComponentStream>
+</DeviceStream>
+<DeviceStream name="asset_30007-1071132324001" uuid="asset_30007-1071132324001">
+<ComponentStream component="Device" name="asset_30007-1071132324001" componentId="asset_30007-1071132324001">
+<Samples>
+<Temperature dataItemId="asset_30007-1071132324001.chamber_temperature" name="Chamber-Temperature" sequence="17868965" timestamp="2025-07-19T03:36:31Z">29.019501</Temperature>
+</Samples>
+<Events>
+<Message dataItemId="asset_30007-1071132324001.printer_name" name="Printer-Name" sequence="14715853" timestamp="2025-07-14T05:05:35Z">SLA750-07</Message>
+<SerialNumber dataItemId="asset_30007-1071132324001.serial_number" name="Serial-Number" sequence="14715854" timestamp="2025-07-14T05:05:35Z">1071132324001</SerialNumber>
+<Message dataItemId="asset_30007-1071132324001.sw_version_3dconnect" name="Sw-Version-3dconnect" sequence="14716791" timestamp="2025-07-14T05:00:12Z">2.0.30.0</Message>
+<AssetChanged assetType="UNAVAILABLE" dataItemId="asset_30007-1071132324001_asset_chg" sequence="454" timestamp="2025-06-03T13:24:57.47184Z">UNAVAILABLE</AssetChanged>
+<AssetRemoved assetType="UNAVAILABLE" dataItemId="asset_30007-1071132324001_asset_rem" sequence="423" timestamp="2025-06-03T13:24:57.471478Z">UNAVAILABLE</AssetRemoved>
+<Availability dataItemId="asset_30007-1071132324001_avail" sequence="14716039" timestamp="2025-07-14T05:54:16.602483Z">AVAILABLE</Availability>
+</Events>
+<Condition>
+<Fault dataItemId="asset_30007-1071132324001.fault.dsp_error" name="Fault-Dsp-Error" sequence="14716418" timestamp="2025-07-12T22:28:04Z" type="HARDWARE">Fatal DSP Error</Fault>
+<Unavailable dataItemId="asset_30007-1071132324001.fault.dsp_not_found" name="Fault-Dsp-Not-Found" sequence="448" timestamp="2025-06-03T13:24:57.471773Z" type="HARDWARE"/>
+<Fault dataItemId="asset_30007-1071132324001.fault.enable" name="Fault-Enable" sequence="14717612" timestamp="2025-07-12T12:37:07Z" type="SYSTEM">User must enable machine</Fault>
+<Unavailable dataItemId="asset_30007-1071132324001.fault.fine_level_timeout" name="Fault-Fine-Level-Timeout" sequence="447" timestamp="2025-06-03T13:24:57.47176Z" type="SYSTEM"/>
+<Unavailable dataItemId="asset_30007-1071132324001.fault.laser_power_low" name="Fault-Laser-Power-Low" sequence="443" timestamp="2025-06-03T13:24:57.47171Z" type="SYSTEM"/>
+<Unavailable dataItemId="asset_30007-1071132324001.fault.mirror_indexing" name="Fault-Mirror-Indexing" sequence="444" timestamp="2025-06-03T13:24:57.471723Z" type="SYSTEM"/>
+<Unavailable dataItemId="asset_30007-1071132324001.fault.pinhole_shift" name="Fault-Pinhole-Shift" sequence="455" timestamp="2025-06-03T13:24:57.471851Z" type="SYSTEM"/>
+<Unavailable dataItemId="asset_30007-1071132324001.fault.sweep_error" name="Fault-Sweep-Error" sequence="452" timestamp="2025-06-03T13:24:57.471817Z" type="MOTION_PROGRAM"/>
+</Condition>
+</ComponentStream>
+<ComponentStream component="Path" name="Build" componentId="asset_30007-1071132324001.build">
+<Samples>
+<Displacement dataItemId="asset_30007-1071132324001.build.cure_depth" name="Build-Cure-Depth" sequence="18770833" timestamp="2025-07-21T10:10:13Z">0</Displacement>
+<AccumulatedTime dataItemId="asset_30007-1071132324001.build.draw_time" name="Build-Draw-Time" sequence="18770876" timestamp="2025-07-21T10:10:13Z">0</AccumulatedTime>
+<Mass dataItemId="asset_30007-1071132324001.build.material_quantity" name="Build-Material-Quantity" sequence="18770875" timestamp="2025-07-21T10:10:13Z">0</Mass>
+<Velocity dataItemId="asset_30007-1071132324001.build.speed" name="Build-Speed" sequence="18770834" timestamp="2025-07-21T10:10:13Z">0</Velocity>
+<AccumulatedTime dataItemId="asset_30007-1071132324001.build.time_remaining" name="Build-Time-Remaining" sequence="18770877" timestamp="2025-07-21T10:10:13Z">0</AccumulatedTime>
+<Length dataItemId="asset_30007-1071132324001.build.z_height" name="Build-Z-Height" sequence="18770861" subType="STANDARD" timestamp="2025-07-21T10:10:13Z">0</Length>
+</Samples>
+<Events>
+<PartCount dataItemId="asset_30007-1071132324001.build.current_layer" name="Build-Current-Layer" sequence="17869636" subType="GOOD" timestamp="2025-07-19T03:37:29Z">1723</PartCount>
+<Message dataItemId="asset_30007-1071132324001.build.filename" name="Build-FileName" sequence="17361919" timestamp="2025-07-18T12:16:28Z">C:\ProgramData\3D Systems\3D Print\jobs\FileMgr\Job12\250718_x7.sladdd</Message>
+<Message dataItemId="asset_30007-1071132324001.build.job_data" name="Build-Job-Data" nativeCode="JSON" sequence="18770878" timestamp="2025-07-21T10:10:13Z">{"build_filename":"-","build_progress":0,"build_state":"-","build_time_estimate":0,"completion_time":0,"current_layer":0,"extent_units":0,"material_estimate_total_volume":[0],"start_time":0,"status":0,"status_change_time":0,"submit_time":0,"time_remaining":0,"total_layers":0,"x_extent":0,"y_extent":0,"z_extent":0}</Message>
+<MessageDiscrete dataItemId="asset_30007-1071132324001.build.progress" name="Build-Progress" sequence="18770870" timestamp="2025-07-21T10:10:13Z">0</MessageDiscrete>
+<Message dataItemId="asset_30007-1071132324001.build.state" name="Build-State" sequence="17869914" timestamp="2025-07-19T03:37:57Z">PRINT_STATE_COMPLETED</Message>
+<Message dataItemId="asset_30007-1071132324001.build.total_layers" name="Build-Total-Layers" sequence="19031696" timestamp="2025-07-21T23:49:21Z">0</Message>
+</Events>
+</ComponentStream>
+<ComponentStream component="Chamber" name="Chamber" componentId="asset_30007-1071132324001.chamber">
+<Samples>
+<Temperature dataItemId="asset_30007-1071132324001.chamber.heater" name="Chamber-Heater" sequence="18771607" timestamp="2025-07-21T10:16:01Z">0</Temperature>
+<Temperature dataItemId="asset_30007-1071132324001.chamber.temperature" name="Chamber-Temperature" sequence="18834320" timestamp="2025-07-21T15:11:02Z">28.9736</Temperature>
+</Samples>
+</ComponentStream>
+<ComponentStream component="Laser" name="Laser-1" componentId="asset_30007-1071132324001.laser_1">
+<Samples>
+<Wattage dataItemId="asset_30007-1071132324001.laser_1.fad_power_large_spot" name="Laser-1-Fad-Power-Large-Spot" sequence="18770873" timestamp="2025-07-21T10:10:13Z">0</Wattage>
+<Wattage dataItemId="asset_30007-1071132324001.laser_1.fad_power_small_spot" name="Laser-1-Fad-Power-Small-Spot" sequence="18770871" timestamp="2025-07-21T10:10:13Z">0</Wattage>
+<Concentration dataItemId="asset_30007-1071132324001.laser_1.large_pin_ratio" name="Laser-1-Large-Pin-Ratio" sequence="18770843" timestamp="2025-07-21T10:10:13Z">0</Concentration>
+<Position dataItemId="asset_30007-1071132324001.laser_1.large_profile_center_x" name="Laser-1-Large-Profile-Center-X" sequence="18770841" subType="ACTUAL" timestamp="2025-07-21T10:10:13Z">0</Position>
+<Position dataItemId="asset_30007-1071132324001.laser_1.large_profile_center_y" name="Laser-1-Large-Profile-Center-Y" sequence="18770842" subType="ACTUAL" timestamp="2025-07-21T10:10:13Z">0</Position>
+<Displacement dataItemId="asset_30007-1071132324001.laser_1.large_profile_drift_x" name="Laser-1-Large-Profile-Drift-X" sequence="18770846" timestamp="2025-07-21T10:10:13Z">0</Displacement>
+<Displacement dataItemId="asset_30007-1071132324001.laser_1.large_profile_drift_y" name="Laser-1-Large-Profile-Drift-Y" sequence="17869604" timestamp="2025-07-19T03:37:27Z">32992</Displacement>
+<Length dataItemId="asset_30007-1071132324001.laser_1.large_profile_width_x" name="Laser-1-Large-Profile-Width-X" sequence="18770844" subType="STANDARD" timestamp="2025-07-21T10:10:13Z">0</Length>
+<Length dataItemId="asset_30007-1071132324001.laser_1.large_profile_width_y" name="Laser-1-Large-Profile-Width-Y" sequence="18770845" subType="STANDARD" timestamp="2025-07-21T10:10:13Z">0</Length>
+<Wattage dataItemId="asset_30007-1071132324001.laser_1.power_large_spot" name="Laser-1-Power-Large-Spot" sequence="18770874" timestamp="2025-07-21T10:10:13Z">0</Wattage>
+<Wattage dataItemId="asset_30007-1071132324001.laser_1.power_small_spot" name="Laser-1-Power-Small-Spot" sequence="18770872" timestamp="2025-07-21T10:10:13Z">0</Wattage>
+<Concentration dataItemId="asset_30007-1071132324001.laser_1.small_pin_ratio" name="Laser-1-Small-Pin-Ratio" sequence="18770836" timestamp="2025-07-21T10:10:13Z">0</Concentration>
+<Position dataItemId="asset_30007-1071132324001.laser_1.small_profile_center_x" name="Laser-1-Small-Profile-Center-X" sequence="17869593" subType="ACTUAL" timestamp="2025-07-19T03:37:27Z">50039.921875</Position>
+<Position dataItemId="asset_30007-1071132324001.laser_1.small_profile_center_y" name="Laser-1-Small-Profile-Center-Y" sequence="18770835" subType="ACTUAL" timestamp="2025-07-21T10:10:13Z">0</Position>
+<Displacement dataItemId="asset_30007-1071132324001.laser_1.small_profile_drift_x" name="Laser-1-Small-Profile-Drift-X" sequence="18770839" timestamp="2025-07-21T10:10:13Z">0</Displacement>
+<Displacement dataItemId="asset_30007-1071132324001.laser_1.small_profile_drift_y" name="Laser-1-Small-Profile-Drift-Y" sequence="18770840" timestamp="2025-07-21T10:10:13Z">0</Displacement>
+<Length dataItemId="asset_30007-1071132324001.laser_1.small_profile_width_x" name="Laser-1-Small-Profile-Width-X" sequence="18770837" subType="STANDARD" timestamp="2025-07-21T10:10:13Z">0</Length>
+<Length dataItemId="asset_30007-1071132324001.laser_1.small_profile_width_y" name="Laser-1-Small-Profile-Width-Y" sequence="18770838" subType="STANDARD" timestamp="2025-07-21T10:10:13Z">0</Length>
+</Samples>
+<Events>
+<SerialNumber dataItemId="asset_30007-1071132324001.laser_1.serial_number" name="Laser-1-Serial-Number" sequence="14715857" timestamp="2025-07-12T12:44:23Z">-</SerialNumber>
+</Events>
+</ComponentStream>
+<ComponentStream component="Laser" name="Laser-2" componentId="asset_30007-1071132324001.laser_2">
+<Samples>
+<Concentration dataItemId="asset_30007-1071132324001.laser_2.large_pin_ratio" name="Laser-2-Large-Pin-Ratio" sequence="18770856" timestamp="2025-07-21T10:10:13Z">0</Concentration>
+<Position dataItemId="asset_30007-1071132324001.laser_2.large_profile_center_x" name="Laser-2-Large-Profile-Center-X" sequence="18770854" subType="ACTUAL" timestamp="2025-07-21T10:10:13Z">0</Position>
+<Position dataItemId="asset_30007-1071132324001.laser_2.large_profile_center_y" name="Laser-2-Large-Profile-Center-Y" sequence="18770855" subType="ACTUAL" timestamp="2025-07-21T10:10:13Z">0</Position>
+<Displacement dataItemId="asset_30007-1071132324001.laser_2.large_profile_drift_x" name="Laser-2-Large-Profile-Drift-X" sequence="18770859" timestamp="2025-07-21T10:10:13Z">0</Displacement>
+<Displacement dataItemId="asset_30007-1071132324001.laser_2.large_profile_drift_y" name="Laser-2-Large-Profile-Drift-Y" sequence="18770860" timestamp="2025-07-21T10:10:13Z">0</Displacement>
+<Length dataItemId="asset_30007-1071132324001.laser_2.large_profile_width_x" name="Laser-2-Large-Profile-Width-X" sequence="18770857" subType="STANDARD" timestamp="2025-07-21T10:10:13Z">0</Length>
+<Length dataItemId="asset_30007-1071132324001.laser_2.large_profile_width_y" name="Laser-2-Large-Profile-Width-Y" sequence="18770858" subType="STANDARD" timestamp="2025-07-21T10:10:13Z">0</Length>
+<Concentration dataItemId="asset_30007-1071132324001.laser_2.small_pin_ratio" name="Laser-2-Small-Pin-Ratio" sequence="18770849" timestamp="2025-07-21T10:10:13Z">0</Concentration>
+<Position dataItemId="asset_30007-1071132324001.laser_2.small_profile_center_x" name="Laser-2-Small-Profile-Center-X" sequence="18770847" subType="ACTUAL" timestamp="2025-07-21T10:10:13Z">0</Position>
+<Position dataItemId="asset_30007-1071132324001.laser_2.small_profile_center_y" name="Laser-2-Small-Profile-Center-Y" sequence="18770848" subType="ACTUAL" timestamp="2025-07-21T10:10:13Z">0</Position>
+<Displacement dataItemId="asset_30007-1071132324001.laser_2.small_profile_drift_x" name="Laser-2-Small-Profile-Drift-X" sequence="18770852" timestamp="2025-07-21T10:10:13Z">0</Displacement>
+<Displacement dataItemId="asset_30007-1071132324001.laser_2.small_profile_drift_y" name="Laser-2-Small-Profile-Drift-Y" sequence="18770853" timestamp="2025-07-21T10:10:13Z">0</Displacement>
+<Length dataItemId="asset_30007-1071132324001.laser_2.small_profile_width_x" name="Laser-2-Small-Profile-Width-X" sequence="18770850" subType="STANDARD" timestamp="2025-07-21T10:10:13Z">0</Length>
+<Length dataItemId="asset_30007-1071132324001.laser_2.small_profile_width_y" name="Laser-2-Small-Profile-Width-Y" sequence="18770851" subType="STANDARD" timestamp="2025-07-21T10:10:13Z">0</Length>
+</Samples>
+<Events>
+<Message dataItemId="asset_30007-1071132324001.laser_2.door" name="Laser-2-Door" sequence="14715852" timestamp="2025-07-14T05:05:31Z">1</Message>
+<SerialNumber dataItemId="asset_30007-1071132324001.laser_2.serial_number" name="Laser-2-Serial-Number" sequence="14715858" timestamp="2025-07-12T12:44:23Z">-</SerialNumber>
+</Events>
+</ComponentStream>
+<ComponentStream component="Vat" name="Vat" componentId="asset_30007-1071132324001.vat">
+<Samples>
+<Temperature dataItemId="asset_30007-1071132324001.vat.temperature" name="Vat-Temperature" sequence="14749208" timestamp="2025-07-14T13:40:48Z">29</Temperature>
+</Samples>
+<Events>
+<Material dataItemId="asset_30007-1071132324001.vat.material" name="Vat-Material" sequence="18769555" timestamp="2025-07-21T10:00:04Z"/>
+</Events>
+</ComponentStream>
+</DeviceStream>
+<DeviceStream name="asset_30007-1071132324002" uuid="asset_30007-1071132324002">
+<ComponentStream component="Device" name="asset_30007-1071132324002" componentId="asset_30007-1071132324002">
+<Samples>
+<Temperature dataItemId="asset_30007-1071132324002.chamber_temperature" name="Chamber-Temperature" sequence="18573527" timestamp="2025-07-20T03:44:47Z">28.9965</Temperature>
+</Samples>
+<Events>
+<Message dataItemId="asset_30007-1071132324002.printer_name" name="Printer-Name" sequence="14715576" timestamp="2025-07-09T11:43:59Z">SLA750-05</Message>
+<SerialNumber dataItemId="asset_30007-1071132324002.serial_number" name="Serial-Number" sequence="14716500" timestamp="2025-07-09T11:43:59Z">1071132324002</SerialNumber>
+<Message dataItemId="asset_30007-1071132324002.sw_version_3dconnect" name="Sw-Version-3dconnect" sequence="14715573" timestamp="2025-07-09T11:38:25Z">2.0.30.0</Message>
+<AssetChanged assetType="UNAVAILABLE" dataItemId="asset_30007-1071132324002_asset_chg" sequence="528" timestamp="2025-06-03T13:24:57.473074Z">UNAVAILABLE</AssetChanged>
+<AssetRemoved assetType="UNAVAILABLE" dataItemId="asset_30007-1071132324002_asset_rem" sequence="496" timestamp="2025-06-03T13:24:57.472365Z">UNAVAILABLE</AssetRemoved>
+<Availability dataItemId="asset_30007-1071132324002_avail" sequence="14715659" timestamp="2025-07-14T05:54:15.433293Z">AVAILABLE</Availability>
+</Events>
+<Condition>
+<Unavailable dataItemId="asset_30007-1071132324002.fault.dsp_error" name="Fault-Dsp-Error" sequence="499" timestamp="2025-06-03T13:24:57.4724Z" type="HARDWARE"/>
+<Unavailable dataItemId="asset_30007-1071132324002.fault.dsp_not_found" name="Fault-Dsp-Not-Found" sequence="518" timestamp="2025-06-03T13:24:57.472945Z" type="HARDWARE"/>
+<Fault dataItemId="asset_30007-1071132324002.fault.enable" name="Fault-Enable" sequence="14717308" timestamp="2025-07-14T04:49:50Z" type="SYSTEM">User must enable machine</Fault>
+<Fault dataItemId="asset_30007-1071132324002.fault.fine_level_timeout" name="Fault-Fine-Level-Timeout" sequence="15704021" timestamp="2025-07-15T18:22:40Z" type="SYSTEM">Fine Level Timeout</Fault>
+<Unavailable dataItemId="asset_30007-1071132324002.fault.laser_power_low" name="Fault-Laser-Power-Low" sequence="500" timestamp="2025-06-03T13:24:57.472413Z" type="SYSTEM"/>
+<Unavailable dataItemId="asset_30007-1071132324002.fault.mirror_indexing" name="Fault-Mirror-Indexing" sequence="507" timestamp="2025-06-03T13:24:57.472496Z" type="SYSTEM"/>
+<Unavailable dataItemId="asset_30007-1071132324002.fault.pinhole_shift" name="Fault-Pinhole-Shift" sequence="463" timestamp="2025-06-03T13:24:57.471946Z" type="SYSTEM"/>
+<Unavailable dataItemId="asset_30007-1071132324002.fault.sweep_error" name="Fault-Sweep-Error" sequence="510" timestamp="2025-06-03T13:24:57.47254Z" type="MOTION_PROGRAM"/>
+</Condition>
+</ComponentStream>
+<ComponentStream component="Path" name="Build" componentId="asset_30007-1071132324002.build">
+<Samples>
+<Displacement dataItemId="asset_30007-1071132324002.build.cure_depth" name="Build-Cure-Depth" sequence="18572492" timestamp="2025-07-20T03:41:06Z">0.012937</Displacement>
+<AccumulatedTime dataItemId="asset_30007-1071132324002.build.draw_time" name="Build-Draw-Time" sequence="18779986" timestamp="2025-07-21T11:22:46Z">0</AccumulatedTime>
+<Mass dataItemId="asset_30007-1071132324002.build.material_quantity" name="Build-Material-Quantity" sequence="18779985" timestamp="2025-07-21T11:22:46Z">0</Mass>
+<Velocity dataItemId="asset_30007-1071132324002.build.speed" name="Build-Speed" sequence="18779941" timestamp="2025-07-21T11:22:46Z">0</Velocity>
+<AccumulatedTime dataItemId="asset_30007-1071132324002.build.time_remaining" name="Build-Time-Remaining" sequence="18779987" timestamp="2025-07-21T11:22:46Z">0</AccumulatedTime>
+<Length dataItemId="asset_30007-1071132324002.build.z_height" name="Build-Z-Height" sequence="18779969" subType="STANDARD" timestamp="2025-07-21T11:22:46Z">0</Length>
+</Samples>
+<Events>
+<PartCount dataItemId="asset_30007-1071132324002.build.current_layer" name="Build-Current-Layer" sequence="18779970" subType="GOOD" timestamp="2025-07-21T11:22:46Z">0</PartCount>
+<Message dataItemId="asset_30007-1071132324002.build.filename" name="Build-FileName" sequence="17375364" timestamp="2025-07-18T13:05:25Z">C:\ProgramData\3D Systems\3D Print\jobs\FileMgr\Job9\250718_hpc5.sladdd</Message>
+<Message dataItemId="asset_30007-1071132324002.build.job_data" name="Build-Job-Data" nativeCode="JSON" sequence="18780763" timestamp="2025-07-21T11:28:51Z">{"build_filename":"-","build_progress":0,"build_state":"-","build_time_estimate":0,"completion_time":0,"current_layer":0,"extent_units":0,"material":["Accura Composite PIV"],"material_estimate_total_volume":[0],"start_time":0,"status":0,"status_change_time":0,"submit_time":0,"time_remaining":0,"total_layers":0,"x_extent":0,"y_extent":0,"z_extent":0}</Message>
+<MessageDiscrete dataItemId="asset_30007-1071132324002.build.progress" name="Build-Progress" sequence="18779979" timestamp="2025-07-21T11:22:46Z">0</MessageDiscrete>
+<Message dataItemId="asset_30007-1071132324002.build.state" name="Build-State" sequence="18780762" timestamp="2025-07-21T11:28:51Z">-</Message>
+<Message dataItemId="asset_30007-1071132324002.build.total_layers" name="Build-Total-Layers" sequence="18833547" timestamp="2025-07-21T15:08:47Z">0</Message>
+</Events>
+</ComponentStream>
+<ComponentStream component="Chamber" name="Chamber" componentId="asset_30007-1071132324002.chamber">
+<Samples>
+<Temperature dataItemId="asset_30007-1071132324002.chamber.heater" name="Chamber-Heater" sequence="14715574" timestamp="2025-07-09T11:41:47Z">29</Temperature>
+<Temperature dataItemId="asset_30007-1071132324002.chamber.temperature" name="Chamber-Temperature" sequence="19088189" timestamp="2025-07-22T02:25:31Z">29.019501</Temperature>
+</Samples>
+</ComponentStream>
+<ComponentStream component="Laser" name="Laser-1" componentId="asset_30007-1071132324002.laser_1">
+<Samples>
+<Wattage dataItemId="asset_30007-1071132324002.laser_1.fad_power_large_spot" name="Laser-1-Fad-Power-Large-Spot" sequence="18779982" timestamp="2025-07-21T11:22:46Z">0</Wattage>
+<Wattage dataItemId="asset_30007-1071132324002.laser_1.fad_power_small_spot" name="Laser-1-Fad-Power-Small-Spot" sequence="18779980" timestamp="2025-07-21T11:22:46Z">0</Wattage>
+<Concentration dataItemId="asset_30007-1071132324002.laser_1.large_pin_ratio" name="Laser-1-Large-Pin-Ratio" sequence="18779951" timestamp="2025-07-21T11:22:46Z">0</Concentration>
+<Position dataItemId="asset_30007-1071132324002.laser_1.large_profile_center_x" name="Laser-1-Large-Profile-Center-X" sequence="18779949" subType="ACTUAL" timestamp="2025-07-21T11:22:46Z">0</Position>
+<Position dataItemId="asset_30007-1071132324002.laser_1.large_profile_center_y" name="Laser-1-Large-Profile-Center-Y" sequence="18779950" subType="ACTUAL" timestamp="2025-07-21T11:22:46Z">0</Position>
+<Displacement dataItemId="asset_30007-1071132324002.laser_1.large_profile_drift_x" name="Laser-1-Large-Profile-Drift-X" sequence="18779954" timestamp="2025-07-21T11:22:46Z">0</Displacement>
+<Displacement dataItemId="asset_30007-1071132324002.laser_1.large_profile_drift_y" name="Laser-1-Large-Profile-Drift-Y" sequence="18572618" timestamp="2025-07-20T03:41:28Z">14305</Displacement>
+<Length dataItemId="asset_30007-1071132324002.laser_1.large_profile_width_x" name="Laser-1-Large-Profile-Width-X" sequence="18779952" subType="STANDARD" timestamp="2025-07-21T11:22:46Z">0</Length>
+<Length dataItemId="asset_30007-1071132324002.laser_1.large_profile_width_y" name="Laser-1-Large-Profile-Width-Y" sequence="18779953" subType="STANDARD" timestamp="2025-07-21T11:22:46Z">0</Length>
+<Wattage dataItemId="asset_30007-1071132324002.laser_1.power_large_spot" name="Laser-1-Power-Large-Spot" sequence="18779983" timestamp="2025-07-21T11:22:46Z">0</Wattage>
+<Wattage dataItemId="asset_30007-1071132324002.laser_1.power_small_spot" name="Laser-1-Power-Small-Spot" sequence="18779981" timestamp="2025-07-21T11:22:46Z">0</Wattage>
+<Concentration dataItemId="asset_30007-1071132324002.laser_1.small_pin_ratio" name="Laser-1-Small-Pin-Ratio" sequence="18779944" timestamp="2025-07-21T11:22:46Z">0</Concentration>
+<Position dataItemId="asset_30007-1071132324002.laser_1.small_profile_center_x" name="Laser-1-Small-Profile-Center-X" sequence="18779942" subType="ACTUAL" timestamp="2025-07-21T11:22:46Z">0</Position>
+<Position dataItemId="asset_30007-1071132324002.laser_1.small_profile_center_y" name="Laser-1-Small-Profile-Center-Y" sequence="18779943" subType="ACTUAL" timestamp="2025-07-21T11:22:46Z">0</Position>
+<Displacement dataItemId="asset_30007-1071132324002.laser_1.small_profile_drift_x" name="Laser-1-Small-Profile-Drift-X" sequence="18779947" timestamp="2025-07-21T11:22:46Z">0</Displacement>
+<Displacement dataItemId="asset_30007-1071132324002.laser_1.small_profile_drift_y" name="Laser-1-Small-Profile-Drift-Y" sequence="18779948" timestamp="2025-07-21T11:22:46Z">0</Displacement>
+<Length dataItemId="asset_30007-1071132324002.laser_1.small_profile_width_x" name="Laser-1-Small-Profile-Width-X" sequence="18779945" subType="STANDARD" timestamp="2025-07-21T11:22:46Z">0</Length>
+<Length dataItemId="asset_30007-1071132324002.laser_1.small_profile_width_y" name="Laser-1-Small-Profile-Width-Y" sequence="18779946" subType="STANDARD" timestamp="2025-07-21T11:22:46Z">0</Length>
+</Samples>
+<Events>
+<SerialNumber dataItemId="asset_30007-1071132324002.laser_1.serial_number" name="Laser-1-Serial-Number" sequence="14715569" timestamp="2025-07-11T13:39:42Z">-</SerialNumber>
+</Events>
+</ComponentStream>
+<ComponentStream component="Laser" name="Laser-2" componentId="asset_30007-1071132324002.laser_2">
+<Samples>
+<Concentration dataItemId="asset_30007-1071132324002.laser_2.large_pin_ratio" name="Laser-2-Large-Pin-Ratio" sequence="18779964" timestamp="2025-07-21T11:22:46Z">0</Concentration>
+<Position dataItemId="asset_30007-1071132324002.laser_2.large_profile_center_x" name="Laser-2-Large-Profile-Center-X" sequence="18779962" subType="ACTUAL" timestamp="2025-07-21T11:22:46Z">0</Position>
+<Position dataItemId="asset_30007-1071132324002.laser_2.large_profile_center_y" name="Laser-2-Large-Profile-Center-Y" sequence="18779963" subType="ACTUAL" timestamp="2025-07-21T11:22:46Z">0</Position>
+<Displacement dataItemId="asset_30007-1071132324002.laser_2.large_profile_drift_x" name="Laser-2-Large-Profile-Drift-X" sequence="18779967" timestamp="2025-07-21T11:22:46Z">0</Displacement>
+<Displacement dataItemId="asset_30007-1071132324002.laser_2.large_profile_drift_y" name="Laser-2-Large-Profile-Drift-Y" sequence="18779968" timestamp="2025-07-21T11:22:46Z">0</Displacement>
+<Length dataItemId="asset_30007-1071132324002.laser_2.large_profile_width_x" name="Laser-2-Large-Profile-Width-X" sequence="18779965" subType="STANDARD" timestamp="2025-07-21T11:22:46Z">0</Length>
+<Length dataItemId="asset_30007-1071132324002.laser_2.large_profile_width_y" name="Laser-2-Large-Profile-Width-Y" sequence="18779966" subType="STANDARD" timestamp="2025-07-21T11:22:46Z">0</Length>
+<Concentration dataItemId="asset_30007-1071132324002.laser_2.small_pin_ratio" name="Laser-2-Small-Pin-Ratio" sequence="18779957" timestamp="2025-07-21T11:22:46Z">0</Concentration>
+<Position dataItemId="asset_30007-1071132324002.laser_2.small_profile_center_x" name="Laser-2-Small-Profile-Center-X" sequence="18779955" subType="ACTUAL" timestamp="2025-07-21T11:22:46Z">0</Position>
+<Position dataItemId="asset_30007-1071132324002.laser_2.small_profile_center_y" name="Laser-2-Small-Profile-Center-Y" sequence="18779956" subType="ACTUAL" timestamp="2025-07-21T11:22:46Z">0</Position>
+<Displacement dataItemId="asset_30007-1071132324002.laser_2.small_profile_drift_x" name="Laser-2-Small-Profile-Drift-X" sequence="18779960" timestamp="2025-07-21T11:22:46Z">0</Displacement>
+<Displacement dataItemId="asset_30007-1071132324002.laser_2.small_profile_drift_y" name="Laser-2-Small-Profile-Drift-Y" sequence="18779961" timestamp="2025-07-21T11:22:46Z">0</Displacement>
+<Length dataItemId="asset_30007-1071132324002.laser_2.small_profile_width_x" name="Laser-2-Small-Profile-Width-X" sequence="18779958" subType="STANDARD" timestamp="2025-07-21T11:22:46Z">0</Length>
+<Length dataItemId="asset_30007-1071132324002.laser_2.small_profile_width_y" name="Laser-2-Small-Profile-Width-Y" sequence="18779959" subType="STANDARD" timestamp="2025-07-21T11:22:46Z">0</Length>
+</Samples>
+<Events>
+<Message dataItemId="asset_30007-1071132324002.laser_2.door" name="Laser-2-Door" sequence="14715575" timestamp="2025-07-09T11:43:55Z">1</Message>
+<SerialNumber dataItemId="asset_30007-1071132324002.laser_2.serial_number" name="Laser-2-Serial-Number" sequence="14716071" timestamp="2025-07-11T13:39:44Z">-</SerialNumber>
+</Events>
+</ComponentStream>
+<ComponentStream component="Vat" name="Vat" componentId="asset_30007-1071132324002.vat">
+<Samples>
+<Temperature dataItemId="asset_30007-1071132324002.vat.temperature" name="Vat-Temperature" sequence="18489667" timestamp="2025-07-19T23:26:19Z">31</Temperature>
+</Samples>
+<Events>
+<Material dataItemId="asset_30007-1071132324002.vat.material" name="Vat-Material" sequence="18605455" timestamp="2025-07-20T08:38:17Z">ACCURA COMPOSITE PIV</Material>
+</Events>
+</ComponentStream>
+</DeviceStream>
+<DeviceStream name="asset_30007-1071A15023001" uuid="asset_30007-1071A15023001">
+<ComponentStream component="Device" name="asset_30007-1071A15023001" componentId="asset_30007-1071A15023001">
+<Samples>
+<Temperature dataItemId="asset_30007-1071A15023001.chamber_temperature" name="Chamber-Temperature" sequence="18943497" timestamp="2025-07-21T19:41:28Z">28.0137</Temperature>
+</Samples>
+<Events>
+<Message dataItemId="asset_30007-1071A15023001.printer_name" name="Printer-Name" sequence="14715796" timestamp="2025-07-11T14:06:09Z">SLA750-01</Message>
+<SerialNumber dataItemId="asset_30007-1071A15023001.serial_number" name="Serial-Number" sequence="14715797" timestamp="2025-07-11T14:06:09Z">1071A15023001</SerialNumber>
+<Message dataItemId="asset_30007-1071A15023001.sw_version_3dconnect" name="Sw-Version-3dconnect" sequence="14716397" timestamp="2025-07-11T14:00:48Z">2.0.30.0</Message>
+<AssetChanged assetType="UNAVAILABLE" dataItemId="asset_30007-1071A15023001_asset_chg" sequence="65" timestamp="2025-06-03T13:24:57.466512Z">UNAVAILABLE</AssetChanged>
+<AssetRemoved assetType="UNAVAILABLE" dataItemId="asset_30007-1071A15023001_asset_rem" sequence="66" timestamp="2025-06-03T13:24:57.466552Z">UNAVAILABLE</AssetRemoved>
+<Availability dataItemId="asset_30007-1071A15023001_avail" sequence="14716040" timestamp="2025-07-14T05:54:16.604117Z">AVAILABLE</Availability>
+</Events>
+<Condition>
+<Unavailable dataItemId="asset_30007-1071A15023001.fault.dsp_error" name="Fault-Dsp-Error" sequence="29" timestamp="2025-06-03T13:24:57.466045Z" type="HARDWARE"/>
+<Unavailable dataItemId="asset_30007-1071A15023001.fault.dsp_not_found" name="Fault-Dsp-Not-Found" sequence="53" timestamp="2025-06-03T13:24:57.466363Z" type="HARDWARE"/>
+<Fault dataItemId="asset_30007-1071A15023001.fault.enable" name="Fault-Enable" sequence="14716398" timestamp="2025-07-11T13:55:04Z" type="SYSTEM">User must enable machine</Fault>
+<Unavailable dataItemId="asset_30007-1071A15023001.fault.fine_level_timeout" name="Fault-Fine-Level-Timeout" sequence="54" timestamp="2025-06-03T13:24:57.466376Z" type="SYSTEM"/>
+<Unavailable dataItemId="asset_30007-1071A15023001.fault.laser_power_low" name="Fault-Laser-Power-Low" sequence="55" timestamp="2025-06-03T13:24:57.466389Z" type="SYSTEM"/>
+<Unavailable dataItemId="asset_30007-1071A15023001.fault.mirror_indexing" name="Fault-Mirror-Indexing" sequence="23" timestamp="2025-06-03T13:24:57.465962Z" type="SYSTEM"/>
+<Unavailable dataItemId="asset_30007-1071A15023001.fault.pinhole_shift" name="Fault-Pinhole-Shift" sequence="48" timestamp="2025-06-03T13:24:57.466299Z" type="SYSTEM"/>
+<Fault dataItemId="asset_30007-1071A15023001.fault.sweep_error" name="Fault-Sweep-Error" sequence="14717432" timestamp="2025-06-20T14:30:36Z" type="MOTION_PROGRAM">Recoater stalled</Fault>
+</Condition>
+</ComponentStream>
+<ComponentStream component="Path" name="Build" componentId="asset_30007-1071A15023001.build">
+<Samples>
+<Displacement dataItemId="asset_30007-1071A15023001.build.cure_depth" name="Build-Cure-Depth" sequence="18943243" timestamp="2025-07-21T19:40:54Z">0.012937</Displacement>
+<AccumulatedTime dataItemId="asset_30007-1071A15023001.build.draw_time" name="Build-Draw-Time" sequence="18943482" timestamp="2025-07-21T19:41:26Z">81464.960938</AccumulatedTime>
+<Mass dataItemId="asset_30007-1071A15023001.build.material_quantity" name="Build-Material-Quantity" sequence="17947101" timestamp="2025-07-19T06:15:10Z">5753.724609</Mass>
+<Velocity dataItemId="asset_30007-1071A15023001.build.speed" name="Build-Speed" sequence="18943244" timestamp="2025-07-21T19:40:54Z">500</Velocity>
+<AccumulatedTime dataItemId="asset_30007-1071A15023001.build.time_remaining" name="Build-Time-Remaining" sequence="18943499" timestamp="2025-07-21T19:41:28Z">-33338</AccumulatedTime>
+<Length dataItemId="asset_30007-1071A15023001.build.z_height" name="Build-Z-Height" sequence="18943486" subType="STANDARD" timestamp="2025-07-21T19:41:28Z">485.899994</Length>
+</Samples>
+<Events>
+<PartCount dataItemId="asset_30007-1071A15023001.build.current_layer" name="Build-Current-Layer" sequence="18943487" subType="GOOD" timestamp="2025-07-21T19:41:28Z">4858</PartCount>
+<Message dataItemId="asset_30007-1071A15023001.build.filename" name="Build-FileName" sequence="17943030" timestamp="2025-07-19T06:06:43Z">C:\ProgramData\3D Systems\3D Print\jobs\FileMgr\Job49\250719_hpc1.sladdd</Message>
+<Message dataItemId="asset_30007-1071A15023001.build.job_data" name="Build-Job-Data" nativeCode="JSON" sequence="18943914" timestamp="2025-07-21T19:42:43Z">{"build_filename":"250719_hpc1.sladdd","build_mode":"0","build_progress":0.999986,"build_state":"PRINT_STATE_COMPLETED","build_time_estimate":188207,"completion_time":1753134162,"current_layer":4858,"extent_units":1,"job_id":"49","material":["Accura Composite PIV"],"material_estimate_total_volume":[5753.724609],"start_time":1752912402,"status":2,"status_change_time":1752912402,"submit_time":0,"time_remaining":-33338,"total_layers":4859,"x_extent":730.900024,"y_extent":601.30011,"z_extent":485.906921}</Message>
+<MessageDiscrete dataItemId="asset_30007-1071A15023001.build.progress" name="Build-Progress" sequence="18943496" timestamp="2025-07-21T19:41:28Z">0.999986</MessageDiscrete>
+<Message dataItemId="asset_30007-1071A15023001.build.state" name="Build-State" sequence="18944348" timestamp="2025-07-21T19:43:59Z">PRINT_STATE_COMPLETED</Message>
+<Message dataItemId="asset_30007-1071A15023001.build.total_layers" name="Build-Total-Layers" sequence="17947100" timestamp="2025-07-19T06:15:10Z">4859</Message>
+</Events>
+</ComponentStream>
+<ComponentStream component="Chamber" name="Chamber" componentId="asset_30007-1071A15023001.chamber">
+<Samples>
+<Temperature dataItemId="asset_30007-1071A15023001.chamber.heater" name="Chamber-Heater" sequence="14715794" timestamp="2025-07-11T14:03:57Z">28</Temperature>
+<Temperature dataItemId="asset_30007-1071A15023001.chamber.temperature" name="Chamber-Temperature" sequence="19088879" timestamp="2025-07-22T02:27:27Z">28.036501</Temperature>
+</Samples>
+</ComponentStream>
+<ComponentStream component="Laser" name="Laser-1" componentId="asset_30007-1071A15023001.laser_1">
+<Samples>
+<Wattage dataItemId="asset_30007-1071A15023001.laser_1.fad_power_large_spot" name="Laser-1-Fad-Power-Large-Spot" sequence="17944135" timestamp="2025-07-19T06:09:06Z">1391.5</Wattage>
+<Wattage dataItemId="asset_30007-1071A15023001.laser_1.fad_power_small_spot" name="Laser-1-Fad-Power-Small-Spot" sequence="17943963" timestamp="2025-07-19T06:08:44Z">793.300049</Wattage>
+<Concentration dataItemId="asset_30007-1071A15023001.laser_1.large_pin_ratio" name="Laser-1-Large-Pin-Ratio" sequence="18943446" timestamp="2025-07-21T19:41:24Z">23.379265</Concentration>
+<Position dataItemId="asset_30007-1071A15023001.laser_1.large_profile_center_x" name="Laser-1-Large-Profile-Center-X" sequence="18943444" subType="ACTUAL" timestamp="2025-07-21T19:41:24Z">49939.035156</Position>
+<Position dataItemId="asset_30007-1071A15023001.laser_1.large_profile_center_y" name="Laser-1-Large-Profile-Center-Y" sequence="18943445" subType="ACTUAL" timestamp="2025-07-21T19:41:24Z">0.061364</Position>
+<Displacement dataItemId="asset_30007-1071A15023001.laser_1.large_profile_drift_x" name="Laser-1-Large-Profile-Drift-X" sequence="18943449" timestamp="2025-07-21T19:41:24Z">3.867188</Displacement>
+<Displacement dataItemId="asset_30007-1071A15023001.laser_1.large_profile_drift_y" name="Laser-1-Large-Profile-Drift-Y" sequence="18943450" timestamp="2025-07-21T19:41:24Z">20964</Displacement>
+<Length dataItemId="asset_30007-1071A15023001.laser_1.large_profile_width_x" name="Laser-1-Large-Profile-Width-X" sequence="18943447" subType="STANDARD" timestamp="2025-07-21T19:41:24Z">23.611818</Length>
+<Length dataItemId="asset_30007-1071A15023001.laser_1.large_profile_width_y" name="Laser-1-Large-Profile-Width-Y" sequence="18943448" subType="STANDARD" timestamp="2025-07-21T19:41:24Z">1409</Length>
+<Wattage dataItemId="asset_30007-1071A15023001.laser_1.power_large_spot" name="Laser-1-Power-Large-Spot" sequence="17944136" timestamp="2025-07-19T06:09:06Z">2968.093994</Wattage>
+<Wattage dataItemId="asset_30007-1071A15023001.laser_1.power_small_spot" name="Laser-1-Power-Small-Spot" sequence="17943964" timestamp="2025-07-19T06:08:44Z">1675.327637</Wattage>
+<Concentration dataItemId="asset_30007-1071A15023001.laser_1.small_pin_ratio" name="Laser-1-Small-Pin-Ratio" sequence="18943439" timestamp="2025-07-21T19:41:24Z">4.449774</Concentration>
+<Position dataItemId="asset_30007-1071A15023001.laser_1.small_profile_center_x" name="Laser-1-Small-Profile-Center-X" sequence="18943437" subType="ACTUAL" timestamp="2025-07-21T19:41:24Z">49933.710938</Position>
+<Position dataItemId="asset_30007-1071A15023001.laser_1.small_profile_center_y" name="Laser-1-Small-Profile-Center-Y" sequence="18943438" subType="ACTUAL" timestamp="2025-07-21T19:41:24Z">0.150494</Position>
+<Displacement dataItemId="asset_30007-1071A15023001.laser_1.small_profile_drift_x" name="Laser-1-Small-Profile-Drift-X" sequence="18943442" timestamp="2025-07-21T19:41:24Z">-1.226563</Displacement>
+<Displacement dataItemId="asset_30007-1071A15023001.laser_1.small_profile_drift_y" name="Laser-1-Small-Profile-Drift-Y" sequence="18943443" timestamp="2025-07-21T19:41:24Z">27684</Displacement>
+<Length dataItemId="asset_30007-1071A15023001.laser_1.small_profile_width_x" name="Laser-1-Small-Profile-Width-X" sequence="18943440" subType="STANDARD" timestamp="2025-07-21T19:41:24Z">4.636744</Length>
+<Length dataItemId="asset_30007-1071A15023001.laser_1.small_profile_width_y" name="Laser-1-Small-Profile-Width-Y" sequence="18943441" subType="STANDARD" timestamp="2025-07-21T19:41:24Z">3894</Length>
+</Samples>
+<Events>
+<SerialNumber dataItemId="asset_30007-1071A15023001.laser_1.serial_number" name="Laser-1-Serial-Number" sequence="14715800" timestamp="2025-07-11T14:10:49Z">-</SerialNumber>
+</Events>
+</ComponentStream>
+<ComponentStream component="Laser" name="Laser-2" componentId="asset_30007-1071A15023001.laser_2">
+<Samples>
+<Concentration dataItemId="asset_30007-1071A15023001.laser_2.large_pin_ratio" name="Laser-2-Large-Pin-Ratio" sequence="18943459" timestamp="2025-07-21T19:41:24Z">30.599916</Concentration>
+<Position dataItemId="asset_30007-1071A15023001.laser_2.large_profile_center_x" name="Laser-2-Large-Profile-Center-X" sequence="18943236" subType="ACTUAL" timestamp="2025-07-21T19:40:52Z">43370.050781</Position>
+<Position dataItemId="asset_30007-1071A15023001.laser_2.large_profile_center_y" name="Laser-2-Large-Profile-Center-Y" sequence="18943458" subType="ACTUAL" timestamp="2025-07-21T19:41:24Z">0.051111</Position>
+<Displacement dataItemId="asset_30007-1071A15023001.laser_2.large_profile_drift_x" name="Laser-2-Large-Profile-Drift-X" sequence="18943240" timestamp="2025-07-21T19:40:52Z">1.492188</Displacement>
+<Displacement dataItemId="asset_30007-1071A15023001.laser_2.large_profile_drift_y" name="Laser-2-Large-Profile-Drift-Y" sequence="18943462" timestamp="2025-07-21T19:41:24Z">21393</Displacement>
+<Length dataItemId="asset_30007-1071A15023001.laser_2.large_profile_width_x" name="Laser-2-Large-Profile-Width-X" sequence="18943460" subType="STANDARD" timestamp="2025-07-21T19:41:24Z">28.275068</Length>
+<Length dataItemId="asset_30007-1071A15023001.laser_2.large_profile_width_y" name="Laser-2-Large-Profile-Width-Y" sequence="18943461" subType="STANDARD" timestamp="2025-07-21T19:41:24Z">1192</Length>
+<Concentration dataItemId="asset_30007-1071A15023001.laser_2.small_pin_ratio" name="Laser-2-Small-Pin-Ratio" sequence="18943453" timestamp="2025-07-21T19:41:24Z">5.243155</Concentration>
+<Position dataItemId="asset_30007-1071A15023001.laser_2.small_profile_center_x" name="Laser-2-Small-Profile-Center-X" sequence="18943451" subType="ACTUAL" timestamp="2025-07-21T19:41:24Z">43370.820312</Position>
+<Position dataItemId="asset_30007-1071A15023001.laser_2.small_profile_center_y" name="Laser-2-Small-Profile-Center-Y" sequence="18943452" subType="ACTUAL" timestamp="2025-07-21T19:41:24Z">0.136836</Position>
+<Displacement dataItemId="asset_30007-1071A15023001.laser_2.small_profile_drift_x" name="Laser-2-Small-Profile-Drift-X" sequence="18943456" timestamp="2025-07-21T19:41:24Z">2.429688</Displacement>
+<Displacement dataItemId="asset_30007-1071A15023001.laser_2.small_profile_drift_y" name="Laser-2-Small-Profile-Drift-Y" sequence="18943457" timestamp="2025-07-21T19:41:24Z">30847</Displacement>
+<Length dataItemId="asset_30007-1071A15023001.laser_2.small_profile_width_x" name="Laser-2-Small-Profile-Width-X" sequence="18943454" subType="STANDARD" timestamp="2025-07-21T19:41:24Z">4.631789</Length>
+<Length dataItemId="asset_30007-1071A15023001.laser_2.small_profile_width_y" name="Laser-2-Small-Profile-Width-Y" sequence="18943455" subType="STANDARD" timestamp="2025-07-21T19:41:24Z">3919</Length>
+</Samples>
+<Events>
+<Message dataItemId="asset_30007-1071A15023001.laser_2.door" name="Laser-2-Door" sequence="14715795" timestamp="2025-07-11T14:06:05Z">1</Message>
+<SerialNumber dataItemId="asset_30007-1071A15023001.laser_2.serial_number" name="Laser-2-Serial-Number" sequence="14715801" timestamp="2025-07-11T14:10:49Z">-</SerialNumber>
+</Events>
+</ComponentStream>
+<ComponentStream component="Vat" name="Vat" componentId="asset_30007-1071A15023001.vat">
+<Samples>
+<Temperature dataItemId="asset_30007-1071A15023001.vat.temperature" name="Vat-Temperature" sequence="18608585" timestamp="2025-07-20T09:11:38Z">28</Temperature>
+</Samples>
+<Events>
+<Material dataItemId="asset_30007-1071A15023001.vat.material" name="Vat-Material" sequence="19058269" timestamp="2025-07-22T01:02:50Z">ACCURA COMPOSITE PIV</Material>
+</Events>
+</ComponentStream>
+</DeviceStream>
+<DeviceStream name="asset_30007-1071A15823001" uuid="asset_30007-1071A15823001">
+<ComponentStream component="Device" name="asset_30007-1071A15823001" componentId="asset_30007-1071A15823001">
+<Samples>
+<Temperature dataItemId="asset_30007-1071A15823001.chamber_temperature" name="Chamber-Temperature" sequence="18757006" timestamp="2025-07-21T08:25:12Z">28.082001</Temperature>
+</Samples>
+<Events>
+<Message dataItemId="asset_30007-1071A15823001.printer_name" name="Printer-Name" sequence="14717058" timestamp="2025-07-11T09:28:41Z">SLA750-04</Message>
+<SerialNumber dataItemId="asset_30007-1071A15823001.serial_number" name="Serial-Number" sequence="14716033" timestamp="2025-07-11T09:28:41Z">1071A15823001</SerialNumber>
+<Message dataItemId="asset_30007-1071A15823001.sw_version_3dconnect" name="Sw-Version-3dconnect" sequence="14716029" timestamp="2025-07-11T09:09:28Z">2.0.30.0</Message>
+<AssetChanged assetType="UNAVAILABLE" dataItemId="asset_30007-1071A15823001_asset_chg" sequence="131" timestamp="2025-06-03T13:24:57.467346Z">UNAVAILABLE</AssetChanged>
+<AssetRemoved assetType="UNAVAILABLE" dataItemId="asset_30007-1071A15823001_asset_rem" sequence="132" timestamp="2025-06-03T13:24:57.467359Z">UNAVAILABLE</AssetRemoved>
+<Availability dataItemId="asset_30007-1071A15823001_avail" sequence="14715891" timestamp="2025-07-14T05:54:16.181867Z">AVAILABLE</Availability>
+</Events>
+<Condition>
+<Fault dataItemId="asset_30007-1071A15823001.fault.dsp_error" name="Fault-Dsp-Error" sequence="14716037" timestamp="2025-07-08T13:56:15Z" type="HARDWARE">Fatal DSP Error</Fault>
+<Unavailable dataItemId="asset_30007-1071A15823001.fault.dsp_not_found" name="Fault-Dsp-Not-Found" sequence="110" timestamp="2025-06-03T13:24:57.467093Z" type="HARDWARE"/>
+<Fault dataItemId="asset_30007-1071A15823001.fault.enable" name="Fault-Enable" sequence="14717499" timestamp="2025-07-11T12:39:32Z" type="SYSTEM">User must enable machine</Fault>
+<Fault dataItemId="asset_30007-1071A15823001.fault.fine_level_timeout" name="Fault-Fine-Level-Timeout" sequence="18384769" timestamp="2025-07-19T18:53:45Z" type="SYSTEM">Fine Level Timeout</Fault>
+<Fault dataItemId="asset_30007-1071A15823001.fault.laser_power_low" name="Fault-Laser-Power-Low" sequence="14717274" timestamp="2025-07-10T11:53:38Z" type="SYSTEM">Unable to set max power to read fad after 5 attempts</Fault>
+<Unavailable dataItemId="asset_30007-1071A15823001.fault.mirror_indexing" name="Fault-Mirror-Indexing" sequence="106" timestamp="2025-06-03T13:24:57.467044Z" type="SYSTEM"/>
+<Unavailable dataItemId="asset_30007-1071A15823001.fault.pinhole_shift" name="Fault-Pinhole-Shift" sequence="121" timestamp="2025-06-03T13:24:57.467223Z" type="SYSTEM"/>
+<Unavailable dataItemId="asset_30007-1071A15823001.fault.sweep_error" name="Fault-Sweep-Error" sequence="88" timestamp="2025-06-03T13:24:57.46683Z" type="MOTION_PROGRAM"/>
+</Condition>
+</ComponentStream>
+<ComponentStream component="Path" name="Build" componentId="asset_30007-1071A15823001.build">
+<Samples>
+<Displacement dataItemId="asset_30007-1071A15823001.build.cure_depth" name="Build-Cure-Depth" sequence="18756966" timestamp="2025-07-21T08:25:00Z">0.023622</Displacement>
+<AccumulatedTime dataItemId="asset_30007-1071A15823001.build.draw_time" name="Build-Draw-Time" sequence="18756970" timestamp="2025-07-21T08:25:02Z">39.334637</AccumulatedTime>
+<Mass dataItemId="asset_30007-1071A15823001.build.material_quantity" name="Build-Material-Quantity" sequence="18757420" timestamp="2025-07-21T08:28:36Z">3629.151611</Mass>
+<Velocity dataItemId="asset_30007-1071A15823001.build.speed" name="Build-Speed" sequence="18756967" timestamp="2025-07-21T08:25:00Z">94.256981</Velocity>
+<AccumulatedTime dataItemId="asset_30007-1071A15823001.build.time_remaining" name="Build-Time-Remaining" sequence="18757421" timestamp="2025-07-21T08:28:36Z">189056</AccumulatedTime>
+<Length dataItemId="asset_30007-1071A15823001.build.z_height" name="Build-Z-Height" sequence="18756995" subType="STANDARD" timestamp="2025-07-21T08:25:12Z">217.5</Length>
+</Samples>
+<Events>
+<PartCount dataItemId="asset_30007-1071A15823001.build.current_layer" name="Build-Current-Layer" sequence="18756996" subType="GOOD" timestamp="2025-07-21T08:25:12Z">2174</PartCount>
+<Message dataItemId="asset_30007-1071A15823001.build.filename" name="Build-FileName" sequence="17382295" timestamp="2025-07-18T13:30:05Z">C:\ProgramData\3D Systems\3D Print\jobs\FileMgr\Job82\250718_hpc4.sladdd</Message>
+<Message dataItemId="asset_30007-1071A15823001.build.job_data" name="Build-Job-Data" nativeCode="JSON" sequence="18757459" timestamp="2025-07-21T08:28:44Z">{"build_filename":"250718_hpc4.sladdd","build_mode":"0","build_progress":0.000965,"build_state":"PRINT_STATE_ABORTED","build_time_estimate":189452,"completion_time":1753093556,"current_layer":2174,"extent_units":1,"job_id":"82","material":["Accura Composite PIV"],"material_estimate_total_volume":[3629.151611],"start_time":1752852604,"status":4,"status_change_time":1752852604,"submit_time":0,"time_remaining":189056,"total_layers":5283,"x_extent":718.80011,"y_extent":630.899963,"z_extent":528.311035}</Message>
+<MessageDiscrete dataItemId="asset_30007-1071A15823001.build.progress" name="Build-Progress" sequence="18757005" timestamp="2025-07-21T08:25:12Z">0.000965</MessageDiscrete>
+<Message dataItemId="asset_30007-1071A15823001.build.state" name="Build-State" sequence="18757124" timestamp="2025-07-21T08:25:58Z">PRINT_STATE_ABORTED</Message>
+<Message dataItemId="asset_30007-1071A15823001.build.total_layers" name="Build-Total-Layers" sequence="18757574" timestamp="2025-07-21T08:29:45Z">5283</Message>
+</Events>
+</ComponentStream>
+<ComponentStream component="Chamber" name="Chamber" componentId="asset_30007-1071A15823001.chamber">
+<Samples>
+<Temperature dataItemId="asset_30007-1071A15823001.chamber.heater" name="Chamber-Heater" sequence="14716030" timestamp="2025-07-11T09:26:24Z">28</Temperature>
+<Temperature dataItemId="asset_30007-1071A15823001.chamber.temperature" name="Chamber-Temperature" sequence="19086682" timestamp="2025-07-22T02:27:48Z">27.990999</Temperature>
+</Samples>
+</ComponentStream>
+<ComponentStream component="Laser" name="Laser-1" componentId="asset_30007-1071A15823001.laser_1">
+<Samples>
+<Wattage dataItemId="asset_30007-1071A15823001.laser_1.fad_power_large_spot" name="Laser-1-Fad-Power-Large-Spot" sequence="18756474" timestamp="2025-07-21T08:22:03Z">1708.900024</Wattage>
+<Wattage dataItemId="asset_30007-1071A15823001.laser_1.fad_power_small_spot" name="Laser-1-Fad-Power-Small-Spot" sequence="18756407" timestamp="2025-07-21T08:21:38Z">1006.299988</Wattage>
+<Concentration dataItemId="asset_30007-1071A15823001.laser_1.large_pin_ratio" name="Laser-1-Large-Pin-Ratio" sequence="18756934" timestamp="2025-07-21T08:24:50Z">29.918808</Concentration>
+<Position dataItemId="asset_30007-1071A15823001.laser_1.large_profile_center_x" name="Laser-1-Large-Profile-Center-X" sequence="18756932" subType="ACTUAL" timestamp="2025-07-21T08:24:50Z">49989.632812</Position>
+<Position dataItemId="asset_30007-1071A15823001.laser_1.large_profile_center_y" name="Laser-1-Large-Profile-Center-Y" sequence="18756933" subType="ACTUAL" timestamp="2025-07-21T08:24:50Z">0.0473</Position>
+<Displacement dataItemId="asset_30007-1071A15823001.laser_1.large_profile_drift_x" name="Laser-1-Large-Profile-Drift-X" sequence="18756937" timestamp="2025-07-21T08:24:50Z">-2.140625</Displacement>
+<Displacement dataItemId="asset_30007-1071A15823001.laser_1.large_profile_drift_y" name="Laser-1-Large-Profile-Drift-Y" sequence="18756777" timestamp="2025-07-21T08:24:04Z">17008</Displacement>
+<Length dataItemId="asset_30007-1071A15823001.laser_1.large_profile_width_x" name="Laser-1-Large-Profile-Width-X" sequence="18756935" subType="STANDARD" timestamp="2025-07-21T08:24:50Z">28.569521</Length>
+<Length dataItemId="asset_30007-1071A15823001.laser_1.large_profile_width_y" name="Laser-1-Large-Profile-Width-Y" sequence="18756936" subType="STANDARD" timestamp="2025-07-21T08:24:50Z">919</Length>
+<Wattage dataItemId="asset_30007-1071A15823001.laser_1.power_large_spot" name="Laser-1-Power-Large-Spot" sequence="18756313" timestamp="2025-07-21T08:20:46Z">0</Wattage>
+<Wattage dataItemId="asset_30007-1071A15823001.laser_1.power_small_spot" name="Laser-1-Power-Small-Spot" sequence="18756408" timestamp="2025-07-21T08:21:38Z">1991.465088</Wattage>
+<Concentration dataItemId="asset_30007-1071A15823001.laser_1.small_pin_ratio" name="Laser-1-Small-Pin-Ratio" sequence="18756952" timestamp="2025-07-21T08:24:56Z">4.435302</Concentration>
+<Position dataItemId="asset_30007-1071A15823001.laser_1.small_profile_center_x" name="Laser-1-Small-Profile-Center-X" sequence="18756950" subType="ACTUAL" timestamp="2025-07-21T08:24:56Z">49992.292969</Position>
+<Position dataItemId="asset_30007-1071A15823001.laser_1.small_profile_center_y" name="Laser-1-Small-Profile-Center-Y" sequence="18756951" subType="ACTUAL" timestamp="2025-07-21T08:24:56Z">0.146677</Position>
+<Displacement dataItemId="asset_30007-1071A15823001.laser_1.small_profile_drift_x" name="Laser-1-Small-Profile-Drift-X" sequence="18756955" timestamp="2025-07-21T08:24:56Z">0.710938</Displacement>
+<Displacement dataItemId="asset_30007-1071A15823001.laser_1.small_profile_drift_y" name="Laser-1-Small-Profile-Drift-Y" sequence="18756825" timestamp="2025-07-21T08:24:10Z">29667</Displacement>
+<Length dataItemId="asset_30007-1071A15823001.laser_1.small_profile_width_x" name="Laser-1-Small-Profile-Width-X" sequence="18756953" subType="STANDARD" timestamp="2025-07-21T08:24:56Z">4.428174</Length>
+<Length dataItemId="asset_30007-1071A15823001.laser_1.small_profile_width_y" name="Laser-1-Small-Profile-Width-Y" sequence="18756954" subType="STANDARD" timestamp="2025-07-21T08:24:56Z">3913</Length>
+</Samples>
+<Events>
+<SerialNumber dataItemId="asset_30007-1071A15823001.laser_1.serial_number" name="Laser-1-Serial-Number" sequence="14716027" timestamp="2025-07-11T12:47:15Z">-</SerialNumber>
+</Events>
+</ComponentStream>
+<ComponentStream component="Laser" name="Laser-2" componentId="asset_30007-1071A15823001.laser_2">
+<Samples>
+<Concentration dataItemId="asset_30007-1071A15823001.laser_2.large_pin_ratio" name="Laser-2-Large-Pin-Ratio" sequence="18756940" timestamp="2025-07-21T08:24:50Z">30.737171</Concentration>
+<Position dataItemId="asset_30007-1071A15823001.laser_2.large_profile_center_x" name="Laser-2-Large-Profile-Center-X" sequence="18756938" subType="ACTUAL" timestamp="2025-07-21T08:24:50Z">43518.613281</Position>
+<Position dataItemId="asset_30007-1071A15823001.laser_2.large_profile_center_y" name="Laser-2-Large-Profile-Center-Y" sequence="18756939" subType="ACTUAL" timestamp="2025-07-21T08:24:50Z">0.049233</Position>
+<Displacement dataItemId="asset_30007-1071A15823001.laser_2.large_profile_drift_x" name="Laser-2-Large-Profile-Drift-X" sequence="18756942" timestamp="2025-07-21T08:24:50Z">-6.414063</Displacement>
+<Displacement dataItemId="asset_30007-1071A15823001.laser_2.large_profile_drift_y" name="Laser-2-Large-Profile-Drift-Y" sequence="18756943" timestamp="2025-07-21T08:24:50Z">17469</Displacement>
+<Length dataItemId="asset_30007-1071A15823001.laser_2.large_profile_width_x" name="Laser-2-Large-Profile-Width-X" sequence="18756941" subType="STANDARD" timestamp="2025-07-21T08:24:50Z">30.98263</Length>
+<Length dataItemId="asset_30007-1071A15823001.laser_2.large_profile_width_y" name="Laser-2-Large-Profile-Width-Y" sequence="18756782" subType="STANDARD" timestamp="2025-07-21T08:24:04Z">936</Length>
+<Concentration dataItemId="asset_30007-1071A15823001.laser_2.small_pin_ratio" name="Laser-2-Small-Pin-Ratio" sequence="18756960" timestamp="2025-07-21T08:24:58Z">4.709135</Concentration>
+<Position dataItemId="asset_30007-1071A15823001.laser_2.small_profile_center_x" name="Laser-2-Small-Profile-Center-X" sequence="18756958" subType="ACTUAL" timestamp="2025-07-21T08:24:58Z">43525.234375</Position>
+<Position dataItemId="asset_30007-1071A15823001.laser_2.small_profile_center_y" name="Laser-2-Small-Profile-Center-Y" sequence="18756959" subType="ACTUAL" timestamp="2025-07-21T08:24:58Z">0.153258</Position>
+<Displacement dataItemId="asset_30007-1071A15823001.laser_2.small_profile_drift_x" name="Laser-2-Small-Profile-Drift-X" sequence="18756963" timestamp="2025-07-21T08:24:58Z">0.566406</Displacement>
+<Displacement dataItemId="asset_30007-1071A15823001.laser_2.small_profile_drift_y" name="Laser-2-Small-Profile-Drift-Y" sequence="18756964" timestamp="2025-07-21T08:24:58Z">28236</Displacement>
+<Length dataItemId="asset_30007-1071A15823001.laser_2.small_profile_width_x" name="Laser-2-Small-Profile-Width-X" sequence="18756961" subType="STANDARD" timestamp="2025-07-21T08:24:58Z">4.393519</Length>
+<Length dataItemId="asset_30007-1071A15823001.laser_2.small_profile_width_y" name="Laser-2-Small-Profile-Width-Y" sequence="18756962" subType="STANDARD" timestamp="2025-07-21T08:24:58Z">3901</Length>
+</Samples>
+<Events>
+<Message dataItemId="asset_30007-1071A15823001.laser_2.door" name="Laser-2-Door" sequence="14716031" timestamp="2025-07-11T09:28:35Z">1</Message>
+<SerialNumber dataItemId="asset_30007-1071A15823001.laser_2.serial_number" name="Laser-2-Serial-Number" sequence="14716028" timestamp="2025-07-11T12:47:17Z">-</SerialNumber>
+</Events>
+</ComponentStream>
+<ComponentStream component="Vat" name="Vat" componentId="asset_30007-1071A15823001.vat">
+<Samples>
+<Temperature dataItemId="asset_30007-1071A15823001.vat.temperature" name="Vat-Temperature" sequence="18739049" timestamp="2025-07-21T05:58:44Z">29</Temperature>
+</Samples>
+<Events>
+<Material dataItemId="asset_30007-1071A15823001.vat.material" name="Vat-Material" sequence="19035979" timestamp="2025-07-22T00:07:54Z">ACCURA COMPOSITE PIV</Material>
+</Events>
+</ComponentStream>
+</DeviceStream>
+<DeviceStream name="asset_30007-1071A21323001" uuid="asset_30007-1071A21323001">
+<ComponentStream component="Device" name="asset_30007-1071A21323001" componentId="asset_30007-1071A21323001">
+<Samples>
+<Temperature dataItemId="asset_30007-1071A21323001.chamber_temperature" name="Chamber-Temperature" sequence="19089382" timestamp="2025-07-22T02:35:37Z">29.019501</Temperature>
+</Samples>
+<Events>
+<Message dataItemId="asset_30007-1071A21323001.printer_name" name="Printer-Name" sequence="14715922" timestamp="2025-07-14T04:41:21Z">SLA750-03</Message>
+<SerialNumber dataItemId="asset_30007-1071A21323001.serial_number" name="Serial-Number" sequence="14715923" timestamp="2025-07-14T04:41:21Z">1071A21323001</SerialNumber>
+<Message dataItemId="asset_30007-1071A21323001.sw_version_3dconnect" name="Sw-Version-3dconnect" sequence="14715919" timestamp="2025-07-14T04:35:47Z">2.0.30.0</Message>
+<AssetChanged assetType="UNAVAILABLE" dataItemId="asset_30007-1071A21323001_asset_chg" sequence="197" timestamp="2025-06-03T13:24:57.46821Z">UNAVAILABLE</AssetChanged>
+<AssetRemoved assetType="UNAVAILABLE" dataItemId="asset_30007-1071A21323001_asset_rem" sequence="198" timestamp="2025-06-03T13:24:57.468221Z">UNAVAILABLE</AssetRemoved>
+<Availability dataItemId="asset_30007-1071A21323001_avail" sequence="14716125" timestamp="2025-07-14T05:54:17.127172Z">AVAILABLE</Availability>
+</Events>
+<Condition>
+<Fault dataItemId="asset_30007-1071A21323001.fault.dsp_error" name="Fault-Dsp-Error" sequence="14715930" timestamp="2025-06-12T13:08:59Z" type="HARDWARE">Fatal DSP Error</Fault>
+<Unavailable dataItemId="asset_30007-1071A21323001.fault.dsp_not_found" name="Fault-Dsp-Not-Found" sequence="182" timestamp="2025-06-03T13:24:57.468034Z" type="HARDWARE"/>
+<Fault dataItemId="asset_30007-1071A21323001.fault.enable" name="Fault-Enable" sequence="14717633" timestamp="2025-07-11T06:24:17Z" type="SYSTEM">User must enable machine</Fault>
+<Unavailable dataItemId="asset_30007-1071A21323001.fault.fine_level_timeout" name="Fault-Fine-Level-Timeout" sequence="181" timestamp="2025-06-03T13:24:57.468022Z" type="SYSTEM"/>
+<Unavailable dataItemId="asset_30007-1071A21323001.fault.laser_power_low" name="Fault-Laser-Power-Low" sequence="185" timestamp="2025-06-03T13:24:57.46807Z" type="SYSTEM"/>
+<Unavailable dataItemId="asset_30007-1071A21323001.fault.mirror_indexing" name="Fault-Mirror-Indexing" sequence="176" timestamp="2025-06-03T13:24:57.467958Z" type="SYSTEM"/>
+<Unavailable dataItemId="asset_30007-1071A21323001.fault.pinhole_shift" name="Fault-Pinhole-Shift" sequence="180" timestamp="2025-06-03T13:24:57.46801Z" type="SYSTEM"/>
+<Fault dataItemId="asset_30007-1071A21323001.fault.sweep_error" name="Fault-Sweep-Error" sequence="14717024" timestamp="2025-06-13T11:16:13Z" type="MOTION_PROGRAM">Recoater stalled</Fault>
+</Condition>
+</ComponentStream>
+<ComponentStream component="Path" name="Build" componentId="asset_30007-1071A21323001.build">
+<Samples>
+<Displacement dataItemId="asset_30007-1071A21323001.build.cure_depth" name="Build-Cure-Depth" sequence="19089337" timestamp="2025-07-22T02:35:33Z">0.012937</Displacement>
+<AccumulatedTime dataItemId="asset_30007-1071A21323001.build.draw_time" name="Build-Draw-Time" sequence="19089383" timestamp="2025-07-22T02:35:37Z">15034.96582</AccumulatedTime>
+<Mass dataItemId="asset_30007-1071A21323001.build.material_quantity" name="Build-Material-Quantity" sequence="18786702" timestamp="2025-07-21T12:15:43Z">808.966492</Mass>
+<Velocity dataItemId="asset_30007-1071A21323001.build.speed" name="Build-Speed" sequence="19089506" timestamp="2025-07-22T02:35:57Z">1200</Velocity>
+<AccumulatedTime dataItemId="asset_30007-1071A21323001.build.time_remaining" name="Build-Time-Remaining" sequence="19089384" timestamp="2025-07-22T02:35:37Z">16922</AccumulatedTime>
+<Length dataItemId="asset_30007-1071A21323001.build.z_height" name="Build-Z-Height" sequence="19089371" subType="STANDARD" timestamp="2025-07-22T02:35:37Z">162.600006</Length>
+</Samples>
+<Events>
+<PartCount dataItemId="asset_30007-1071A21323001.build.current_layer" name="Build-Current-Layer" sequence="19089372" subType="GOOD" timestamp="2025-07-22T02:35:37Z">1625</PartCount>
+<Message dataItemId="asset_30007-1071A21323001.build.filename" name="Build-FileName" sequence="18786406" timestamp="2025-07-21T12:13:58Z">C:\ProgramData\3D Systems\3D Print\jobs\FileMgr\Job54\250721_hpc3.sladdd</Message>
+<Message dataItemId="asset_30007-1071A21323001.build.job_data" name="Build-Job-Data" nativeCode="JSON" sequence="19089385" timestamp="2025-07-22T02:35:37Z">{"build_filename":"250721_hpc3.sladdd","build_mode":"0","build_progress":0.613122,"build_state":"PRINT_STATE_BUILDING","build_time_estimate":68530,"completion_time":0,"current_layer":1625,"extent_units":1,"job_id":"54","material":["Accura Composite PIV"],"material_estimate_total_volume":[808.966492],"start_time":1753107237,"status":1,"status_change_time":1753107237,"submit_time":0,"time_remaining":16949,"total_layers":2652,"x_extent":723.400024,"y_extent":265.899994,"z_extent":265.200256}</Message>
+<MessageDiscrete dataItemId="asset_30007-1071A21323001.build.progress" name="Build-Progress" sequence="19089381" timestamp="2025-07-22T02:35:37Z">0.613122</MessageDiscrete>
+<Message dataItemId="asset_30007-1071A21323001.build.state" name="Build-State" sequence="18787130" timestamp="2025-07-21T12:18:30Z">PRINT_STATE_BUILDING</Message>
+<Message dataItemId="asset_30007-1071A21323001.build.total_layers" name="Build-Total-Layers" sequence="18786701" timestamp="2025-07-21T12:15:43Z">2652</Message>
+</Events>
+</ComponentStream>
+<ComponentStream component="Chamber" name="Chamber" componentId="asset_30007-1071A21323001.chamber">
+<Samples>
+<Temperature dataItemId="asset_30007-1071A21323001.chamber.heater" name="Chamber-Heater" sequence="14715920" timestamp="2025-07-14T04:39:09Z">29</Temperature>
+<Temperature dataItemId="asset_30007-1071A21323001.chamber.temperature" name="Chamber-Temperature" sequence="19089516" timestamp="2025-07-22T02:35:57Z">28.9965</Temperature>
+</Samples>
+</ComponentStream>
+<ComponentStream component="Laser" name="Laser-1" componentId="asset_30007-1071A21323001.laser_1">
+<Samples>
+<Wattage dataItemId="asset_30007-1071A21323001.laser_1.fad_power_large_spot" name="Laser-1-Fad-Power-Large-Spot" sequence="18786400" timestamp="2025-07-21T12:13:58Z">0</Wattage>
+<Wattage dataItemId="asset_30007-1071A21323001.laser_1.fad_power_small_spot" name="Laser-1-Fad-Power-Small-Spot" sequence="18786586" timestamp="2025-07-21T12:15:03Z">961.400024</Wattage>
+<Concentration dataItemId="asset_30007-1071A21323001.laser_1.large_pin_ratio" name="Laser-1-Large-Pin-Ratio" sequence="19089508" timestamp="2025-07-22T02:35:57Z">29.659758</Concentration>
+<Position dataItemId="asset_30007-1071A21323001.laser_1.large_profile_center_x" name="Laser-1-Large-Profile-Center-X" sequence="19089321" subType="ACTUAL" timestamp="2025-07-22T02:35:31Z">49885.078125</Position>
+<Position dataItemId="asset_30007-1071A21323001.laser_1.large_profile_center_y" name="Laser-1-Large-Profile-Center-Y" sequence="19089507" subType="ACTUAL" timestamp="2025-07-22T02:35:57Z">0.04886</Position>
+<Displacement dataItemId="asset_30007-1071A21323001.laser_1.large_profile_drift_x" name="Laser-1-Large-Profile-Drift-X" sequence="19089326" timestamp="2025-07-22T02:35:31Z">-11.546875</Displacement>
+<Displacement dataItemId="asset_30007-1071A21323001.laser_1.large_profile_drift_y" name="Laser-1-Large-Profile-Drift-Y" sequence="19089511" timestamp="2025-07-22T02:35:57Z">17180</Displacement>
+<Length dataItemId="asset_30007-1071A21323001.laser_1.large_profile_width_x" name="Laser-1-Large-Profile-Width-X" sequence="19089509" subType="STANDARD" timestamp="2025-07-22T02:35:57Z">28.444689</Length>
+<Length dataItemId="asset_30007-1071A21323001.laser_1.large_profile_width_y" name="Laser-1-Large-Profile-Width-Y" sequence="19089510" subType="STANDARD" timestamp="2025-07-22T02:35:57Z">893</Length>
+<Wattage dataItemId="asset_30007-1071A21323001.laser_1.power_large_spot" name="Laser-1-Power-Large-Spot" sequence="18786663" timestamp="2025-07-21T12:15:25Z">3272.762939</Wattage>
+<Wattage dataItemId="asset_30007-1071A21323001.laser_1.power_small_spot" name="Laser-1-Power-Small-Spot" sequence="18786587" timestamp="2025-07-21T12:15:03Z">1977.776001</Wattage>
+<Concentration dataItemId="asset_30007-1071A21323001.laser_1.small_pin_ratio" name="Laser-1-Small-Pin-Ratio" sequence="19089341" timestamp="2025-07-22T02:35:33Z">4.97177</Concentration>
+<Position dataItemId="asset_30007-1071A21323001.laser_1.small_profile_center_x" name="Laser-1-Small-Profile-Center-X" sequence="19089339" subType="ACTUAL" timestamp="2025-07-22T02:35:33Z">49885.449219</Position>
+<Position dataItemId="asset_30007-1071A21323001.laser_1.small_profile_center_y" name="Laser-1-Small-Profile-Center-Y" sequence="19089340" subType="ACTUAL" timestamp="2025-07-22T02:35:33Z">0.143147</Position>
+<Displacement dataItemId="asset_30007-1071A21323001.laser_1.small_profile_drift_x" name="Laser-1-Small-Profile-Drift-X" sequence="19089344" timestamp="2025-07-22T02:35:33Z">-11.191406</Displacement>
+<Displacement dataItemId="asset_30007-1071A21323001.laser_1.small_profile_drift_y" name="Laser-1-Small-Profile-Drift-Y" sequence="19089345" timestamp="2025-07-22T02:35:33Z">28077</Displacement>
+<Length dataItemId="asset_30007-1071A21323001.laser_1.small_profile_width_x" name="Laser-1-Small-Profile-Width-X" sequence="19089342" subType="STANDARD" timestamp="2025-07-22T02:35:33Z">4.757149</Length>
+<Length dataItemId="asset_30007-1071A21323001.laser_1.small_profile_width_y" name="Laser-1-Small-Profile-Width-Y" sequence="19089343" subType="STANDARD" timestamp="2025-07-22T02:35:33Z">3917</Length>
+</Samples>
+<Events>
+<SerialNumber dataItemId="asset_30007-1071A21323001.laser_1.serial_number" name="Laser-1-Serial-Number" sequence="14715925" timestamp="2025-07-09T15:32:35Z">-</SerialNumber>
+</Events>
+</ComponentStream>
+<ComponentStream component="Laser" name="Laser-2" componentId="asset_30007-1071A21323001.laser_2">
+<Samples>
+<Concentration dataItemId="asset_30007-1071A21323001.laser_2.large_pin_ratio" name="Laser-2-Large-Pin-Ratio" sequence="19089512" timestamp="2025-07-22T02:35:57Z">31.106518</Concentration>
+<Position dataItemId="asset_30007-1071A21323001.laser_2.large_profile_center_x" name="Laser-2-Large-Profile-Center-X" sequence="19089328" subType="ACTUAL" timestamp="2025-07-22T02:35:31Z">43333.195312</Position>
+<Position dataItemId="asset_30007-1071A21323001.laser_2.large_profile_center_y" name="Laser-2-Large-Profile-Center-Y" sequence="19089329" subType="ACTUAL" timestamp="2025-07-22T02:35:31Z">0.050205</Position>
+<Displacement dataItemId="asset_30007-1071A21323001.laser_2.large_profile_drift_x" name="Laser-2-Large-Profile-Drift-X" sequence="19089335" timestamp="2025-07-22T02:35:31Z">0.171875</Displacement>
+<Displacement dataItemId="asset_30007-1071A21323001.laser_2.large_profile_drift_y" name="Laser-2-Large-Profile-Drift-Y" sequence="19089515" timestamp="2025-07-22T02:35:57Z">15212</Displacement>
+<Length dataItemId="asset_30007-1071A21323001.laser_2.large_profile_width_x" name="Laser-2-Large-Profile-Width-X" sequence="19089513" subType="STANDARD" timestamp="2025-07-22T02:35:57Z">27.852468</Length>
+<Length dataItemId="asset_30007-1071A21323001.laser_2.large_profile_width_y" name="Laser-2-Large-Profile-Width-Y" sequence="19089514" subType="STANDARD" timestamp="2025-07-22T02:35:57Z">833</Length>
+<Concentration dataItemId="asset_30007-1071A21323001.laser_2.small_pin_ratio" name="Laser-2-Small-Pin-Ratio" sequence="19089348" timestamp="2025-07-22T02:35:33Z">4.873984</Concentration>
+<Position dataItemId="asset_30007-1071A21323001.laser_2.small_profile_center_x" name="Laser-2-Small-Profile-Center-X" sequence="19089346" subType="ACTUAL" timestamp="2025-07-22T02:35:33Z">43337.28125</Position>
+<Position dataItemId="asset_30007-1071A21323001.laser_2.small_profile_center_y" name="Laser-2-Small-Profile-Center-Y" sequence="19089347" subType="ACTUAL" timestamp="2025-07-22T02:35:33Z">0.150925</Position>
+<Displacement dataItemId="asset_30007-1071A21323001.laser_2.small_profile_drift_x" name="Laser-2-Small-Profile-Drift-X" sequence="19089213" timestamp="2025-07-22T02:35:07Z">4.207031</Displacement>
+<Displacement dataItemId="asset_30007-1071A21323001.laser_2.small_profile_drift_y" name="Laser-2-Small-Profile-Drift-Y" sequence="19089350" timestamp="2025-07-22T02:35:33Z">27451</Displacement>
+<Length dataItemId="asset_30007-1071A21323001.laser_2.small_profile_width_x" name="Laser-2-Small-Profile-Width-X" sequence="19089349" subType="STANDARD" timestamp="2025-07-22T02:35:33Z">4.393639</Length>
+<Length dataItemId="asset_30007-1071A21323001.laser_2.small_profile_width_y" name="Laser-2-Small-Profile-Width-Y" sequence="19089212" subType="STANDARD" timestamp="2025-07-22T02:35:07Z">3906</Length>
+</Samples>
+<Events>
+<Message dataItemId="asset_30007-1071A21323001.laser_2.door" name="Laser-2-Door" sequence="14715921" timestamp="2025-07-14T04:41:15Z">1</Message>
+<SerialNumber dataItemId="asset_30007-1071A21323001.laser_2.serial_number" name="Laser-2-Serial-Number" sequence="14715926" timestamp="2025-07-09T15:32:37Z">-</SerialNumber>
+</Events>
+</ComponentStream>
+<ComponentStream component="Vat" name="Vat" componentId="asset_30007-1071A21323001.vat">
+<Samples>
+<Temperature dataItemId="asset_30007-1071A21323001.vat.temperature" name="Vat-Temperature" sequence="18798172" timestamp="2025-07-21T13:13:51Z">29</Temperature>
+</Samples>
+<Events>
+<Material dataItemId="asset_30007-1071A21323001.vat.material" name="Vat-Material" sequence="18962500" timestamp="2025-07-21T20:42:31Z">ACCURA COMPOSITE PIV</Material>
+</Events>
+</ComponentStream>
+</DeviceStream>
+<DeviceStream name="asset_30007-1071A24223003" uuid="asset_30007-1071A24223003">
+<ComponentStream component="Device" name="asset_30007-1071A24223003" componentId="asset_30007-1071A24223003">
+<Samples>
+<Temperature dataItemId="asset_30007-1071A24223003.chamber_temperature" name="Chamber-Temperature" sequence="19089477" timestamp="2025-07-22T02:29:04Z">28.9965</Temperature>
+</Samples>
+<Events>
+<Message dataItemId="asset_30007-1071A24223003.printer_name" name="Printer-Name" sequence="14716097" timestamp="2025-07-09T11:21:26Z">SLA750-02</Message>
+<SerialNumber dataItemId="asset_30007-1071A24223003.serial_number" name="Serial-Number" sequence="14715629" timestamp="2025-07-09T11:21:26Z">1071A24223003</SerialNumber>
+<Message dataItemId="asset_30007-1071A24223003.sw_version_3dconnect" name="Sw-Version-3dconnect" sequence="14716095" timestamp="2025-07-09T11:15:36Z">2.0.28.0</Message>
+<AssetChanged assetType="UNAVAILABLE" dataItemId="asset_30007-1071A24223003_asset_chg" sequence="240" timestamp="2025-06-03T13:24:57.468822Z">UNAVAILABLE</AssetChanged>
+<AssetRemoved assetType="UNAVAILABLE" dataItemId="asset_30007-1071A24223003_asset_rem" sequence="264" timestamp="2025-06-03T13:24:57.469299Z">UNAVAILABLE</AssetRemoved>
+<Availability dataItemId="asset_30007-1071A24223003_avail" sequence="14715525" timestamp="2025-07-14T05:54:14.811374Z">AVAILABLE</Availability>
+</Events>
+<Condition>
+<Unavailable dataItemId="asset_30007-1071A24223003.fault.dsp_error" name="Fault-Dsp-Error" sequence="252" timestamp="2025-06-03T13:24:57.46916Z" type="HARDWARE"/>
+<Unavailable dataItemId="asset_30007-1071A24223003.fault.dsp_not_found" name="Fault-Dsp-Not-Found" sequence="216" timestamp="2025-06-03T13:24:57.468514Z" type="HARDWARE"/>
+<Fault dataItemId="asset_30007-1071A24223003.fault.enable" name="Fault-Enable" sequence="14717537" timestamp="2025-07-11T12:56:18Z" type="SYSTEM">User must enable machine</Fault>
+<Fault dataItemId="asset_30007-1071A24223003.fault.fine_level_timeout" name="Fault-Fine-Level-Timeout" sequence="14717546" timestamp="2025-06-11T02:07:45Z" type="SYSTEM">Fine Level Timeout</Fault>
+<Unavailable dataItemId="asset_30007-1071A24223003.fault.laser_power_low" name="Fault-Laser-Power-Low" sequence="239" timestamp="2025-06-03T13:24:57.468808Z" type="SYSTEM"/>
+<Unavailable dataItemId="asset_30007-1071A24223003.fault.mirror_indexing" name="Fault-Mirror-Indexing" sequence="233" timestamp="2025-06-03T13:24:57.468737Z" type="SYSTEM"/>
+<Fault dataItemId="asset_30007-1071A24223003.fault.pinhole_shift" name="Fault-Pinhole-Shift" sequence="14717139" timestamp="2025-06-10T12:59:25Z" type="SYSTEM">Profiling Error</Fault>
+<Fault dataItemId="asset_30007-1071A24223003.fault.sweep_error" name="Fault-Sweep-Error" sequence="14716900" timestamp="2025-06-20T12:56:06Z" type="MOTION_PROGRAM">Recoater stalled</Fault>
+</Condition>
+</ComponentStream>
+<ComponentStream component="Path" name="Build" componentId="asset_30007-1071A24223003.build">
+<Samples>
+<Displacement dataItemId="asset_30007-1071A24223003.build.cure_depth" name="Build-Cure-Depth" sequence="19089449" timestamp="2025-07-22T02:29:00Z">0.012937</Displacement>
+<AccumulatedTime dataItemId="asset_30007-1071A24223003.build.draw_time" name="Build-Draw-Time" sequence="19089479" timestamp="2025-07-22T02:29:04Z">16852.328125</AccumulatedTime>
+<Mass dataItemId="asset_30007-1071A24223003.build.material_quantity" name="Build-Material-Quantity" sequence="18782516" timestamp="2025-07-21T11:41:40Z">2439.879639</Mass>
+<Velocity dataItemId="asset_30007-1071A24223003.build.speed" name="Build-Speed" sequence="19089386" timestamp="2025-07-22T02:28:54Z">1200</Velocity>
+<AccumulatedTime dataItemId="asset_30007-1071A24223003.build.time_remaining" name="Build-Time-Remaining" sequence="19089480" timestamp="2025-07-22T02:29:04Z">99163</AccumulatedTime>
+<Length dataItemId="asset_30007-1071A24223003.build.z_height" name="Build-Z-Height" sequence="19089466" subType="STANDARD" timestamp="2025-07-22T02:29:04Z">146.199997</Length>
+</Samples>
+<Events>
+<PartCount dataItemId="asset_30007-1071A24223003.build.current_layer" name="Build-Current-Layer" sequence="19089467" subType="GOOD" timestamp="2025-07-22T02:29:04Z">1461</PartCount>
+<Message dataItemId="asset_30007-1071A24223003.build.filename" name="Build-FileName" sequence="18781868" timestamp="2025-07-21T11:37:19Z">C:\ProgramData\3D Systems\3D Print\jobs\FileMgr\Job57\250721_hpc2.sladdd</Message>
+<Message dataItemId="asset_30007-1071A24223003.build.job_data" name="Build-Job-Data" nativeCode="JSON" sequence="19089400" timestamp="2025-07-22T02:28:54Z">{"build_filename":"250721_hpc2.sladdd","build_mode":"1","build_progress":0.276542,"build_state":"PRINT_STATE_BUILDING","build_time_estimate":152594,"completion_time":0,"current_layer":1460,"extent_units":1,"job_id":"57","material":["Accura Composite PIV"],"material_estimate_total_volume":[2439.879639],"start_time":1753105038,"status":1,"status_change_time":1753105038,"submit_time":0,"time_remaining":99197,"total_layers":5283,"x_extent":701.615784,"y_extent":363.80011,"z_extent":528.311035}</Message>
+<MessageDiscrete dataItemId="asset_30007-1071A24223003.build.progress" name="Build-Progress" sequence="19089476" timestamp="2025-07-22T02:29:04Z">0.276731</MessageDiscrete>
+<Message dataItemId="asset_30007-1071A24223003.build.state" name="Build-State" sequence="18999882" timestamp="2025-07-21T22:20:28Z">PRINT_STATE_BUILDING</Message>
+<Message dataItemId="asset_30007-1071A24223003.build.total_layers" name="Build-Total-Layers" sequence="18782515" timestamp="2025-07-21T11:41:40Z">5283</Message>
+</Events>
+</ComponentStream>
+<ComponentStream component="Chamber" name="Chamber" componentId="asset_30007-1071A24223003.chamber">
+<Samples>
+<Temperature dataItemId="asset_30007-1071A24223003.chamber.heater" name="Chamber-Heater" sequence="14716096" timestamp="2025-07-09T11:19:12Z">29</Temperature>
+<Temperature dataItemId="asset_30007-1071A24223003.chamber.temperature" name="Chamber-Temperature" sequence="19089478" timestamp="2025-07-22T02:29:04Z">28.9965</Temperature>
+</Samples>
+</ComponentStream>
+<ComponentStream component="Laser" name="Laser-1" componentId="asset_30007-1071A24223003.laser_1">
+<Samples>
+<Wattage dataItemId="asset_30007-1071A24223003.laser_1.fad_power_large_spot" name="Laser-1-Fad-Power-Large-Spot" sequence="18782042" timestamp="2025-07-21T11:38:31Z">1836.299927</Wattage>
+<Wattage dataItemId="asset_30007-1071A24223003.laser_1.fad_power_small_spot" name="Laser-1-Fad-Power-Small-Spot" sequence="18781972" timestamp="2025-07-21T11:38:07Z">1063.5</Wattage>
+<Concentration dataItemId="asset_30007-1071A24223003.laser_1.large_pin_ratio" name="Laser-1-Large-Pin-Ratio" sequence="19089389" timestamp="2025-07-22T02:28:54Z">28.673738</Concentration>
+<Position dataItemId="asset_30007-1071A24223003.laser_1.large_profile_center_x" name="Laser-1-Large-Profile-Center-X" sequence="19089387" subType="ACTUAL" timestamp="2025-07-22T02:28:54Z">49782.792969</Position>
+<Position dataItemId="asset_30007-1071A24223003.laser_1.large_profile_center_y" name="Laser-1-Large-Profile-Center-Y" sequence="19089388" subType="ACTUAL" timestamp="2025-07-22T02:28:54Z">0.050042</Position>
+<Displacement dataItemId="asset_30007-1071A24223003.laser_1.large_profile_drift_x" name="Laser-1-Large-Profile-Drift-X" sequence="19088983" timestamp="2025-07-22T02:27:44Z">-12.070313</Displacement>
+<Displacement dataItemId="asset_30007-1071A24223003.laser_1.large_profile_drift_y" name="Laser-1-Large-Profile-Drift-Y" sequence="19089392" timestamp="2025-07-22T02:28:54Z">8128</Displacement>
+<Length dataItemId="asset_30007-1071A24223003.laser_1.large_profile_width_x" name="Laser-1-Large-Profile-Width-X" sequence="19089390" subType="STANDARD" timestamp="2025-07-22T02:28:54Z">28.492552</Length>
+<Length dataItemId="asset_30007-1071A24223003.laser_1.large_profile_width_y" name="Laser-1-Large-Profile-Width-Y" sequence="19089391" subType="STANDARD" timestamp="2025-07-22T02:28:54Z">449</Length>
+<Wattage dataItemId="asset_30007-1071A24223003.laser_1.power_large_spot" name="Laser-1-Power-Large-Spot" sequence="18782043" timestamp="2025-07-21T11:38:31Z">3923.50293</Wattage>
+<Wattage dataItemId="asset_30007-1071A24223003.laser_1.power_small_spot" name="Laser-1-Power-Small-Spot" sequence="18781973" timestamp="2025-07-21T11:38:07Z">2261.143555</Wattage>
+<Concentration dataItemId="asset_30007-1071A24223003.laser_1.small_pin_ratio" name="Laser-1-Small-Pin-Ratio" sequence="19089452" timestamp="2025-07-22T02:29:00Z">4.560023</Concentration>
+<Position dataItemId="asset_30007-1071A24223003.laser_1.small_profile_center_x" name="Laser-1-Small-Profile-Center-X" sequence="19089450" subType="ACTUAL" timestamp="2025-07-22T02:29:00Z">49786.71875</Position>
+<Position dataItemId="asset_30007-1071A24223003.laser_1.small_profile_center_y" name="Laser-1-Small-Profile-Center-Y" sequence="19089451" subType="ACTUAL" timestamp="2025-07-22T02:29:00Z">0.1587</Position>
+<Displacement dataItemId="asset_30007-1071A24223003.laser_1.small_profile_drift_x" name="Laser-1-Small-Profile-Drift-X" sequence="19089455" timestamp="2025-07-22T02:29:00Z">-8.308594</Displacement>
+<Displacement dataItemId="asset_30007-1071A24223003.laser_1.small_profile_drift_y" name="Laser-1-Small-Profile-Drift-Y" sequence="19089456" timestamp="2025-07-22T02:29:00Z">13998</Displacement>
+<Length dataItemId="asset_30007-1071A24223003.laser_1.small_profile_width_x" name="Laser-1-Small-Profile-Width-X" sequence="19089453" subType="STANDARD" timestamp="2025-07-22T02:29:00Z">4.432832</Length>
+<Length dataItemId="asset_30007-1071A24223003.laser_1.small_profile_width_y" name="Laser-1-Small-Profile-Width-Y" sequence="19089454" subType="STANDARD" timestamp="2025-07-22T02:29:00Z">2486</Length>
+</Samples>
+<Events>
+<SerialNumber dataItemId="asset_30007-1071A24223003.laser_1.serial_number" name="Laser-1-Serial-Number" sequence="14716099" timestamp="2025-07-11T13:39:54Z">-</SerialNumber>
+</Events>
+</ComponentStream>
+<ComponentStream component="Laser" name="Laser-2" componentId="asset_30007-1071A24223003.laser_2">
+<Samples>
+<Concentration dataItemId="asset_30007-1071A24223003.laser_2.large_pin_ratio" name="Laser-2-Large-Pin-Ratio" sequence="19089394" timestamp="2025-07-22T02:28:54Z">29.879019</Concentration>
+<Position dataItemId="asset_30007-1071A24223003.laser_2.large_profile_center_x" name="Laser-2-Large-Profile-Center-X" sequence="19088802" subType="ACTUAL" timestamp="2025-07-22T02:27:10Z">43113.515625</Position>
+<Position dataItemId="asset_30007-1071A24223003.laser_2.large_profile_center_y" name="Laser-2-Large-Profile-Center-Y" sequence="19089393" subType="ACTUAL" timestamp="2025-07-22T02:28:54Z">0.047143</Position>
+<Displacement dataItemId="asset_30007-1071A24223003.laser_2.large_profile_drift_x" name="Laser-2-Large-Profile-Drift-X" sequence="19089397" timestamp="2025-07-22T02:28:54Z">-8.820313</Displacement>
+<Displacement dataItemId="asset_30007-1071A24223003.laser_2.large_profile_drift_y" name="Laser-2-Large-Profile-Drift-Y" sequence="19089398" timestamp="2025-07-22T02:28:54Z">15568</Displacement>
+<Length dataItemId="asset_30007-1071A24223003.laser_2.large_profile_width_x" name="Laser-2-Large-Profile-Width-X" sequence="19089395" subType="STANDARD" timestamp="2025-07-22T02:28:54Z">30.391064</Length>
+<Length dataItemId="asset_30007-1071A24223003.laser_2.large_profile_width_y" name="Laser-2-Large-Profile-Width-Y" sequence="19089396" subType="STANDARD" timestamp="2025-07-22T02:28:54Z">835</Length>
+<Concentration dataItemId="asset_30007-1071A24223003.laser_2.small_pin_ratio" name="Laser-2-Small-Pin-Ratio" sequence="19089459" timestamp="2025-07-22T02:29:00Z">4.629961</Concentration>
+<Position dataItemId="asset_30007-1071A24223003.laser_2.small_profile_center_x" name="Laser-2-Small-Profile-Center-X" sequence="19089457" subType="ACTUAL" timestamp="2025-07-22T02:29:00Z">43121.601562</Position>
+<Position dataItemId="asset_30007-1071A24223003.laser_2.small_profile_center_y" name="Laser-2-Small-Profile-Center-Y" sequence="19089458" subType="ACTUAL" timestamp="2025-07-22T02:29:00Z">0.151826</Position>
+<Displacement dataItemId="asset_30007-1071A24223003.laser_2.small_profile_drift_x" name="Laser-2-Small-Profile-Drift-X" sequence="19089462" timestamp="2025-07-22T02:29:00Z">-0.8125</Displacement>
+<Displacement dataItemId="asset_30007-1071A24223003.laser_2.small_profile_drift_y" name="Laser-2-Small-Profile-Drift-Y" sequence="19089233" timestamp="2025-07-22T02:28:26Z">27457</Displacement>
+<Length dataItemId="asset_30007-1071A24223003.laser_2.small_profile_width_x" name="Laser-2-Small-Profile-Width-X" sequence="19089460" subType="STANDARD" timestamp="2025-07-22T02:29:00Z">4.270745</Length>
+<Length dataItemId="asset_30007-1071A24223003.laser_2.small_profile_width_y" name="Laser-2-Small-Profile-Width-Y" sequence="19089461" subType="STANDARD" timestamp="2025-07-22T02:29:00Z">3888</Length>
+</Samples>
+<Events>
+<Message dataItemId="asset_30007-1071A24223003.laser_2.door" name="Laser-2-Door" sequence="14715625" timestamp="2025-07-09T11:21:22Z">1</Message>
+<SerialNumber dataItemId="asset_30007-1071A24223003.laser_2.serial_number" name="Laser-2-Serial-Number" sequence="14715630" timestamp="2025-07-11T13:39:56Z">-</SerialNumber>
+</Events>
+</ComponentStream>
+<ComponentStream component="Vat" name="Vat" componentId="asset_30007-1071A24223003.vat">
+<Samples>
+<Temperature dataItemId="asset_30007-1071A24223003.vat.temperature" name="Vat-Temperature" sequence="18814903" timestamp="2025-07-21T14:09:08Z">29</Temperature>
+</Samples>
+<Events>
+<Material dataItemId="asset_30007-1071A24223003.vat.material" name="Vat-Material" sequence="18927808" timestamp="2025-07-21T19:04:48Z">ACCURA COMPOSITE PIV</Material>
+</Events>
+</ComponentStream>
+</DeviceStream>
+<DeviceStream name="asset_30100-1170123924004" uuid="asset_30100-1170123924004">
+<ComponentStream component="Device" name="asset_30100-1170123924004" componentId="asset_30100-1170123924004">
+<Samples>
+<Message dataItemId="asset_30100-1170123924004.device.fine_level_sensor_reading" name="Device-Fine-Level-Sensor-Reading" sequence="19089517" timestamp="2025-07-22T08:24:18Z">49.1689</Message>
+<Message dataItemId="asset_30100-1170123924004.device.heater1_duty_cycle" name="Device-Heater1-Duty-Cycle" sequence="622" timestamp="2025-06-03T13:24:57.474423Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.device.heater2_duty_cycle" name="Device-Heater2-Duty-Cycle" sequence="591" timestamp="2025-06-03T13:24:57.474087Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.device.printer_chamber_temperature" name="Device-Printer-Chamber-Temperature" sequence="19089315" timestamp="2025-07-22T08:23:46Z">33.162441</Message>
+<Message dataItemId="asset_30100-1170123924004.device.resin_temperature" name="Device-Resin-Temperature" sequence="19089518" timestamp="2025-07-22T08:24:18Z">26.41</Message>
+</Samples>
+<Events>
+<Message dataItemId="asset_30100-1170123924004.device.auto_drain_enable" name="Device-Auto-Drain-Enable" sequence="541" timestamp="2025-06-03T13:24:57.473228Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.device.auto_offload_enable" name="Device-Auto-Offload-Enable" sequence="592" timestamp="2025-06-03T13:24:57.474099Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.device.auto_stir_enable" name="Device-Auto-Stir-Enable" sequence="560" timestamp="2025-06-03T13:24:57.473427Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.device.build_max_sweeper_travel" name="Device-Build-Max-Sweeper-Travel" sequence="597" timestamp="2025-06-03T13:24:57.474155Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.device.chamber_heater_control_enable" name="Device-Chamber-Heater-Control-Enable" sequence="630" timestamp="2025-06-03T13:24:57.47451Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.device.displacer_bottom_limit" name="Device-Displacer-Bottom-Limit" sequence="626" timestamp="2025-06-03T13:24:57.474465Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.device.displacer_home_limit" name="Device-Displacer-Home-Limit" sequence="578" timestamp="2025-06-03T13:24:57.473937Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.device.elevator_home_limit" name="Device-Elevator-Home-Limit" sequence="615" timestamp="2025-06-03T13:24:57.474348Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.device.elevator_top_limit" name="Device-Elevator-Top-Limit" sequence="623" timestamp="2025-06-03T13:24:57.474433Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.device.estop_status" name="Device-Estop-Status" sequence="621" timestamp="2025-06-03T13:24:57.474412Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.device.indicator_intensity" name="Device-Indicator-Intensity" sequence="603" timestamp="2025-06-03T13:24:57.47422Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.device.internal_top_chamber_light" name="Device-Internal-Top-Chamber-Light" sequence="14715976" timestamp="2025-06-05T21:17:56Z">1</Message>
+<Message dataItemId="asset_30100-1170123924004.device.last_stir_depth" name="Device-Last-Stir-Depth" sequence="564" timestamp="2025-06-03T13:24:57.473471Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.device.last_stir_duration" name="Device-Last-Stir-Duration" sequence="589" timestamp="2025-06-03T13:24:57.474064Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.device.last_stir_startz" name="Device-Last-Stir-Startz" sequence="604" timestamp="2025-06-03T13:24:57.474231Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.device.last_stir_velocity" name="Device-Last-Stir-Velocity" sequence="612" timestamp="2025-06-03T13:24:57.474317Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.device.light_bar_color" name="Device-Light-Bar-Color" sequence="14715941" timestamp="2025-06-19T13:24:12Z">3</Message>
+<Message dataItemId="asset_30100-1170123924004.device.mdm_bottle_detect" name="Device-Mdm-Bottle-Detect" sequence="611" timestamp="2025-06-03T13:24:57.474307Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.device.mdm_enable" name="Device-Mdm-Enable" sequence="579" timestamp="2025-06-03T13:24:57.473949Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.device.mdm_present" name="Device-Mdm-Present" sequence="628" timestamp="2025-06-03T13:24:57.474488Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.device.model_id" name="Device-Model-Id" sequence="618" timestamp="2025-06-03T13:24:57.47438Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.device.motor_driver_enable" name="Device-Motor-Driver-Enable" sequence="14715939" timestamp="2025-06-19T13:24:08Z">1</Message>
+<Message dataItemId="asset_30100-1170123924004.device.move_z_to_home" name="Device-Move-Z-To-Home" sequence="533" timestamp="2025-06-03T13:24:57.473139Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.device.os_version" name="Device-Os-Version" sequence="601" timestamp="2025-06-03T13:24:57.474199Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.device.printer_build_state" name="Device-Printer-Build-State" sequence="14716232" timestamp="2025-06-17T13:00:44Z">Engine_Build_IdleState</Message>
+<Message dataItemId="asset_30100-1170123924004.device.printer_chamber_temp_setpoint" name="Device-Printer-Chamber-Temp-Setpoint" sequence="567" timestamp="2025-06-03T13:24:57.473504Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.device.printer_external_ip_address" name="Device-Printer-External-Ip-Address" sequence="605" timestamp="2025-06-03T13:24:57.474241Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.device.printer_fw_version" name="Device-Printer-Fw-Version" sequence="538" timestamp="2025-06-03T13:24:57.473196Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.device.printer_manual_op_state" name="Device-Printer-Manual-Op-State" sequence="14716819" timestamp="2025-06-19T13:25:04Z">Engine_ManualOp_IdleState</Message>
+<Message dataItemId="asset_30100-1170123924004.device.printer_name" name="Device-Printer-Name" sequence="599" timestamp="2025-06-03T13:24:57.474177Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.device.printer_state" name="Device-Printer-State" sequence="14717634" timestamp="2025-06-19T13:25:04Z">Engine</Message>
+<Message dataItemId="asset_30100-1170123924004.device.proj_driver_enable" name="Device-Proj-Driver-Enable" sequence="598" timestamp="2025-06-03T13:24:57.474167Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.device.proj_x_offset" name="Device-Proj-X-Offset" sequence="613" timestamp="2025-06-03T13:24:57.474327Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.device.proj_y_offset" name="Device-Proj-Y-Offset" sequence="572" timestamp="2025-06-03T13:24:57.473563Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.device.remove_bubbles_state" name="Device-Remove-Bubbles-State" sequence="580" timestamp="2025-06-03T13:24:57.47396Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.device.serial_number" name="Device-Serial-Number" sequence="624" timestamp="2025-06-03T13:24:57.474444Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.device.smart_sweep" name="Device-Smart-Sweep" sequence="593" timestamp="2025-06-03T13:24:57.47411Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.device.stir_settings_valid" name="Device-Stir-Settings-Valid" sequence="616" timestamp="2025-06-03T13:24:57.474359Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.device.submodel_id" name="Device-Submodel-Id" sequence="574" timestamp="2025-06-03T13:24:57.473585Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.device.sweeper_back_limit" name="Device-Sweeper-Back-Limit" sequence="588" timestamp="2025-06-03T13:24:57.474049Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.device.sweeper_home_limit" name="Device-Sweeper-Home-Limit" sequence="14715975" timestamp="2025-06-17T01:48:26Z">1</Message>
+<Message dataItemId="asset_30100-1170123924004.device.system_control_enable_state" name="Device-System-Control-Enable-State" sequence="582" timestamp="2025-06-03T13:24:57.473981Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.device.top_chamber_door.state" name="Device-Top-Chamber-Door-State" sequence="14717638" timestamp="2025-06-19T13:24:08Z">0</Message>
+<Message dataItemId="asset_30100-1170123924004.device.usb_secure_status" name="Device-Usb-Secure-Status" sequence="619" timestamp="2025-06-03T13:24:57.474391Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.device.vacuum_state" name="Device-Vacuum-State" sequence="14717034" timestamp="2025-06-17T01:48:28Z">0</Message>
+<Message dataItemId="asset_30100-1170123924004.device.vat_present_status" name="Device-Vat-Present-Status" sequence="595" timestamp="2025-06-03T13:24:57.474133Z">UNAVAILABLE</Message>
+<AssetChanged assetType="UNAVAILABLE" dataItemId="asset_30100-1170123924004_asset_chg" sequence="666" timestamp="2025-06-03T13:24:57.4749Z">UNAVAILABLE</AssetChanged>
+<AssetRemoved assetType="UNAVAILABLE" dataItemId="asset_30100-1170123924004_asset_rem" sequence="667" timestamp="2025-06-03T13:24:57.474914Z">UNAVAILABLE</AssetRemoved>
+<Availability dataItemId="asset_30100-1170123924004_avail" sequence="14715788" timestamp="2025-07-14T05:54:15.807508Z">AVAILABLE</Availability>
+</Events>
+</ComponentStream>
+<ComponentStream component="Path" name="Build" componentId="asset_30100-1170123924004.build">
+<Events>
+<Message dataItemId="asset_30100-1170123924004.build.build_jobname" name="Build-Build-Jobname" sequence="14715962" timestamp="2025-06-17T13:00:44Z"/>
+<Message dataItemId="asset_30100-1170123924004.build.build_time_estimate" name="Build-Build-Time-Estimate" sequence="14716835" timestamp="2025-06-17T13:00:44Z">-1</Message>
+<Message dataItemId="asset_30100-1170123924004.build.current_layer" name="Build-Current-Layer" sequence="14717653" timestamp="2025-06-17T01:48:08Z">1206</Message>
+<Message dataItemId="asset_30100-1170123924004.build.delayed_time" name="Build-Delayed-Time" sequence="546" timestamp="2025-06-03T13:24:57.473282Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.build.drain_duration" name="Build-Drain-Duration" sequence="547" timestamp="2025-06-03T13:24:57.473293Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.build.drain_height" name="Build-Drain-Height" sequence="551" timestamp="2025-06-03T13:24:57.473334Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.build.drain_offset" name="Build-Drain-Offset" sequence="552" timestamp="2025-06-03T13:24:57.473345Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.build.drain_time" name="Build-Drain-Time" sequence="553" timestamp="2025-06-03T13:24:57.473355Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.build.end_time" name="Build-End-Time" sequence="14717642" timestamp="2025-06-17T01:48:24Z">1750124928</Message>
+<Message dataItemId="asset_30100-1170123924004.build.job_data" name="Build-Job-Data" nativeCode="JSON" sequence="14717237" timestamp="2025-06-19T13:25:04Z">{"build_filename":"-","build_mode":0,"build_progress":0,"build_state":"PRINT_STATE_COMPLETED","build_time_estimate":0,"completion_time":0,"current_layer":0,"extent_units":0,"job_id":0,"jobname":"-","material":["-"],"material_estimate_total_volume":[0],"printer_build_state":"Engine_Build_IdleState","printer_manual_op_state":"Engine_ManualOp_IdleState","printer_state":"Engine_System_IdleState","start_time":0,"status":2,"status_change_time":1750124903,"submit_time":0,"time_remaining":0,"total_layers":0,"x_extent":0,"y_extent":0,"z_extent":0}</Message>
+<Message dataItemId="asset_30100-1170123924004.build.job_id" name="Build-Job-Id" sequence="14715949" timestamp="2025-06-17T13:00:44Z">-1</Message>
+<Message dataItemId="asset_30100-1170123924004.build.layers_completed" name="Build-Layers-Completed" sequence="14715973" timestamp="2025-06-17T13:00:44Z">0</Message>
+<Message dataItemId="asset_30100-1170123924004.build.material_name" name="Build-Material-Name" sequence="14715960" timestamp="2025-06-17T13:00:44Z"/>
+<Message dataItemId="asset_30100-1170123924004.build.material_volume" name="Build-Material-Volume" sequence="14717651" timestamp="2025-06-16T19:56:55Z">1</Message>
+<Message dataItemId="asset_30100-1170123924004.build.material_weight" name="Build-Material-Weight" sequence="535" timestamp="2025-06-03T13:24:57.473162Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.build.offload_position" name="Build-Offload-Position" sequence="559" timestamp="2025-06-03T13:24:57.473417Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.build.pause_time_limit" name="Build-Pause-Time-Limit" sequence="558" timestamp="2025-06-03T13:24:57.473407Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.build.prep_start_time" name="Build-Prep-Start-Time" sequence="14717461" timestamp="2025-06-16T20:26:31Z">1750105600</Message>
+<Message dataItemId="asset_30100-1170123924004.build.print_mode" name="Build-Print-Mode" sequence="563" timestamp="2025-06-03T13:24:57.47346Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.build.progress" name="Build-Progress" sequence="14715974" timestamp="2025-06-17T13:00:44Z">0.000000</Message>
+<Message dataItemId="asset_30100-1170123924004.build.start_time" name="Build-Start-Time" sequence="14715955" timestamp="2025-06-16T20:26:31Z">1750105600</Message>
+<Message dataItemId="asset_30100-1170123924004.build.submit_time" name="Build-Submit-Time" sequence="14715953" timestamp="2025-06-16T19:56:55Z">1750099072</Message>
+<Message dataItemId="asset_30100-1170123924004.build.sweeper_start_position" name="Build-Sweeper-Start-Position" sequence="570" timestamp="2025-06-03T13:24:57.47354Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.build.time_remaining" name="Build-Time-Remaining" sequence="14717643" timestamp="2025-06-17T13:00:44Z">-1</Message>
+<Message dataItemId="asset_30100-1170123924004.build.total_layers" name="Build-Total-Layers" sequence="14715957" timestamp="2025-06-17T13:00:44Z">-1</Message>
+<Message dataItemId="asset_30100-1170123924004.build.z_start_position" name="Build-Z-Start-Position" sequence="608" timestamp="2025-06-03T13:24:57.474275Z">UNAVAILABLE</Message>
+</Events>
+</ComponentStream>
+<ComponentStream component="Displacer" name="Displacer" componentId="asset_30100-1170123924004.displacer">
+<Events>
+<Message dataItemId="asset_30100-1170123924004.displacer.motor_alarm_status" name="Displacer-Motor-Alarm-Status" sequence="14717640" timestamp="2025-06-17T11:54:48Z">0</Message>
+<Message dataItemId="asset_30100-1170123924004.displacer.motor_driver_status" name="Displacer-Motor-Driver-Status" sequence="14715942" timestamp="2025-06-19T13:24:08Z">1</Message>
+<Message dataItemId="asset_30100-1170123924004.displacer.motor_enabled" name="Displacer-Motor-Enabled" sequence="14717639" timestamp="2025-06-19T13:24:08Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.displacer.motor_home_position_status" name="Displacer-Motor-Home-Position-Status" sequence="649" timestamp="2025-06-03T13:24:57.474718Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.displacer.motor_position" name="Displacer-Motor-Position" sequence="14717248" timestamp="2025-06-19T13:23:48Z">-378338.687500</Message>
+<Message dataItemId="asset_30100-1170123924004.displacer.motor_position_valid" name="Displacer-Motor-Position-Valid" sequence="646" timestamp="2025-06-03T13:24:57.474686Z">UNAVAILABLE</Message>
+</Events>
+</ComponentStream>
+<ComponentStream component="Mdm" name="Mdm" componentId="asset_30100-1170123924004.mdm">
+<Events>
+<Message dataItemId="asset_30100-1170123924004.mdm.motor_alarm_status" name="Mdm-Motor-Alarm-Status" sequence="656" timestamp="2025-06-03T13:24:57.474794Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.mdm.motor_driver_status" name="Mdm-Motor-Driver-Status" sequence="657" timestamp="2025-06-03T13:24:57.474804Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.mdm.motor_enabled" name="Mdm-Motor-Enabled" sequence="655" timestamp="2025-06-03T13:24:57.474784Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.mdm.motor_home_position_status" name="Mdm-Motor-Home-Position-Status" sequence="654" timestamp="2025-06-03T13:24:57.474773Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.mdm.motor_position" name="Mdm-Motor-Position" sequence="653" timestamp="2025-06-03T13:24:57.474762Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.mdm.motor_position_valid" name="Mdm-Motor-Position-Valid" sequence="652" timestamp="2025-06-03T13:24:57.474751Z">UNAVAILABLE</Message>
+</Events>
+</ComponentStream>
+<ComponentStream component="Mqg" name="Mqg" componentId="asset_30100-1170123924004.mqg">
+<Events>
+<Message dataItemId="asset_30100-1170123924004.mqg.last_scanned_barcode" name="Mqg-Last-Scanned-Barcode" sequence="543" timestamp="2025-06-03T13:24:57.47325Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.mqg.material_batch_number" name="Mqg-Material-Batch-Number" sequence="565" timestamp="2025-06-03T13:24:57.473482Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.mqg.material_expiration_date" name="Mqg-Material-Expiration-Date" sequence="581" timestamp="2025-06-03T13:24:57.473971Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.mqg.material_name" name="Mqg-Material-Name" sequence="549" timestamp="2025-06-03T13:24:57.473314Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.mqg.mdm_bottle_barcode" name="Mqg-Mdm-Bottle-Barcode" sequence="542" timestamp="2025-06-03T13:24:57.473239Z">UNAVAILABLE</Message>
+</Events>
+</ComponentStream>
+<ComponentStream component="Projector" name="Projector0" componentId="asset_30100-1170123924004.projector0">
+<Events>
+<Message dataItemId="asset_30100-1170123924004.projector0.app_version" name="Projector0-App-Version" sequence="583" timestamp="2025-06-03T13:24:57.473992Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.projector0.fpga_version" name="Projector0-Fpga-Version" sequence="594" timestamp="2025-06-03T13:24:57.474121Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.projector0.led_enabled" name="Projector0-Led-Enabled" sequence="14715967" timestamp="2025-06-17T01:48:10Z">0</Message>
+<Message dataItemId="asset_30100-1170123924004.projector0.led_lifetime_on_seconds" name="Projector0-Led-Lifetime-On-Seconds" sequence="14716840" timestamp="2025-06-17T01:48:10Z">90954.000000</Message>
+<Message dataItemId="asset_30100-1170123924004.projector0.led_power_commanded" name="Projector0-Led-Power-Commanded" sequence="14715964" timestamp="2025-06-17T01:48:24Z">0</Message>
+<Message dataItemId="asset_30100-1170123924004.projector0.led_pwm_value" name="Projector0-Led-Pwm-Value" sequence="14715966" timestamp="2025-06-17T01:48:24Z">0</Message>
+<Message dataItemId="asset_30100-1170123924004.projector0.lifetime_on_hours" name="Projector0-Lifetime-On-Hours" sequence="14715969" timestamp="2025-06-17T01:48:24Z">170.317505</Message>
+<Message dataItemId="asset_30100-1170123924004.projector0.mfg_serial_number" name="Projector0-Mfg-Serial-Number" sequence="639" timestamp="2025-06-03T13:24:57.474608Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.projector0.peak_power" name="Projector0-Peak-Power" sequence="577" timestamp="2025-06-03T13:24:57.473925Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.projector0.power_cal_table" name="Projector0-Power-Cal-Table" sequence="638" timestamp="2025-06-03T13:24:57.474597Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.projector0.power_calibration_table" name="Projector0-Power-Calibration-Table" sequence="637" timestamp="2025-06-03T13:24:57.474587Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.projector0.sdk_version" name="Projector0-Sdk-Version" sequence="636" timestamp="2025-06-03T13:24:57.474575Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.projector0.service_state" name="Projector0-Service-State" sequence="635" timestamp="2025-06-03T13:24:57.474564Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.projector0.type" name="Projector0-Type" sequence="634" timestamp="2025-06-03T13:24:57.474554Z">UNAVAILABLE</Message>
+</Events>
+</ComponentStream>
+<ComponentStream component="Projector" name="Projector1" componentId="asset_30100-1170123924004.projector1">
+<Events>
+<Message dataItemId="asset_30100-1170123924004.projector1.app_version" name="Projector1-App-Version" sequence="576" timestamp="2025-06-03T13:24:57.473911Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.projector1.fpga_version" name="Projector1-Fpga-Version" sequence="585" timestamp="2025-06-03T13:24:57.474014Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.projector1.led_enabled" name="Projector1-Led-Enabled" sequence="14715968" timestamp="2025-06-17T01:48:10Z">0</Message>
+<Message dataItemId="asset_30100-1170123924004.projector1.led_lifetime_on_seconds" name="Projector1-Led-Lifetime-On-Seconds" sequence="14715972" timestamp="2025-06-17T01:48:10Z">106340.000000</Message>
+<Message dataItemId="asset_30100-1170123924004.projector1.led_power_commanded" name="Projector1-Led-Power-Commanded" sequence="14715965" timestamp="2025-06-17T01:48:24Z">0</Message>
+<Message dataItemId="asset_30100-1170123924004.projector1.led_pwm_value" name="Projector1-Led-Pwm-Value" sequence="14716234" timestamp="2025-06-17T01:48:24Z">0</Message>
+<Message dataItemId="asset_30100-1170123924004.projector1.lifetime_on_hours" name="Projector1-Lifetime-On-Hours" sequence="14715970" timestamp="2025-06-17T01:48:24Z">170.309174</Message>
+<Message dataItemId="asset_30100-1170123924004.projector1.mfg_serial_number" name="Projector1-Mfg-Serial-Number" sequence="537" timestamp="2025-06-03T13:24:57.473185Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.projector1.peak_power" name="Projector1-Peak-Power" sequence="586" timestamp="2025-06-03T13:24:57.474026Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.projector1.power_cal_table" name="Projector1-Power-Cal-Table" sequence="539" timestamp="2025-06-03T13:24:57.473207Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.projector1.power_calibration_table" name="Projector1-Power-Calibration-Table" sequence="561" timestamp="2025-06-03T13:24:57.473438Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.projector1.sdk_version" name="Projector1-Sdk-Version" sequence="540" timestamp="2025-06-03T13:24:57.473217Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.projector1.serial_number" name="Projector1-Serial-Number" sequence="557" timestamp="2025-06-03T13:24:57.473397Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.projector1.service_state" name="Projector1-Service-State" sequence="625" timestamp="2025-06-03T13:24:57.474455Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.projector1.type" name="Projector1-Type" sequence="602" timestamp="2025-06-03T13:24:57.474209Z">UNAVAILABLE</Message>
+</Events>
+</ComponentStream>
+<ComponentStream component="Recoater" name="Recoater" componentId="asset_30100-1170123924004.recoater">
+<Events>
+<Message dataItemId="asset_30100-1170123924004.recoater.motor_alarm_status" name="Recoater-Motor-Alarm-Status" sequence="14715948" timestamp="2025-06-19T13:24:08Z">2</Message>
+<Message dataItemId="asset_30100-1170123924004.recoater.motor_driver_status" name="Recoater-Motor-Driver-Status" sequence="14716824" timestamp="2025-06-19T13:24:08Z">513</Message>
+<Message dataItemId="asset_30100-1170123924004.recoater.motor_enabled" name="Recoater-Motor-Enabled" sequence="14715947" timestamp="2025-06-19T13:24:08Z">1</Message>
+<Message dataItemId="asset_30100-1170123924004.recoater.motor_home_position_status" name="Recoater-Motor-Home-Position-Status" sequence="14715951" timestamp="2025-06-17T01:48:26Z">1</Message>
+<Message dataItemId="asset_30100-1170123924004.recoater.motor_position" name="Recoater-Motor-Position" sequence="14717641" timestamp="2025-06-19T13:24:08Z">136.000000</Message>
+<Message dataItemId="asset_30100-1170123924004.recoater.motor_position_valid" name="Recoater-Motor-Position-Valid" sequence="658" timestamp="2025-06-03T13:24:57.474813Z">UNAVAILABLE</Message>
+</Events>
+</ComponentStream>
+<ComponentStream component="Zstage" name="Zstage" componentId="asset_30100-1170123924004.zstage">
+<Events>
+<Message dataItemId="asset_30100-1170123924004.zstage.build_start_position" name="Zstage-Build-Start-Position" sequence="644" timestamp="2025-06-03T13:24:57.474663Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.zstage.motor_alarm_status" name="Zstage-Motor-Alarm-Status" sequence="14715945" timestamp="2025-06-17T11:54:48Z">0</Message>
+<Message dataItemId="asset_30100-1170123924004.zstage.motor_driver_status" name="Zstage-Motor-Driver-Status" sequence="14715937" timestamp="2025-06-19T13:24:46Z">1</Message>
+<Message dataItemId="asset_30100-1170123924004.zstage.motor_enabled" name="Zstage-Motor-Enabled" sequence="14715943" timestamp="2025-06-19T13:24:10Z">1</Message>
+<Message dataItemId="asset_30100-1170123924004.zstage.motor_home_position_status" name="Zstage-Motor-Home-Position-Status" sequence="631" timestamp="2025-06-03T13:24:57.474521Z">UNAVAILABLE</Message>
+<Message dataItemId="asset_30100-1170123924004.zstage.motor_position" name="Zstage-Motor-Position" sequence="14716821" timestamp="2025-06-19T13:25:04Z">304513.187500</Message>
+<Message dataItemId="asset_30100-1170123924004.zstage.motor_position_valid" name="Zstage-Motor-Position-Valid" sequence="633" timestamp="2025-06-03T13:24:57.474543Z">UNAVAILABLE</Message>
+</Events>
+</ComponentStream>
+</DeviceStream>
+</Streams>
+</MTConnectStreams>

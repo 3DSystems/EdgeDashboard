@@ -118,6 +118,16 @@ export const parsePrinterXML = (xmlText) => {
       );
 
       // getFieldValue returns the first matching value for a given field key
+      // const getFieldValue = (field) => {
+      //   const validKeys = singleValueFieldNamesByKey[field] || [];
+      //   for (const key of validKeys) {
+      //     for (const itemKey in dataItemMap) {
+      //       if (itemKey === key) return dataItemMap[itemKey].value;
+      //     }
+      //   }
+      //   return "";
+      // };
+
       const getFieldValue = (field) => {
         const validKeys = singleValueFieldNamesByKey[field] || [];
         for (const key of validKeys) {
@@ -125,6 +135,24 @@ export const parsePrinterXML = (xmlText) => {
             if (itemKey === key) return dataItemMap[itemKey].value;
           }
         }
+
+        // Special fallback: check inside build.job_data JSON blob
+        const jobDataItem = dataItemMap[singleValueFieldNamesByKey.jobData];
+        if (jobDataItem?.value) {
+          try {
+            const jobData = JSON.parse(jobDataItem.value);
+            for (const key of validKeys) {
+              const nestedKey = key.replace(
+                `${singleValueFieldNamesByKey.jobData}.`,
+                ""
+              );
+              if (jobData[nestedKey] !== undefined) return jobData[nestedKey];
+            }
+          } catch (e) {
+            console.warn("Failed to parse job_data JSON", e);
+          }
+        }
+
         return "";
       };
 
