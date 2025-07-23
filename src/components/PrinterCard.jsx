@@ -27,6 +27,7 @@ import React, { useState } from "react";
 import ComponentStreamModal from "./ComponentStreamModal";
 import { getJsonJobData, formatStatusText } from "../utils/xmlUtils";
 import ICONS from "../utils/iconPaths";
+import { getLeftLayerTitle, getRightLayerTitle, getRightTempTitle } from "../utils/common";
 
 const PrinterCard = ({
   printerModel,
@@ -159,11 +160,14 @@ const PrinterCard = ({
         </div>
         <div className="data-item">
           <img
-            title="Chamber Temperature"
+            title={getRightTempTitle(deviceStreamName)}
             src={ICONS.chamberTemp}
             className="icon icon-block"
           />
-          <span className="data-value" title="Chamber Temperature">
+          <span
+            className="data-value"
+            title={getRightTempTitle(deviceStreamName)}
+          >
             {!isNaN(parseFloat(chamberTemp))
               ? `${Math.floor(parseFloat(chamberTemp) * 10000) / 10000} °C`
               : `${chamberTemp}`}
@@ -172,8 +176,13 @@ const PrinterCard = ({
         <div className="progress-section full-span">
           <div className="layer-info">
             <img src={ICONS.layers} className="icon icon-inline" />
-            <span title="Current Layer">{currentLayer}</span>&nbsp;/&nbsp;
-            <span title="Total Layers">{totalLayers}</span>
+            <span title={getLeftLayerTitle(deviceStreamName)}>
+              {currentLayer}
+            </span>
+            &nbsp;/&nbsp;
+            <span title={getRightLayerTitle(deviceStreamName)}>
+              {totalLayers}
+            </span>
           </div>
           <span className="progress-percentage" title="Progress">
             {!isNaN(parseFloat(progress))

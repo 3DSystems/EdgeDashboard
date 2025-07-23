@@ -22,12 +22,19 @@ import { usePolling } from "./utils/usePolling";
 import PrinterCard from "./components/PrinterCard";
 import { parsePrinterXML } from "./utils/xmlUtils";
 import environment from "./utils/environment";
+import DataItemModal from "./components/DataItemModal";
+import { printerModelMap } from "./utils/printerFieldMappings";
 
 const App = () => {
   const [expandedCardId, setExpandedCardId] = useState(null);
   const [printers, setPrinters] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [hasError, setHasError] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const model5555Printer = printers.find((p) => {
+    const match = p.deviceStreamName?.match(/asset_(\d+)-/);
+    return match?.[1] === printerModelMap.EdgePC;
+  });
 
   const fetchData = async () => {
     try {
@@ -120,21 +127,71 @@ const App = () => {
   }
 
   return (
-    <div id="cardsContainer">
-      {printers.map((data) => {
-        const id = data.deviceStreamName;
-        return (
-          <PrinterCard
-            key={id}
-            {...data}
-            expanded={expandedCardId === id}
-            onToggleExpand={() =>
-              setExpandedCardId(expandedCardId === id ? null : id)
-            }
-          />
-        );
-      })}
-    </div>
+    <>
+      {model5555Printer && (
+        <div
+          style={{
+            position: "sticky",
+            top: 0,
+            display: "flex",
+            justifyContent: "flex-end",
+            padding: "18px",
+            zIndex: 999,
+          }}
+        >
+          <button
+            onClick={() => setShowModal(true)}
+            style={{
+              position: "fixed",
+              top: 10,
+              right: 10,
+              padding: "8px 12px",
+              backgroundColor: "#1976d2",
+              color: "#fff",
+              border: "none",
+              borderRadius: "4px",
+              cursor: "pointer",
+              zIndex: 1000,
+            }}
+          >
+            Show Edge-PC Data
+          </button>
+        </div>
+      )}
+
+      {showModal && (
+        <DataItemModal
+          onClose={() => setShowModal(false)}
+          dataItems={model5555Printer.modalDataItems.flatMap((c) =>
+            c.messages.map((m) => ({
+              dataItemId: m.dataItemId,
+              value: m.value,
+            }))
+          )}
+        />
+      )}
+
+      <div id="cardsContainer">
+        {printers
+          .filter((p) => {
+            const match = p.deviceStreamName?.match(/asset_(\d+)-/);
+            return match?.[1] !== printerModelMap.EdgePC;
+          })
+          .map((data) => {
+            const id = data.deviceStreamName;
+            return (
+              <PrinterCard
+                key={id}
+                {...data}
+                expanded={expandedCardId === id}
+                onToggleExpand={() =>
+                  setExpandedCardId(expandedCardId === id ? null : id)
+                }
+              />
+            );
+          })}
+      </div>
+    </>
   );
 };
 

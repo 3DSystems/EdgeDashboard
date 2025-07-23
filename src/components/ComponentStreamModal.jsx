@@ -360,7 +360,7 @@ const ComponentStreamModal = ({
             width: "70vw",
             maxHeight: "80vh",
             backgroundImage: "linear-gradient(145deg, #3f3f3f, #212121)",
-            color: "#fff",
+            color: "#cccccc",
             padding: "20px",
             borderRadius: "8px",
             overflowY: "auto",
@@ -385,7 +385,7 @@ const ComponentStreamModal = ({
                 fontSize: "1.2em",
                 fontWeight: "600",
                 margin: 0,
-                color: "#ffffff",
+                color: "#cccccc",
                 letterSpacing: "0.5px",
               }}
             >
