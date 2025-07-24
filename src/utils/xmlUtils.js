@@ -234,6 +234,44 @@ export const parsePrinterXML = (xmlText) => {
         return material;
       };
 
+      const getStartTime = () => {
+        let startTimeRaw = getFieldValue("startTime");
+        let startTime;
+
+        if (
+          printerCode === printerModelMap.SLA750 ||
+          printerCode === printerModelMap.SLA750Dual
+        ) {
+          const seconds = parseInt(startTimeRaw, 10);
+          if (!isNaN(seconds)) {
+            const date = new Date(seconds * 1000);
+            startTime = date.toISOString().substring(11, 16); // Extracts "HH:MM" from UTC
+          } else {
+            startTime = startTimeRaw;
+          }
+        } else {
+          startTime = formatTimeToHHMM(startTimeRaw);
+        }
+
+        return startTime;
+      };
+
+      const getProgress = () => {
+        let progress = getFieldValue("progress");
+
+        if (
+          printerCode === printerModelMap.SLA750 ||
+          printerCode === printerModelMap.SLA750Dual
+        ) {
+          const val = parseFloat(progress);
+          if (!isNaN(val)) {
+            progress = val * 100;
+          }
+        }
+
+        return progress;
+      };
+
       return {
         printerModel,
         printerName: getFieldValue("printerName"),
@@ -241,7 +279,7 @@ export const parsePrinterXML = (xmlText) => {
         jobName: getFieldValue("jobName"),
         resinTemp: getFieldValue("resinTemp"),
         chamberTemp: getFieldValue("chamberTemp"),
-        startTime: formatTimeToHHMM(getFieldValue("startTime")),
+        startTime: getStartTime(),
         timeRemaining: formatSecondsToHHMM(getFieldValue("timeRemaining")),
         endTime: formatTimeToHHMM(getFieldValue("endTime")),
         buildState: getFieldValue("buildState"),
@@ -253,7 +291,7 @@ export const parsePrinterXML = (xmlText) => {
         material: getMaterial(),
         currentLayer: getCurrentLayer(),
         totalLayers: getFieldValue("totalLayers"),
-        progress: getFieldValue("progress"),
+        progress: getProgress(),
         jobData: getJsonJobData(getFieldValue("jobData")),
         modalDataItems,
         dataItemMap,
