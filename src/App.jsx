@@ -39,7 +39,12 @@ const App = () => {
   const fetchData = async () => {
     try {
       setHasError(false);
-      const response = await fetch(`/mtconnect/current`);
+      const response = await fetch(`/mtconnect/current?_=${Date.now()}`, {
+        cache: "no-store",
+        headers: {
+          "Cache-Control": "no-cache",
+        },
+      });
       const xmlText = await response.text();
       const parsedPrinters = parsePrinterXML(xmlText);
       setPrinters(parsedPrinters);
