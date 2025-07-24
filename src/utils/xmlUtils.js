@@ -19,8 +19,12 @@
 import {
   singleValueFieldNamesByKey,
   multiValueFieldNamesByKey,
-  printerModelByCode,
 } from "./printerFieldMappings";
+import {
+  printerModelByCode,
+  printerModelMap,
+  printer31006StateMap,
+} from "./common.js";
 
 export const formatStatusText = (text) => {
   return text?.replace(/_/g, "_\n") ?? text;
@@ -51,7 +55,11 @@ export const formatSecondsToHHMM = (timeString) => {
   if (!timeString || timeString === "0") return "00:00";
 
   const seconds = parseInt(timeString, 10);
-  if (isNaN(seconds) || seconds < 0) return "00:00";
+  if (isNaN(seconds)) {
+    return timeString;
+  } else if (seconds < 0) {
+    return "00:00";
+  }
 
   const hours = Math.floor(seconds / 3600);
   const minutes = Math.ceil((seconds % 3600) / 60);
@@ -138,7 +146,7 @@ export const parsePrinterXML = (xmlText) => {
 
         // Special fallback: check inside build.job_data JSON blob
         const jobDataItem = dataItemMap[singleValueFieldNamesByKey.jobData];
-        if (jobDataItem?.value) {
+        if (jobDataItem?.value && jobDataItem.value.trim().startsWith("{")) {
           try {
             const jobData = JSON.parse(jobDataItem.value);
             for (const key of validKeys) {
@@ -172,6 +180,60 @@ export const parsePrinterXML = (xmlText) => {
         return values.length === 1 ? values[0] : values;
       };
 
+      const resolvePrinterState = (printerCode, rawState) => {
+        if (printerCode !== printerModelMap.SLS380) return rawState;
+        const numeric = parseInt(rawState);
+        return printer31006StateMap[numeric] || rawState;
+      };
+
+      const getCurrentLayer = () => {
+        let currentLayer = getFieldValue("currentLayer");
+
+        if (printerCode === printerModelMap.SLS380) {
+          const jobDataItem =
+            dataItemMap[singleValueFieldNamesByKey.jobData[0]];
+          if (jobDataItem?.value && jobDataItem.value.trim().startsWith("{")) {
+            try {
+              const jobData = JSON.parse(jobDataItem.value);
+              if (jobData.current_height !== undefined) {
+                currentLayer = jobData.current_height;
+              }
+            } catch (err) {
+              console.warn(
+                "Invalid job_data while reading current_height",
+                err
+              );
+            }
+          }
+        }
+
+        return currentLayer;
+      };
+
+      const getMaterial = () => {
+        let material = getAllFieldValues("material");
+
+        if (printerCode === printerModelMap.SLS380) {
+          const jobDataItem =
+            dataItemMap[singleValueFieldNamesByKey.jobData[0]];
+          if (jobDataItem?.value && jobDataItem.value.trim().startsWith("{")) {
+            try {
+              const jobData = JSON.parse(jobDataItem.value);
+              if (jobData.material !== undefined) {
+                material = jobData.material;
+              }
+            } catch (err) {
+              console.warn(
+                "Invalid job_data while reading current_height",
+                err
+              );
+            }
+          }
+        }
+
+        return material;
+      };
+
       return {
         printerModel,
         printerName: getFieldValue("printerName"),
@@ -183,10 +245,13 @@ export const parsePrinterXML = (xmlText) => {
         timeRemaining: formatSecondsToHHMM(getFieldValue("timeRemaining")),
         endTime: formatTimeToHHMM(getFieldValue("endTime")),
         buildState: getFieldValue("buildState"),
-        printerState: getFieldValue("printerState"),
+        printerState: resolvePrinterState(
+          printerCode,
+          getFieldValue("printerState")
+        ),
         manualOpState: getFieldValue("manualOpState"),
-        material: getAllFieldValues("material"),
-        currentLayer: getFieldValue("currentLayer"),
+        material: getMaterial(),
+        currentLayer: getCurrentLayer(),
         totalLayers: getFieldValue("totalLayers"),
         progress: getFieldValue("progress"),
         jobData: getJsonJobData(getFieldValue("jobData")),

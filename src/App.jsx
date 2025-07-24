@@ -23,7 +23,7 @@ import PrinterCard from "./components/PrinterCard";
 import { parsePrinterXML } from "./utils/xmlUtils";
 import environment from "./utils/environment";
 import DataItemModal from "./components/DataItemModal";
-import { printerModelMap } from "./utils/printerFieldMappings";
+import { printerModelMap } from "./utils/common.js";
 
 const App = () => {
   const [expandedCardId, setExpandedCardId] = useState(null);
