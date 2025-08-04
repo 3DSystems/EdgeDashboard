@@ -38,7 +38,7 @@ export const printerModelMap = {
   DMPFlex350Triple: "32009",
 };
 
-export const printer31006StateMap = {
+export const printerStateMap = {
   0: "Unknown",
   1: "Disconnected",
   30: "Unknown",

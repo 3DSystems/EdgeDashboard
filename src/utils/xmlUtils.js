@@ -23,7 +23,7 @@ import {
 import {
   printerModelByCode,
   printerModelMap,
-  printer31006StateMap,
+  printerStateMap,
 } from "./common.js";
 
 export const formatStatusText = (text) => {
@@ -181,9 +181,13 @@ export const parsePrinterXML = (xmlText) => {
       };
 
       const resolvePrinterState = (printerCode, rawState) => {
-        if (printerCode !== printerModelMap.SLS380) return rawState;
+        if (
+          printerCode !== printerModelMap.SLS380 &&
+          printerCode !== printerModelMap.DMPFlex350Triple
+        )
+          return rawState;
         const numeric = parseInt(rawState);
-        return printer31006StateMap[numeric] || rawState;
+        return printerStateMap[numeric] || rawState;
       };
 
       const getCurrentLayer = () => {
@@ -213,7 +217,10 @@ export const parsePrinterXML = (xmlText) => {
       const getMaterial = () => {
         let material = getAllFieldValues("material");
 
-        if (printerCode === printerModelMap.SLS380) {
+        if (
+          printerCode === printerModelMap.SLS380 ||
+          printerCode === printerModelMap.DMPFlex350Triple
+        ) {
           const jobDataItem =
             dataItemMap[singleValueFieldNamesByKey.jobData[0]];
           if (jobDataItem?.value && jobDataItem.value.trim().startsWith("{")) {

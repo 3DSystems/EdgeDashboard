@@ -19,9 +19,13 @@
  */
 
 export const singleValueFieldNamesByKey = {
-  printerName: ["device.printer_name", "printer_name"],//1
-  jobName: ["build.build_jobname", "build.job_data.build_filename"],
-  resinTemp: ["device.resin_temperature", "vat.temperature"],//2
+  printerName: ["device.printer_name", "printer_name"], //1
+  jobName: [
+    "build.build_jobname",
+    "build.job_data.build_filename",
+    "build.job_data.name",
+  ],
+  resinTemp: ["device.resin_temperature", "vat.temperature"], //2
   chamberTemp: [
     "part_bed.temperature",
     "device.printer_chamber_temperature",
@@ -33,7 +37,7 @@ export const singleValueFieldNamesByKey = {
   endTime: ["build.end_time", "build.job_data.completion_time"],
   buildState: ["device.printer_build_state", "build.state"],
   printerState: ["device.printer_state", "printer_state"],
-  manualOpState: ["device.printer_manual_op_state"],//3
+  manualOpState: ["device.printer_manual_op_state"], //3
   currentLayer: [
     "build.job_data.current_height",
     "build.current_layer",
