@@ -16,6 +16,7 @@ const environment = {
   MTCONNECT_HOST: process.env.REACT_APP_MTCONNECT_HOST,
   MTCONNECT_PORT: process.env.REACT_APP_MTCONNECT_PORT,
   API_POLLING_IN_MS: process.env.REACT_APP_API_POLLING_IN_MS,
+  SHOW_ALL_PRINTERS: process.env.REACT_APP_SHOW_ALL_PRINTERS === "true",
 };
 
 export default environment;

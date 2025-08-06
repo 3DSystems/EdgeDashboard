@@ -26,6 +26,8 @@ import {
   printerStateMap,
 } from "./common.js";
 
+import environment from "./environment.js";
+
 export const formatStatusText = (text) => {
   return text?.replace(/_/g, "_\n") ?? text;
 };
@@ -93,216 +95,227 @@ export const parsePrinterXML = (xmlText) => {
       const deviceStreamName = stream.getAttribute("name") || "Unknown Device";
       const printerCodeMatch = deviceStreamName.match(/asset_(\d+)-/);
       const printerCode = printerCodeMatch?.[1] || "Unknown";
+      if (environment.SHOW_ALL_PRINTERS || printerModelByCode[printerCode]) {
+        const printerModel = printerModelByCode[printerCode];
 
-      if (!printerModelByCode[printerCode]) return null;
+        const componentStreams = [
+          ...stream.querySelectorAll("ComponentStream"),
+        ];
+        const modalDataItems = componentStreams.map((cs) => {
+          const component = cs.getAttribute("component");
+          const name = cs.getAttribute("name");
 
-      const printerModel = printerModelByCode[printerCode];
+          const messages = [...cs.querySelectorAll("[dataItemId]")].map(
+            (el) => {
+              const dataItemId = el.getAttribute("dataItemId");
+              const key = dataItemId.split(".").slice(1).join(".");
+              return {
+                component,
+                name,
+                key,
+                dataItemId,
+                value: el.textContent?.trim(),
+                tag: el.tagName,
+                category: el.parentElement?.tagName || "Unknown",
+              };
+            }
+          );
 
-      const componentStreams = [...stream.querySelectorAll("ComponentStream")];
-      const modalDataItems = componentStreams.map((cs) => {
-        const component = cs.getAttribute("component");
-        const name = cs.getAttribute("name");
-
-        const messages = [...cs.querySelectorAll("[dataItemId]")].map((el) => {
-          const dataItemId = el.getAttribute("dataItemId");
-          const key = dataItemId.split(".").slice(1).join(".");
-          return {
-            component,
-            name,
-            key,
-            dataItemId,
-            value: el.textContent?.trim(),
-            tag: el.tagName,
-            category: el.parentElement?.tagName || "Unknown",
-          };
+          return { component, name, messages };
         });
 
-        return { component, name, messages };
-      });
+        const flatMessages = modalDataItems.flatMap((cs) => cs.messages);
+        const dataItemMap = Object.fromEntries(
+          flatMessages.map((item) => [item.key, item])
+        );
 
-      const flatMessages = modalDataItems.flatMap((cs) => cs.messages);
-      const dataItemMap = Object.fromEntries(
-        flatMessages.map((item) => [item.key, item])
-      );
+        // getFieldValue returns the first matching value for a given field key
+        // const getFieldValue = (field) => {
+        //   const validKeys = singleValueFieldNamesByKey[field] || [];
+        //   for (const key of validKeys) {
+        //     for (const itemKey in dataItemMap) {
+        //       if (itemKey === key) return dataItemMap[itemKey].value;
+        //     }
+        //   }
+        //   return "";
+        // };
 
-      // getFieldValue returns the first matching value for a given field key
-      // const getFieldValue = (field) => {
-      //   const validKeys = singleValueFieldNamesByKey[field] || [];
-      //   for (const key of validKeys) {
-      //     for (const itemKey in dataItemMap) {
-      //       if (itemKey === key) return dataItemMap[itemKey].value;
-      //     }
-      //   }
-      //   return "";
-      // };
-
-      const getFieldValue = (field) => {
-        const validKeys = singleValueFieldNamesByKey[field] || [];
-        for (const key of validKeys) {
-          for (const itemKey in dataItemMap) {
-            if (itemKey === key) return dataItemMap[itemKey].value;
-          }
-        }
-
-        // Special fallback: check inside build.job_data JSON blob
-        const jobDataItem = dataItemMap[singleValueFieldNamesByKey.jobData];
-        if (jobDataItem?.value && jobDataItem.value.trim().startsWith("{")) {
-          try {
-            const jobData = JSON.parse(jobDataItem.value);
-            for (const key of validKeys) {
-              const nestedKey = key.replace(
-                `${singleValueFieldNamesByKey.jobData}.`,
-                ""
-              );
-              if (jobData[nestedKey] !== undefined) return jobData[nestedKey];
-            }
-          } catch (e) {
-            console.warn("Failed to parse job_data JSON", e);
-          }
-        }
-
-        return "";
-      };
-
-      // getAllFieldValues returns an array of values matching field keys
-      const getAllFieldValues = (field) => {
-        const validKeys = multiValueFieldNamesByKey[field] || [];
-        const values = [];
-
-        for (const key of validKeys) {
-          for (const itemKey in dataItemMap) {
-            if (itemKey === key) {
-              values.push(dataItemMap[itemKey].value);
+        const getFieldValue = (field) => {
+          const validKeys = singleValueFieldNamesByKey[field] || [];
+          for (const key of validKeys) {
+            for (const itemKey in dataItemMap) {
+              if (itemKey === key) return dataItemMap[itemKey].value;
             }
           }
-        }
 
-        return values.length === 1 ? values[0] : values;
-      };
-
-      const resolvePrinterState = (printerCode, rawState) => {
-        if (
-          printerCode !== printerModelMap.SLS380 &&
-          printerCode !== printerModelMap.DMPFlex350Triple
-        )
-          return rawState;
-        const numeric = parseInt(rawState);
-        return printerStateMap[numeric] || rawState;
-      };
-
-      const getCurrentLayer = () => {
-        let currentLayer = getFieldValue("currentLayer");
-
-        if (printerCode === printerModelMap.SLS380) {
-          const jobDataItem =
-            dataItemMap[singleValueFieldNamesByKey.jobData[0]];
+          // Special fallback: check inside build.job_data JSON blob
+          const jobDataItem = dataItemMap[singleValueFieldNamesByKey.jobData];
           if (jobDataItem?.value && jobDataItem.value.trim().startsWith("{")) {
             try {
               const jobData = JSON.parse(jobDataItem.value);
-              if (jobData.current_height !== undefined) {
-                currentLayer = jobData.current_height;
+              for (const key of validKeys) {
+                const nestedKey = key.replace(
+                  `${singleValueFieldNamesByKey.jobData}.`,
+                  ""
+                );
+                if (jobData[nestedKey] !== undefined) return jobData[nestedKey];
               }
-            } catch (err) {
-              console.warn(
-                "Invalid job_data while reading current_height",
-                err
-              );
+            } catch (e) {
+              console.warn("Failed to parse job_data JSON", e);
             }
           }
-        }
 
-        return currentLayer;
-      };
+          return "";
+        };
 
-      const getMaterial = () => {
-        let material = getAllFieldValues("material");
+        // getAllFieldValues returns an array of values matching field keys
+        const getAllFieldValues = (field) => {
+          const validKeys = multiValueFieldNamesByKey[field] || [];
+          const values = [];
 
-        if (
-          printerCode === printerModelMap.SLS380 ||
-          printerCode === printerModelMap.DMPFlex350Triple
-        ) {
-          const jobDataItem =
-            dataItemMap[singleValueFieldNamesByKey.jobData[0]];
-          if (jobDataItem?.value && jobDataItem.value.trim().startsWith("{")) {
-            try {
-              const jobData = JSON.parse(jobDataItem.value);
-              if (jobData.material !== undefined) {
-                material = jobData.material;
+          for (const key of validKeys) {
+            for (const itemKey in dataItemMap) {
+              if (itemKey === key) {
+                values.push(dataItemMap[itemKey].value);
               }
-            } catch (err) {
-              console.warn(
-                "Invalid job_data while reading current_height",
-                err
-              );
             }
           }
-        }
 
-        return material;
-      };
+          return values.length === 1 ? values[0] : values;
+        };
 
-      const getStartTime = () => {
-        let startTimeRaw = getFieldValue("startTime");
-        let startTime;
+        const resolvePrinterState = (printerCode, rawState) => {
+          if (
+            printerCode !== printerModelMap.SLS380 &&
+            printerCode !== printerModelMap.DMPFlex350Triple
+          )
+            return rawState;
+          const numeric = parseInt(rawState);
+          return printerStateMap[numeric] || rawState;
+        };
 
-        if (
-          printerCode === printerModelMap.SLA750 ||
-          printerCode === printerModelMap.SLA750Dual
-        ) {
-          const seconds = parseInt(startTimeRaw, 10);
-          if (!isNaN(seconds)) {
-            const date = new Date(seconds * 1000);
-            startTime = date.toISOString().substring(11, 16); // Extracts "HH:MM" from UTC
+        const getCurrentLayer = () => {
+          let currentLayer = getFieldValue("currentLayer");
+
+          if (printerCode === printerModelMap.SLS380) {
+            const jobDataItem =
+              dataItemMap[singleValueFieldNamesByKey.jobData[0]];
+            if (
+              jobDataItem?.value &&
+              jobDataItem.value.trim().startsWith("{")
+            ) {
+              try {
+                const jobData = JSON.parse(jobDataItem.value);
+                if (jobData.current_height !== undefined) {
+                  currentLayer = jobData.current_height;
+                }
+              } catch (err) {
+                console.warn(
+                  "Invalid job_data while reading current_height",
+                  err
+                );
+              }
+            }
+          }
+
+          return currentLayer;
+        };
+
+        const getMaterial = () => {
+          let material = getAllFieldValues("material");
+
+          if (
+            printerCode === printerModelMap.SLS380 ||
+            printerCode === printerModelMap.DMPFlex350Triple
+          ) {
+            const jobDataItem =
+              dataItemMap[singleValueFieldNamesByKey.jobData[0]];
+            if (
+              jobDataItem?.value &&
+              jobDataItem.value.trim().startsWith("{")
+            ) {
+              try {
+                const jobData = JSON.parse(jobDataItem.value);
+                if (jobData.material !== undefined) {
+                  material = jobData.material;
+                }
+              } catch (err) {
+                console.warn(
+                  "Invalid job_data while reading current_height",
+                  err
+                );
+              }
+            }
+          }
+
+          return material;
+        };
+
+        const getStartTime = () => {
+          let startTimeRaw = getFieldValue("startTime");
+          let startTime;
+
+          if (
+            printerCode === printerModelMap.SLA750 ||
+            printerCode === printerModelMap.SLA750Dual
+          ) {
+            const seconds = parseInt(startTimeRaw, 10);
+            if (!isNaN(seconds)) {
+              const date = new Date(seconds * 1000);
+              startTime = date.toISOString().substring(11, 16); // Extracts "HH:MM" from UTC
+            } else {
+              startTime = startTimeRaw;
+            }
           } else {
-            startTime = startTimeRaw;
+            startTime = formatTimeToHHMM(startTimeRaw);
           }
-        } else {
-          startTime = formatTimeToHHMM(startTimeRaw);
-        }
 
-        return startTime;
-      };
+          return startTime;
+        };
 
-      const getProgress = () => {
-        let progress = getFieldValue("progress");
+        const getProgress = () => {
+          let progress = getFieldValue("progress");
 
-        if (
-          printerCode === printerModelMap.SLA750 ||
-          printerCode === printerModelMap.SLA750Dual
-        ) {
-          const val = parseFloat(progress);
-          if (!isNaN(val)) {
-            progress = val * 100;
+          if (
+            printerCode === printerModelMap.SLA750 ||
+            printerCode === printerModelMap.SLA750Dual
+          ) {
+            const val = parseFloat(progress);
+            if (!isNaN(val)) {
+              progress = val * 100;
+            }
           }
-        }
 
-        return progress;
-      };
+          return progress;
+        };
 
-      return {
-        printerModel,
-        printerName: getFieldValue("printerName"),
-        deviceStreamName,
-        jobName: getFieldValue("jobName"),
-        resinTemp: getFieldValue("resinTemp"),
-        chamberTemp: getFieldValue("chamberTemp"),
-        startTime: getStartTime(),
-        timeRemaining: formatSecondsToHHMM(getFieldValue("timeRemaining")),
-        endTime: formatTimeToHHMM(getFieldValue("endTime")),
-        buildState: getFieldValue("buildState"),
-        printerState: resolvePrinterState(
-          printerCode,
-          getFieldValue("printerState")
-        ),
-        manualOpState: getFieldValue("manualOpState"),
-        material: getMaterial(),
-        currentLayer: getCurrentLayer(),
-        totalLayers: getFieldValue("totalLayers"),
-        progress: getProgress(),
-        jobData: getJsonJobData(getFieldValue("jobData")),
-        modalDataItems,
-        dataItemMap,
-      };
+        return {
+          printerModel,
+          printerName: getFieldValue("printerName"),
+          deviceStreamName,
+          jobName: getFieldValue("jobName"),
+          resinTemp: getFieldValue("resinTemp"),
+          chamberTemp: getFieldValue("chamberTemp"),
+          startTime: getStartTime(),
+          timeRemaining: formatSecondsToHHMM(getFieldValue("timeRemaining")),
+          endTime: formatTimeToHHMM(getFieldValue("endTime")),
+          buildState: getFieldValue("buildState"),
+          printerState: resolvePrinterState(
+            printerCode,
+            getFieldValue("printerState")
+          ),
+          manualOpState: getFieldValue("manualOpState"),
+          material: getMaterial(),
+          currentLayer: getCurrentLayer(),
+          totalLayers: getFieldValue("totalLayers"),
+          progress: getProgress(),
+          jobData: getJsonJobData(getFieldValue("jobData")),
+          modalDataItems,
+          dataItemMap,
+        };
+      } else {
+        return null;
+      }
     })
     .filter(Boolean);
 };
