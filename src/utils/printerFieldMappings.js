@@ -32,7 +32,7 @@ export const singleValueFieldNamesByKey = {
   timeRemaining: ["build.time_remaining", "build.job_data.time_remaining"],
   endTime: ["build.end_time", "build.job_data.completion_time"],
   buildState: ["device.printer_build_state", "build.state"],
-  printerState: ["device.printer_state", "printer_state"],
+  printerState: ["device.printer_state", "printer_state", "system_state"],
   manualOpState: ["device.printer_manual_op_state"],
   currentLayer: [
     "build.job_data.current_height",

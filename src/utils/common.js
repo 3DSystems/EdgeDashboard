@@ -26,6 +26,7 @@ export const printerModelByCode = {
   30005: "SLA 750",
   31006: "SLS 380",
   5555: "Edge PC",
+  60000: "PostCure 1050",
 };
 
 export const printerModelMap = {
@@ -34,6 +35,7 @@ export const printerModelMap = {
   SLS380: "31006",
   PSLA270: "30100",
   EdgePC: "5555",
+  PostCure1050: "60000",
 };
 
 export const printer31006StateMap = {
