@@ -27,6 +27,7 @@ export const singleValueFieldNamesByKey = {
     "device.printer_chamber_temperature",
     "chamber_temperature",
     "chamber.temperature",
+    "chamber.chamber_temp",
   ],
   startTime: ["build.start_time", "build.job_data.start_time"],
   timeRemaining: ["build.time_remaining", "build.job_data.time_remaining"],
