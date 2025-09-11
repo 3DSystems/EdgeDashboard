@@ -7,7 +7,7 @@
 		<DeviceStream name="asset_30007-1071127724003" uuid="asset_30007-1071127724003">
 			<ComponentStream component="Device" name="asset_30007-1071127724003" componentId="asset_30007-1071127724003">
 				<Samples>
-					<Temperature dataItemId="asset_30007-1071127724003.chamber_temperature" name="Chamber-Temperature" sequence="19089306" timestamp="2025-07-22T02:28:39Z">-27.016701</Temperature>
+					<Temperature dataItemId="asset_30007-1071127724003.chamber_temperature" name="Chamber-Temperature" sequence="19089306" timestamp="2025-07-22T02:28:39Z">27.016701</Temperature>
 				</Samples>
 				<Events>
 					<Message dataItemId="asset_30007-1071127724003.printer_name" name="Printer-Name" sequence="14715741" timestamp="2025-07-07T11:29:34Z">SLA750-08</Message>
@@ -165,7 +165,7 @@
 					<Length dataItemId="asset_31006-1071127724003.build.z_height" name="Build-Z-Height" sequence="19089295" subType="STANDARD" timestamp="2025-07-22T02:28:39Z">71</Length>
 				</Samples>
 				<Events>
-					<PartCount dataItemId="asset_31006-1071127724003.build.current_layer" name="Build-Current-Layer" sequence="19089296" subType="GOOD" timestamp="2025-07-22T02:28:39Z">-1</PartCount>
+					<PartCount dataItemId="asset_31006-1071127724003.build.current_layer" name="Build-Current-Layer" sequence="19089296" subType="GOOD" timestamp="2025-07-22T02:28:39Z">709</PartCount>
 					<Message dataItemId="asset_31006-1071127724003.build.filename" name="Build-FileName" sequence="18814929" timestamp="2025-07-21T14:09:15Z">C:\ProgramData\3D Systems\3D Print\jobs\FileMgr\Job55\250721_x8.sladdd</Message>
 					<Message dataItemId="asset_31006-1071127724003.build.job_data" name="Build-Job-Data" nativeCode="JSON" sequence="19089309" timestamp="2025-07-22T02:28:39Z">{"build_filename":"250721_x8.sladdd","build_mode":"0","build_progress":0.212432,"build_state":"PRINT_STATE_BUILDING","build_time_estimate":107357,"completion_time":0,"current_layer":709,"extent_units":1,"material":["Accura Xtreme"],"material_estimate_total_volume":[2138.896484],"start_time":1753114155,"status":1,"status_change_time":1753114155,"submit_time":0,"time_remaining":63158,"total_layers":3342,"x_extent":721,"y_extent":693,"z_extent":334.223999}</Message>
 					<MessageDiscrete dataItemId="asset_31006-1071127724003.build.progress" name="Build-Progress" sequence="19089305" timestamp="2025-07-22T02:28:39Z">0.212432</MessageDiscrete>
@@ -176,7 +176,7 @@
 			<ComponentStream component="Chamber" name="Chamber" componentId="asset_31006-1071127724003.chamber">
 				<Samples>
 					<Temperature dataItemId="asset_31006-1071127724003.chamber.heater" name="Chamber-Heater" sequence="14715739" timestamp="2025-07-07T11:27:21Z">27</Temperature>
-					<Temperature dataItemId="asset_31006-1071127724003.chamber.temperature" name="Chamber-Temperature" sequence="19089494" timestamp="2025-07-22T02:29:12Z">-27.061899</Temperature>
+					<Temperature dataItemId="asset_31006-1071127724003.chamber.temperature" name="Chamber-Temperature" sequence="19089494" timestamp="2025-07-22T02:29:12Z">27.061899</Temperature>
 				</Samples>
 			</ComponentStream>
 			<ComponentStream component="Laser" name="Laser-1" componentId="asset_31006-1071127724003.laser_1">

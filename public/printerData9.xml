@@ -1,0 +1,214 @@
+<MTConnectStreams xmlns:m="urn:mtconnect.org:MTConnectStreams:1.4"
+    xmlns="urn:mtconnect.org:MTConnectStreams:1.4"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:mtconnect.org:MTConnectStreams:1.4 http://schemas.mtconnect.org/schemas/MTConnectStreams_1.4.xsd">
+    <Header creationTime="2025-07-24T03:55:37Z" sender="tdsprinter" instanceId="1753322101" version="2.5.0.8" bufferSize="1073741824" nextSequence="2113" firstSequence="1" lastSequence="2112"/>
+    <Streams>        
+        <DeviceStream name="asset_60000-20071331201" uuid="asset_60000-20071331201">
+            <ComponentStream component="Device" name="asset_60000-20071331201" componentId="asset_60000-20071331201">
+                <Samples>
+                    <Temperature dataItemId="asset_60000-20071331201.ambient_temperature" name="Ambient-Temperature" sequence="125" timestamp="2025-07-24T01:55:01.794423Z">UNAVAILABLE</Temperature>
+                </Samples>
+                <Events>
+                    <Message dataItemId="asset_60000-20071331201.adapter_id" name="Adapter-Id" sequence="134" timestamp="2025-07-24T01:55:01.794492Z">UNAVAILABLE</Message>
+                    <Message dataItemId="asset_60000-20071331201.model" name="Model" sequence="119" timestamp="2025-07-24T01:55:01.794382Z">UNAVAILABLE</Message>
+                    <Message dataItemId="asset_60000-20071331201.model_name" name="Model-Name" sequence="120" timestamp="2025-07-24T01:55:01.794388Z">UNAVAILABLE</Message>
+                    <Message dataItemId="asset_60000-20071331201.printer_name" name="Printer-Name" sequence="123" timestamp="2025-07-24T01:55:01.794409Z">SLS380</Message>
+                    <Message dataItemId="asset_60000-20071331201.system_state" name="System-State" sequence="160" timestamp="2025-07-24T01:55:01.794669Z">CURING</Message>
+                    <Message dataItemId="asset_60000-20071331201.release_version" name="Release-Version" sequence="126" timestamp="2025-07-24T01:55:01.794429Z">UNAVAILABLE</Message>
+                    <SerialNumber dataItemId="asset_60000-20071331201.serial_number" name="Serial-Number" sequence="159" timestamp="2025-07-24T01:55:01.794661Z">UNAVAILABLE</SerialNumber>
+                    <Message dataItemId="asset_60000-20071331201.service_person_name" name="Service-Person-Name" sequence="116" timestamp="2025-07-24T01:55:01.794363Z">UNAVAILABLE</Message>
+                    <Message dataItemId="asset_60000-20071331201.submodel" name="Submodel" sequence="91" timestamp="2025-07-24T01:55:01.794192Z">UNAVAILABLE</Message>
+                    <Message dataItemId="asset_60000-20071331201.timezone" name="Timezone" sequence="113" timestamp="2025-07-24T01:55:01.794341Z">UNAVAILABLE</Message>
+                    <AssetChanged assetType="UNAVAILABLE" dataItemId="asset_60000-20071331201_asset_chg" sequence="117" timestamp="2025-07-24T01:55:01.794368Z">UNAVAILABLE</AssetChanged>
+                    <AssetRemoved assetType="UNAVAILABLE" dataItemId="asset_60000-20071331201_asset_rem" sequence="112" timestamp="2025-07-24T01:55:01.794335Z">UNAVAILABLE</AssetRemoved>
+                    <Availability dataItemId="asset_60000-20071331201_avail" sequence="2112" timestamp="2025-07-24T03:55:12.976295Z">AVAILABLE</Availability>
+                </Events>
+                <Condition>
+                    <Unavailable dataItemId="asset_60000-20071331201.fault.coolant_leak_alarm" name="Fault-Coolant-Leak-Alarm" sequence="128" timestamp="2025-07-24T01:55:01.794443Z" type="SYSTEM"/>
+                    <Unavailable dataItemId="asset_60000-20071331201.fault.epm_filter_alarm" name="Fault-Epm-Filter-Alarm" sequence="129" timestamp="2025-07-24T01:55:01.794456Z" type="SYSTEM"/>
+                    <Unavailable dataItemId="asset_60000-20071331201.fault.hfm_powder" name="Fault-Hfm-Powder" sequence="140" timestamp="2025-07-24T01:55:01.794536Z" type="SYSTEM"/>
+                    <Unavailable dataItemId="asset_60000-20071331201.fault.laser_alarm" name="Fault-Laser-Alarm" sequence="132" timestamp="2025-07-24T01:55:01.794478Z" type="SYSTEM"/>
+                    <Unavailable dataItemId="asset_60000-20071331201.fault.laser_window_temperature" name="Fault-Laser-Window-Temperature" sequence="96" timestamp="2025-07-24T01:55:01.79423Z" type="SYSTEM"/>
+                    <Unavailable dataItemId="asset_60000-20071331201.fault.n2_pressure_switch" name="Fault-N2-Pressure-Switch" sequence="142" timestamp="2025-07-24T01:55:01.794549Z" type="SYSTEM"/>
+                    <Unavailable dataItemId="asset_60000-20071331201.fault.part_bed_heater_temperature" name="Fault-Part-Bed-Heater-Temperature" sequence="136" timestamp="2025-07-24T01:55:01.794504Z" type="SYSTEM"/>
+                    <Unavailable dataItemId="asset_60000-20071331201.fault.sock_filter_alarm" name="Fault-Sock-Filter-Alarm" sequence="79" timestamp="2025-07-24T01:55:01.794108Z" type="SYSTEM"/>
+                </Condition>
+            </ComponentStream>
+            <ComponentStream component="BlackBody" name="Black-Body" componentId="asset_60000-20071331201.black_body">
+                <Samples>
+                    <Message dataItemId="asset_60000-20071331201.black_body.duty_cycle" name="Black-Body-Duty-Cycle" sequence="81" timestamp="2025-07-24T01:55:01.794128Z">UNAVAILABLE</Message>
+                    <Temperature dataItemId="asset_60000-20071331201.black_body.temperature" name="Black-Body-Temperature" sequence="75" timestamp="2025-07-24T01:55:01.794083Z">UNAVAILABLE</Temperature>
+                    <Temperature dataItemId="asset_60000-20071331201.black_body.temperature_setpoint" name="Black-Body-Temperature-Setpoint" sequence="76" timestamp="2025-07-24T01:55:01.794088Z">UNAVAILABLE</Temperature>
+                </Samples>
+                <Events>
+                    <Message dataItemId="asset_60000-20071331201.black_body.home_position" name="Black-Body-Home-Position" sequence="169" timestamp="2025-07-24T01:55:01.794724Z">UNAVAILABLE</Message>
+                    <Message dataItemId="asset_60000-20071331201.black_body.measurement_position" name="Black-Body-Measurement-Position" sequence="135" timestamp="2025-07-24T01:55:01.794498Z">UNAVAILABLE</Message>
+                </Events>
+            </ComponentStream>
+            <ComponentStream component="Path" name="Build" componentId="asset_60000-20071331201.build">
+                <Events>
+                    <Message dataItemId="asset_60000-20071331201.build.current_layer" name="Build-Current-Layer" sequence="149" timestamp="2025-07-24T01:55:01.794595Z">UNAVAILABLE</Message>
+                    <Message dataItemId="asset_60000-20071331201.build.job_data" name="Build-Job-Data" sequence="153" timestamp="2025-07-24T01:55:01.79462Z">{"build_mode": "Standard", "build_style": "General", "build_time_estimate": 42111, "current_height": 19.1008, "current_stage_height": 6.4008, "elapsed_duration": 5210, "estimated_end_time": 1753254551, "job_id": "1753212439", "last_updated_time": 1753217651, "material": ["SLS380 DuraFormProX PA V7.10"], "pending_duration": 36901, "print_stage_info": [{"actual_total_duration": 3450, "print_stage": 1}], "start_time": 1753212439, "status": 1, "completion_time": 1753212439, "total_print_height": 80.6388, "total_stage_height": 65.3988}</Message>
+                    <Message dataItemId="asset_60000-20071331201.build.progress" name="Build-Progress" sequence="150" timestamp="2025-07-24T01:55:01.794601Z">30.988845</Message>
+                    <Message dataItemId="asset_60000-20071331201.build.stage" name="Build-Stage" sequence="146" timestamp="2025-07-24T01:55:01.794577Z">UNAVAILABLE</Message>
+                    <Message dataItemId="asset_60000-20071331201.build.time_remaining" name="Build-Time-Remaining" sequence="124" timestamp="2025-07-24T01:55:01.794415Z">989</Message>
+                </Events>
+            </ComponentStream>
+            <ComponentStream component="Controller" name="Controller" componentId="asset_60000-20071331201.controller">
+                <Events>
+                    <Message dataItemId="asset_60000-20071331201.controller.3dconnect_version" name="Controller-3dconnect-Version" sequence="145" timestamp="2025-07-24T01:55:01.794569Z">UNAVAILABLE</Message>
+                    <Message dataItemId="asset_60000-20071331201.controller.build_prep_version" name="Controller-Build-Prep-Version" sequence="144" timestamp="2025-07-24T01:55:01.794563Z">UNAVAILABLE</Message>
+                    <Message dataItemId="asset_60000-20071331201.controller.mac_address" name="Controller-Mac-Address" sequence="115" timestamp="2025-07-24T01:55:01.794356Z">UNAVAILABLE</Message>
+                </Events>
+            </ComponentStream>
+            <ComponentStream component="Cylinder" name="Cylinder" componentId="asset_60000-20071331201.cylinder">
+                <Samples>
+                    <Message dataItemId="asset_60000-20071331201.cylinder.duty_cycle" name="Cylinder-Duty-Cycle" sequence="106" timestamp="2025-07-24T01:55:01.794297Z">UNAVAILABLE</Message>
+                    <Amperage dataItemId="asset_60000-20071331201.cylinder.heater.current" name="Cylinder-Heater-Current" sequence="105" timestamp="2025-07-24T01:55:01.79429Z">UNAVAILABLE</Amperage>
+                    <Temperature dataItemId="asset_60000-20071331201.cylinder.temperature" name="Cylinder-Temperature" sequence="87" timestamp="2025-07-24T01:55:01.794167Z">UNAVAILABLE</Temperature>
+                    <Temperature dataItemId="asset_60000-20071331201.cylinder.temperature_setpoint" name="Cylinder-Temperature-Setpoint" sequence="102" timestamp="2025-07-24T01:55:01.794271Z">UNAVAILABLE</Temperature>
+                </Samples>
+            </ComponentStream>
+            <ComponentStream component="Enclosure" name="Enclosure" componentId="asset_60000-20071331201.enclosure">
+                <Samples>
+                    <Concentration dataItemId="asset_60000-20071331201.oxygen_level" name="Oxygen-Level" sequence="164" timestamp="2025-07-24T01:55:01.794694Z">UNAVAILABLE</Concentration>
+                </Samples>
+                <Events>
+                    <SerialNumber dataItemId="asset_60000-20071331201.card_rack_asm.serial_number" name="Card-Rack-Asm-Serial-Number" sequence="151" timestamp="2025-07-24T01:55:01.794606Z">UNAVAILABLE</SerialNumber>
+                    <SerialNumber dataItemId="asset_60000-20071331201.heater_control.serial_number" name="Heater-Control-Serial-Number" sequence="77" timestamp="2025-07-24T01:55:01.794096Z">UNAVAILABLE</SerialNumber>
+                    <SerialNumber dataItemId="asset_60000-20071331201.mirror_driver_board_1.serial_number" name="Mirror-Driver-Board-1-Serial-Number" sequence="137" timestamp="2025-07-24T01:55:01.794513Z">UNAVAILABLE</SerialNumber>
+                    <SerialNumber dataItemId="asset_60000-20071331201.mirror_driver_board_2.serial_number" name="Mirror-Driver-Board-2-Serial-Number" sequence="168" timestamp="2025-07-24T01:55:01.794719Z">UNAVAILABLE</SerialNumber>
+                    <SerialNumber dataItemId="asset_60000-20071331201.motion_control.serial_number" name="Motion-Control-Serial-Number" sequence="72" timestamp="2025-07-24T01:55:01.794062Z">UNAVAILABLE</SerialNumber>
+                    <Message dataItemId="asset_60000-20071331201.sinter_installer.version" name="Sinter-Installer-Version" sequence="78" timestamp="2025-07-24T01:55:01.794102Z">UNAVAILABLE</Message>
+                </Events>
+            </ComponentStream>
+            <ComponentStream component="Feeder" name="Feeder" componentId="asset_60000-20071331201.feeder">
+                <Samples>
+                    <Amperage dataItemId="asset_60000-20071331201.feeder.left_heater.current" name="Feeder-Left-Heater-Current" sequence="162" subType="ALTERNATING" timestamp="2025-07-24T01:55:01.79468Z">UNAVAILABLE</Amperage>
+                    <Message dataItemId="asset_60000-20071331201.feeder.left_heater.duty_cycle" name="Feeder-Left-Heater-Duty-Cycle" sequence="71" timestamp="2025-07-24T01:55:01.794056Z">UNAVAILABLE</Message>
+                    <Temperature dataItemId="asset_60000-20071331201.feeder.left_heater.temperature" name="Feeder-Left-Heater-Temperature" sequence="163" timestamp="2025-07-24T01:55:01.794686Z">UNAVAILABLE</Temperature>
+                    <Amperage dataItemId="asset_60000-20071331201.feeder.right_heater.current" name="Feeder-Right-Heater-Current" sequence="155" subType="ALTERNATING" timestamp="2025-07-24T01:55:01.794634Z">UNAVAILABLE</Amperage>
+                    <Message dataItemId="asset_60000-20071331201.feeder.right_heater.duty_cycle" name="Feeder-Right-Heater-Duty-Cycle" sequence="165" timestamp="2025-07-24T01:55:01.794699Z">UNAVAILABLE</Message>
+                    <Temperature dataItemId="asset_60000-20071331201.feeder.right_heater.temperature" name="Feeder-Right-Heater-Temperature" sequence="167" timestamp="2025-07-24T01:55:01.794713Z">UNAVAILABLE</Temperature>
+                </Samples>
+                <Events>
+                    <Message dataItemId="asset_60000-20071331201.feeder.lower_prox_sensor_state" name="Feeder-Lower-Prox-Sensor-State" sequence="110" timestamp="2025-07-24T01:55:01.794321Z">UNAVAILABLE</Message>
+                    <Message dataItemId="asset_60000-20071331201.feeder.upper_prox_sensor_state" name="Feeder-Upper-Prox-Sensor-State" sequence="118" timestamp="2025-07-24T01:55:01.794374Z">UNAVAILABLE</Message>
+                </Events>
+            </ComponentStream>
+            <ComponentStream component="IrCamera" name="Ir-Camera" componentId="asset_60000-20071331201.ir_camera">
+                <Samples>
+                    <Temperature dataItemId="asset_60000-20071331201.ir_camera.temperature_box" name="Ir-Camera-Temperature-Box" sequence="107" timestamp="2025-07-24T01:55:01.794303Z">UNAVAILABLE</Temperature>
+                    <Temperature dataItemId="asset_60000-20071331201.ir_camera.temperature_chip" name="Ir-Camera-Temperature-Chip" sequence="108" timestamp="2025-07-24T01:55:01.794308Z">UNAVAILABLE</Temperature>
+                    <Temperature dataItemId="asset_60000-20071331201.ir_camera.temperature_flag" name="Ir-Camera-Temperature-Flag" sequence="94" timestamp="2025-07-24T01:55:01.794213Z">UNAVAILABLE</Temperature>
+                </Samples>
+                <Events>
+                    <SerialNumber dataItemId="asset_60000-20071331201.ir_camera.serial_number" name="Ir-Camera-Serial-Number" sequence="103" timestamp="2025-07-24T01:55:01.794278Z">UNAVAILABLE</SerialNumber>
+                </Events>
+            </ComponentStream>
+            <ComponentStream component="IrSensorHead" name="Ir-Sensor-Head" componentId="asset_60000-20071331201.ir_sensor_head">
+                <Samples>
+                    <Temperature dataItemId="asset_60000-20071331201.ir_sensor_head.temperature" name="Ir-Sensor-Head-Temperature" sequence="86" timestamp="2025-07-24T01:55:01.794161Z">UNAVAILABLE</Temperature>
+                </Samples>
+                <Events>
+                    <SerialNumber dataItemId="asset_60000-20071331201.ir_sensor_head.serial_number" name="Ir-Sensor-Head-Serial-Number" sequence="84" timestamp="2025-07-24T01:55:01.794148Z">UNAVAILABLE</SerialNumber>
+                </Events>
+            </ComponentStream>
+            <ComponentStream component="Laser" name="Laser" componentId="asset_60000-20071331201.laser">
+                <Samples>
+                    <Amperage dataItemId="asset_60000-20071331201.laser.window.current" name="Laser-Window-Current" sequence="73" subType="ALTERNATING" timestamp="2025-07-24T01:55:01.794068Z">UNAVAILABLE</Amperage>
+                    <Message dataItemId="asset_60000-20071331201.laser.window.duty_cycle" name="Laser-Window-Duty-Cycle" sequence="67" timestamp="2025-07-24T01:55:01.794028Z">UNAVAILABLE</Message>
+                    <Temperature dataItemId="asset_60000-20071331201.laser.window.temperature" name="Laser-Window-Temperature" sequence="68" timestamp="2025-07-24T01:55:01.794036Z">UNAVAILABLE</Temperature>
+                    <Temperature dataItemId="asset_60000-20071331201.laser.x_mirror.temperature" name="Laser-X-Mirror-Temperature" sequence="141" timestamp="2025-07-24T01:55:01.794543Z">UNAVAILABLE</Temperature>
+                    <Temperature dataItemId="asset_60000-20071331201.laser.y_mirror.temperature" name="Laser-Y-Mirror-Temperature" sequence="89" timestamp="2025-07-24T01:55:01.79418Z">UNAVAILABLE</Temperature>
+                    <Temperature dataItemId="asset_60000-20071331201.laser.z_coil.temperature" name="Laser-Z-Coil-Temperature" sequence="109" timestamp="2025-07-24T01:55:01.794316Z">UNAVAILABLE</Temperature>
+                </Samples>
+                <Events>
+                    <Message dataItemId="asset_60000-20071331201.laser.safety_interlock_state" name="Laser-Safety-Interlock-State" sequence="69" timestamp="2025-07-24T01:55:01.794042Z">UNAVAILABLE</Message>
+                    <SerialNumber dataItemId="asset_60000-20071331201.laser.serial_number" name="Laser-Serial-Number" sequence="170" timestamp="2025-07-24T01:55:01.794732Z">UNAVAILABLE</SerialNumber>
+                    <Message dataItemId="asset_60000-20071331201.laser.shutter_state" name="Laser-Shutter-State" sequence="111" timestamp="2025-07-24T01:55:01.794327Z">UNAVAILABLE</Message>
+                    <SerialNumber dataItemId="asset_60000-20071331201.laser.z_coil.serial_number" name="Laser-Z-Coil-Serial-Number" sequence="66" timestamp="2025-07-24T01:55:01.794021Z">UNAVAILABLE</SerialNumber>
+                </Events>
+            </ComponentStream>
+            <ComponentStream component="Loader" name="Loader" componentId="asset_60000-20071331201.loader">
+                <Events>
+                    <Message dataItemId="asset_60000-20071331201.loader.mqc_firmware_version" name="Loader-Mqc-Firmware-Version" sequence="148" timestamp="2025-07-24T01:55:01.794588Z">UNAVAILABLE</Message>
+                </Events>
+            </ComponentStream>
+            <ComponentStream component="PartBed" name="Partbed Heaters" componentId="asset_60000-20071331201.part_bed">
+                <Samples>
+                    <Amperage dataItemId="asset_60000-20071331201.part_bed.inner_back_left_heater.current" name="Part-Bed-Inner-Back-Left-Heater-Current" sequence="92" subType="ALTERNATING" timestamp="2025-07-24T01:55:01.794199Z">UNAVAILABLE</Amperage>
+                    <Message dataItemId="asset_60000-20071331201.part_bed.inner_back_left_heater.duty_cycle" name="Part-Bed-Inner-Back-Left-Heater-Duty-Cycle" sequence="131" timestamp="2025-07-24T01:55:01.794471Z">UNAVAILABLE</Message>
+                    <Amperage dataItemId="asset_60000-20071331201.part_bed.inner_back_right_heater.current" name="Part-Bed-Inner-Back-Right-Heater-Current" sequence="93" subType="ALTERNATING" timestamp="2025-07-24T01:55:01.794207Z">UNAVAILABLE</Amperage>
+                    <Message dataItemId="asset_60000-20071331201.part_bed.inner_back_right_heater.duty_cycle" name="Part-Bed-Inner-Back-Right-Heater-Duty-Cycle" sequence="90" timestamp="2025-07-24T01:55:01.794186Z">UNAVAILABLE</Message>
+                    <Amperage dataItemId="asset_60000-20071331201.part_bed.inner_front_left_heater.current" name="Part-Bed-Inner-Front-Left-Heater-Current" sequence="95" subType="ALTERNATING" timestamp="2025-07-24T01:55:01.794222Z">UNAVAILABLE</Amperage>
+                    <Message dataItemId="asset_60000-20071331201.part_bed.inner_front_left_heater.duty_cycle" name="Part-Bed-Inner-Front-Left-Heater-Duty-Cycle" sequence="88" timestamp="2025-07-24T01:55:01.794172Z">UNAVAILABLE</Message>
+                    <Amperage dataItemId="asset_60000-20071331201.part_bed.inner_front_right_heater.current" name="Part-Bed-Inner-Front-Right-Heater-Current" sequence="127" subType="ALTERNATING" timestamp="2025-07-24T01:55:01.794434Z">UNAVAILABLE</Amperage>
+                    <Message dataItemId="asset_60000-20071331201.part_bed.inner_front_right_heater.duty_cycle" name="Part-Bed-Inner-Front-Right-Heater-Duty-Cycle" sequence="101" timestamp="2025-07-24T01:55:01.794265Z">UNAVAILABLE</Message>
+                    <Message dataItemId="asset_60000-20071331201.part_bed.master_duty_cycle" name="Part-Bed-Master-Duty-Cycle" sequence="161" timestamp="2025-07-24T01:55:01.794675Z">UNAVAILABLE</Message>
+                    <Amperage dataItemId="asset_60000-20071331201.part_bed.outer_back_left_heater.current" name="Part-Bed-Outer-Back-Left-Heater-Current" sequence="130" subType="ALTERNATING" timestamp="2025-07-24T01:55:01.794463Z">UNAVAILABLE</Amperage>
+                    <Amperage dataItemId="asset_60000-20071331201.part_bed.outer_back_right_heater.current" name="Part-Bed-Outer-Back-Right-Heater-Current" sequence="114" subType="ALTERNATING" timestamp="2025-07-24T01:55:01.794347Z">UNAVAILABLE</Amperage>
+                    <Message dataItemId="asset_60000-20071331201.part_bed.outer_back_right_heater.duty_cycle" name="Part-Bed-Outer-Back-Right-Heater-Duty-Cycle" sequence="157" timestamp="2025-07-24T01:55:01.794647Z">UNAVAILABLE</Message>
+                    <Amperage dataItemId="asset_60000-20071331201.part_bed.outer_front_left_heater.current" name="Part-Bed-Outer-Front-Left-Heater-Current" sequence="97" subType="ALTERNATING" timestamp="2025-07-24T01:55:01.794237Z">UNAVAILABLE</Amperage>
+                    <Message dataItemId="asset_60000-20071331201.part_bed.outer_front_left_heater.duty_cycle" name="Part-Bed-Outer-Front-Left-Heater-Duty-Cycle" sequence="80" timestamp="2025-07-24T01:55:01.794121Z">UNAVAILABLE</Message>
+                    <Amperage dataItemId="asset_60000-20071331201.part_bed.outer_front_right_heater.current" name="Part-Bed-Outer-Front-Right-Heater-Current" sequence="98" subType="ALTERNATING" timestamp="2025-07-24T01:55:01.794245Z">UNAVAILABLE</Amperage>
+                    <Message dataItemId="asset_60000-20071331201.part_bed.outer_front_right_heater.duty_cycle" name="Part-Bed-Outer-Front-Right-Heater-Duty-Cycle" sequence="104" timestamp="2025-07-24T01:55:01.794285Z">UNAVAILABLE</Message>
+                    <Temperature dataItemId="asset_60000-20071331201.part_bed.temperature" name="Part-Bed-Temperature" sequence="99" timestamp="2025-07-24T01:55:01.794252Z">19.93783387</Temperature>
+                    <Temperature dataItemId="asset_60000-20071331201.part_bed.temperature_setpoint" name="Part-Bed-Temperature-Setpoint" sequence="100" timestamp="2025-07-24T01:55:01.794259Z">UNAVAILABLE</Temperature>
+                </Samples>
+            </ComponentStream>
+            <ComponentStream component="PartIrBlock" name="Part-Ir-Block" componentId="asset_60000-20071331201.part_ir_block">
+                <Samples>
+                    <Message dataItemId="asset_60000-20071331201.part_ir_block.duty_cycle" name="Part-Ir-Block-Duty-Cycle" sequence="82" timestamp="2025-07-24T01:55:01.794134Z">UNAVAILABLE</Message>
+                    <Temperature dataItemId="asset_60000-20071331201.part_ir_block.temperature" name="Part-Ir-Block-Temperature" sequence="147" timestamp="2025-07-24T01:55:01.794582Z">UNAVAILABLE</Temperature>
+                    <Temperature dataItemId="asset_60000-20071331201.part_ir_block.temperature_setpoint" name="Part-Ir-Block-Temperature-Setpoint" sequence="74" timestamp="2025-07-24T01:55:01.794077Z">UNAVAILABLE</Temperature>
+                </Samples>
+            </ComponentStream>
+            <ComponentStream component="Linear" name="X" componentId="asset_60000-20071331201.piston">
+                <Samples>
+                    <Message dataItemId="asset_60000-20071331201.piston.duty_cycle" name="Piston-Duty-Cycle" sequence="70" timestamp="2025-07-24T01:55:01.794048Z">UNAVAILABLE</Message>
+                    <Amperage dataItemId="asset_60000-20071331201.piston.heater.current" name="Piston-Heater-Current" sequence="83" subType="ALTERNATING" timestamp="2025-07-24T01:55:01.794141Z">UNAVAILABLE</Amperage>
+                    <Amperage dataItemId="asset_60000-20071331201.piston.heater.current_threshold" name="Piston-Heater-Current-Threshold" sequence="171" timestamp="2025-07-24T01:55:01.794738Z">UNAVAILABLE</Amperage>
+                    <PositionDiscrete dataItemId="asset_60000-20071331201.piston.position" name="Piston-Position" sequence="174" timestamp="2025-07-24T01:55:01.794756Z">UNAVAILABLE</PositionDiscrete>
+                    <Temperature dataItemId="asset_60000-20071331201.piston.temperature" name="Piston-Temperature" sequence="173" timestamp="2025-07-24T01:55:01.794751Z">UNAVAILABLE</Temperature>
+                    <Temperature dataItemId="asset_60000-20071331201.piston.temperature_setpoint" name="Piston-Temperature-Setpoint" sequence="172" timestamp="2025-07-24T01:55:01.794743Z">UNAVAILABLE</Temperature>
+                </Samples>
+            </ComponentStream>
+            <ComponentStream component="Pneumatic" name="Pneumatic" componentId="asset_60000-20071331201.pneumatic">
+                <Samples>
+                    <Pressure dataItemId="asset_60000-20071331201.pneumatic.overflow_transport.air_pressure" name="Pneumatic-Overflow-Transport-Air-Pressure" sequence="158" timestamp="2025-07-24T01:55:01.794655Z">UNAVAILABLE</Pressure>
+                </Samples>
+            </ComponentStream>
+            <ComponentStream component="Linear" name="Y" componentId="asset_60000-20071331201.roller">
+                <Samples>
+                    <PositionDiscrete dataItemId="asset_60000-20071331201.roller.left_proximity_position" name="Roller-Left-Proximity-Position" sequence="177" timestamp="2025-07-24T01:55:01.794777Z">UNAVAILABLE</PositionDiscrete>
+                    <PositionDiscrete dataItemId="asset_60000-20071331201.roller.position" name="Roller-Position" sequence="139" subType="ACTUAL" timestamp="2025-07-24T01:55:01.794527Z">UNAVAILABLE</PositionDiscrete>
+                    <PositionDiscrete dataItemId="asset_60000-20071331201.roller.right_proximity_position" name="Roller-Right-Proximity-Position" sequence="152" subType="ACTUAL" timestamp="2025-07-24T01:55:01.794614Z">UNAVAILABLE</PositionDiscrete>
+                </Samples>
+                <Events>
+                    <Message dataItemId="asset_60000-20071331201.roller.left_prox_state" name="Roller-Left-Prox-State" sequence="176" timestamp="2025-07-24T01:55:01.794772Z">UNAVAILABLE</Message>
+                    <Message dataItemId="asset_60000-20071331201.roller.right_prox_state" name="Roller-Right-Prox-State" sequence="175" timestamp="2025-07-24T01:55:01.794762Z">UNAVAILABLE</Message>
+                </Events>
+            </ComponentStream>
+            <ComponentStream component="Scanner" name="Scanner" componentId="asset_60000-20071331201.scanner">
+                <Events>
+                    <SerialNumber dataItemId="asset_60000-20071331201.scanner.serial_number" name="Scanner-Serial-Number" sequence="143" timestamp="2025-07-24T01:55:01.794557Z">UNAVAILABLE</SerialNumber>
+                </Events>
+            </ComponentStream>
+            <ComponentStream component="Stock" name="Stock" componentId="asset_60000-20071331201.stock">
+                <Samples>
+                    <VolumeFluid dataItemId="asset_60000-20071331201.stock.blender_material_volume" name="Stock-Blender-Material-Volume" sequence="156" subType="ACTUAL" timestamp="2025-07-24T01:55:01.79464Z">UNAVAILABLE</VolumeFluid>
+                    <Concentration dataItemId="asset_60000-20071331201.stock.fresh_blend_percentage" name="Stock-Fresh-Blend-Percentage" sequence="85" timestamp="2025-07-24T01:55:01.794154Z">UNAVAILABLE</Concentration>
+                    <VolumeFluid dataItemId="asset_60000-20071331201.stock.fresh_material_volume" name="Stock-Fresh-Material-Volume" sequence="138" subType="ACTUAL" timestamp="2025-07-24T01:55:01.79452Z">UNAVAILABLE</VolumeFluid>
+                </Samples>
+                <Events>
+                    <Message dataItemId="asset_60000-20071331201.stock.material_code" name="Stock-Material-Code" sequence="166" timestamp="2025-07-24T01:55:01.794704Z">UNAVAILABLE</Message>
+                    <Material dataItemId="asset_60000-20071331201.stock.material_name" name="Stock-Material-Name" sequence="154" timestamp="2025-07-24T01:55:01.794626Z">UNAVAILABLE</Material>
+                    <Message dataItemId="asset_60000-20071331201.stock.mqc_connection_state" name="Stock-Mqc-Connection-State" sequence="122" timestamp="2025-07-24T01:55:01.794403Z">UNAVAILABLE</Message>
+                    <Message dataItemId="asset_60000-20071331201.stock.mqc_mode" name="Stock-Mqc-Mode" sequence="133" timestamp="2025-07-24T01:55:01.794485Z">UNAVAILABLE</Message>
+                </Events>
+            </ComponentStream>
+        </DeviceStream>
+        
+    </Streams>
+</MTConnectStreams>

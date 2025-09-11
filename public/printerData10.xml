@@ -1,0 +1,105 @@
+<DeviceStream name="asset_60000-1025F08022207" uuid="asset_60000-1025F08022207">
+    <ComponentStream component="Device" name="asset_60000-1025F08022207" componentId="asset_60000-1025F08022207">
+        <Samples>
+            <EquipmentTimer dataItemId="asset_60000-1025F08022207.power_on_time" name="Power-On-Time" sequence="2030" timestamp="2025-08-15T01:25:42Z">88743704</EquipmentTimer>
+            <EquipmentTimer dataItemId="asset_60000-1025F08022207.total_365nm_cure_time" name="Total-365nm-Cure-Time" sequence="785" subType="LOADED" timestamp="2025-08-15T01:22:24Z">4806864</EquipmentTimer>
+            <EquipmentTimer dataItemId="asset_60000-1025F08022207.total_395nm_cure_time" name="Total-395nm-Cure-Time" sequence="784" subType="LOADED" timestamp="2025-08-15T01:22:24Z">5100805</EquipmentTimer>
+            <EquipmentTimer dataItemId="asset_60000-1025F08022207.total_425nm_cure_time" name="Total-425nm-Cure-Time" sequence="783" subType="LOADED" timestamp="2025-08-15T01:22:24Z">4676665</EquipmentTimer>
+            <EquipmentTimer dataItemId="asset_60000-1025F08022207.total_cure_time" name="Total-Cure-Time" sequence="782" timestamp="2025-08-15T01:22:24Z">5242234</EquipmentTimer>
+        </Samples>
+        <Events>
+            <Message dataItemId="asset_60000-1025F08022207.365nm_average_pwm" name="365nm-Average-Pwm" sequence="816" timestamp="2025-08-15T01:22:24Z">19.355608</Message>
+            <Message dataItemId="asset_60000-1025F08022207.395nm_average_pwm" name="395nm-Average-Pwm" sequence="815" timestamp="2025-08-15T01:22:24Z">58.401436</Message>
+            <Message dataItemId="asset_60000-1025F08022207.425nm_average_pwm" name="425nm-Average-Pwm" sequence="814" timestamp="2025-08-15T01:22:24Z">59.576702</Message>
+            <Message dataItemId="asset_60000-1025F08022207.f4_aborted_jobs" name="F4-Aborted-Jobs" sequence="778" timestamp="2025-08-15T01:22:24Z">129</Message>
+            <Message dataItemId="asset_60000-1025F08022207.f4_completed_jobs" name="F4-Completed-Jobs" sequence="777" timestamp="2025-08-15T01:22:24Z">695</Message>
+            <Message dataItemId="asset_60000-1025F08022207.f4_failed_jobs" name="F4-Failed-Jobs" sequence="693" timestamp="2025-08-15T01:12:49.47277Z">UNAVAILABLE</Message>
+            <Message dataItemId="asset_60000-1025F08022207.product_model" name="Product-Model" sequence="769" timestamp="2025-08-15T01:22:24Z">PostCure 1050</Message>
+            <Message dataItemId="asset_60000-1025F08022207.product_name" name="Product-Name" sequence="768" timestamp="2025-08-15T01:22:24Z">PostCure 1050</Message>
+            <SerialNumber dataItemId="asset_60000-1025F08022207.serial_number" name="Serial-Number" sequence="770" timestamp="2025-08-15T01:22:24Z"/>
+            <Message dataItemId="asset_60000-1025F08022207.sla_aborted_jobs" name="Sla-Aborted-Jobs" sequence="780" timestamp="2025-08-15T01:22:24Z">90</Message>
+            <Message dataItemId="asset_60000-1025F08022207.sla_completed_jobs" name="Sla-Completed-Jobs" sequence="779" timestamp="2025-08-15T01:22:24Z">494</Message>
+            <Message dataItemId="asset_60000-1025F08022207.sla_failed_jobs" name="Sla-Failed-Jobs" sequence="781" timestamp="2025-08-15T01:22:24Z">0</Message>
+            <Message dataItemId="asset_60000-1025F08022207.system_state" name="System-State" sequence="832" timestamp="2025-08-15T01:23:42Z">READY</Message>
+            <AssetChanged assetType="UNAVAILABLE" dataItemId="asset_60000-1025F08022207_asset_chg" sequence="750" timestamp="2025-08-15T01:12:49.472931Z">UNAVAILABLE</AssetChanged>
+            <AssetRemoved assetType="UNAVAILABLE" dataItemId="asset_60000-1025F08022207_asset_rem" sequence="751" timestamp="2025-08-15T01:12:49.472933Z">UNAVAILABLE</AssetRemoved>
+            <Availability dataItemId="asset_60000-1025F08022207_avail" sequence="766" timestamp="2025-08-15T01:12:49.473982Z">AVAILABLE</Availability>
+        </Events>
+        <Condition>
+            <Unavailable dataItemId="asset_60000-1025F08022207.fault" name="Fault" sequence="712" timestamp="2025-08-15T01:12:49.472822Z" type="HARDWARE"/>
+        </Condition>
+    </ComponentStream>
+    <ComponentStream component="Path" name="Build" componentId="asset_60000-1025F08022207.build">
+        <Events>
+            <Message dataItemId="asset_60000-1025F08022207.build.job_data" name="Build-Job-Data" nativeCode="JSON" sequence="798" timestamp="2025-08-15T01:22:24Z">{"build_time_estimate":7440,"completion_time":1755212123,"job_id":"1417","load_factor":"MEDIUM","recipe_name":"PRO-BLK 10@full-strength@fig4@2022-06-10","start_time":1755204683,"status":"2"}</Message>
+            <Message dataItemId="asset_60000-1025F08022207.build.progress" name="Build-Progress" sequence="787" timestamp="2025-08-15T01:22:24Z">73.2300000</Message>
+            <Message dataItemId="asset_60000-1025F08022207.build.time_remaining" name="Build-Time-Remaining" sequence="786" timestamp="2025-08-15T01:22:24Z">150</Message>
+        </Events>
+    </ComponentStream>
+    <ComponentStream component="Calibration" name="Calibration" componentId="asset_60000-1025F08022207.calibration">
+        <Events>
+            <Message dataItemId="asset_60000-1025F08022207.calibration.365_max_irradiance" name="Calibration-365-Max-Irradiance" sequence="790" timestamp="2025-08-15T01:22:24Z">14.536445</Message>
+            <Message dataItemId="asset_60000-1025F08022207.calibration.395_max_irradiance" name="Calibration-395-Max-Irradiance" sequence="789" timestamp="2025-08-15T01:22:24Z">21.117193</Message>
+            <Message dataItemId="asset_60000-1025F08022207.calibration.425_max_irradiance" name="Calibration-425-Max-Irradiance" sequence="788" timestamp="2025-08-15T01:22:24Z">17.628027</Message>
+        </Events>
+    </ComponentStream>
+    <ComponentStream component="Chamber" name="Chamber" componentId="asset_60000-1025F08022207.chamber">
+        <Samples>
+            <Temperature dataItemId="asset_60000-1025F08022207.chamber.ambient_temperature" name="Chamber-Ambient-Temperature" sequence="2034" timestamp="2025-08-15T01:25:42Z">24.038069</Temperature>
+            <Temperature dataItemId="asset_60000-1025F08022207.chamber.chamber_temp" name="Chamber-Chamber-Temp" sequence="2031" timestamp="2025-08-15T01:25:42Z">24.775564</Temperature>
+        </Samples>
+        <Events>
+            <Message dataItemId="asset_60000-1025F08022207.chamber.light_status" name="Chamber-Light-Status" sequence="797" timestamp="2025-08-15T01:22:24Z">0</Message>
+        </Events>
+    </ComponentStream>
+    <ComponentStream component="Component" name="Component" componentId="asset_60000-1025F08022207.component">
+        <Samples>
+            <Voltage dataItemId="asset_60000-1025F08022207.component.24v_sys_in_voltage" name="Component-24v-Sys-In-Voltage" sequence="2080" subType="ACTUAL" timestamp="2025-08-15T01:25:46Z">23.878765</Voltage>
+            <Voltage dataItemId="asset_60000-1025F08022207.component.ground_voltage" name="Component-Ground-Voltage" sequence="2086" subType="ACTUAL" timestamp="2025-08-15T01:25:46Z">0.002536</Voltage>
+            <Amperage dataItemId="asset_60000-1025F08022207.component.lcm1500_24v_current_1" name="Component-Lcm1500-24v-Current-1" sequence="2089" subType="ACTUAL" timestamp="2025-08-15T01:25:46Z">1.956863</Amperage>
+            <Amperage dataItemId="asset_60000-1025F08022207.component.lcm1500_24v_current_2" name="Component-Lcm1500-24v-Current-2" sequence="2090" subType="ACTUAL" timestamp="2025-08-15T01:25:46Z">1.936575</Amperage>
+            <Amperage dataItemId="asset_60000-1025F08022207.component.lcm1500_24v_current_3" name="Component-Lcm1500-24v-Current-3" sequence="2091" subType="ACTUAL" timestamp="2025-08-15T01:25:46Z">1.877556</Amperage>
+            <Amperage dataItemId="asset_60000-1025F08022207.component.lcm1500_24v_current_4" name="Component-Lcm1500-24v-Current-4" sequence="2092" subType="ACTUAL" timestamp="2025-08-15T01:25:46Z">1.925509</Amperage>
+            <Amperage dataItemId="asset_60000-1025F08022207.component.lcm1500_24v_current_5" name="Component-Lcm1500-24v-Current-5" sequence="2093" subType="ACTUAL" timestamp="2025-08-15T01:25:46Z">1.93842</Amperage>
+            <Amperage dataItemId="asset_60000-1025F08022207.component.lcm1500_24v_current_6" name="Component-Lcm1500-24v-Current-6" sequence="2094" subType="ACTUAL" timestamp="2025-08-15T01:25:46Z">1.929198</Amperage>
+            <Amperage dataItemId="asset_60000-1025F08022207.component.lcm600_24v_1_current" name="Component-Lcm600-24v-1-Current" sequence="2087" subType="ACTUAL" timestamp="2025-08-15T01:25:46Z">2.178186</Amperage>
+            <Amperage dataItemId="asset_60000-1025F08022207.component.lcm600_24v_2_current" name="Component-Lcm600-24v-2-Current" sequence="2088" subType="ACTUAL" timestamp="2025-08-15T01:25:46Z">2.314669</Amperage>
+            <Voltage dataItemId="asset_60000-1025F08022207.component.led_24v_1_voltage" name="Component-Led-24v-1-Voltage" sequence="2085" subType="ALTERNATING" timestamp="2025-08-15T01:25:46Z">24.08638</Voltage>
+            <Voltage dataItemId="asset_60000-1025F08022207.component.led_24v_b1_voltage" name="Component-Led-24v-B1-Voltage" sequence="2081" subType="ALTERNATING" timestamp="2025-08-15T01:25:46Z">25.595234</Voltage>
+            <Voltage dataItemId="asset_60000-1025F08022207.component.led_24v_b2_voltage" name="Component-Led-24v-B2-Voltage" sequence="2082" subType="ALTERNATING" timestamp="2025-08-15T01:25:46Z">25.565218</Voltage>
+            <Voltage dataItemId="asset_60000-1025F08022207.component.led_24v_b3_voltage" name="Component-Led-24v-B3-Voltage" sequence="2083" subType="ALTERNATING" timestamp="2025-08-15T01:25:46Z">25.605797</Voltage>
+            <Voltage dataItemId="asset_60000-1025F08022207.component.led_24v_cs1_voltage" name="Component-Led-24v-Cs1-Voltage" sequence="2084" subType="ACTUAL" timestamp="2025-08-15T01:25:46Z">24.995932</Voltage>
+            <Voltage dataItemId="asset_60000-1025F08022207.component.led_24v_in_voltage" name="Component-Led-24v-In-Voltage" sequence="2079" subType="ACTUAL" timestamp="2025-08-15T01:25:46Z">25.252871</Voltage>
+            <Voltage dataItemId="asset_60000-1025F08022207.component.ps_12v_voltage" name="Component-Ps-12v-Voltage" sequence="2078" subType="ACTUAL" timestamp="2025-08-15T01:25:46Z">12.064678</Voltage>
+            <Voltage dataItemId="asset_60000-1025F08022207.component.ps_1v8_voltage" name="Component-Ps-1v8-Voltage" sequence="2075" subType="ACTUAL" timestamp="2025-08-15T01:25:46Z">1.798742</Voltage>
+            <Voltage dataItemId="asset_60000-1025F08022207.component.ps_1v_voltage" name="Component-Ps-1v-Voltage" sequence="2074" subType="ACTUAL" timestamp="2025-08-15T01:25:46Z">1.021044</Voltage>
+            <Voltage dataItemId="asset_60000-1025F08022207.component.ps_3v3_voltage" name="Component-Ps-3v3-Voltage" sequence="2076" subType="ACTUAL" timestamp="2025-08-15T01:25:46Z">3.298639</Voltage>
+            <Voltage dataItemId="asset_60000-1025F08022207.component.ps_5v_voltage" name="Component-Ps-5v-Voltage" sequence="2077" subType="ACTUAL" timestamp="2025-08-15T01:25:46Z">4.593293</Voltage>
+            <Voltage dataItemId="asset_60000-1025F08022207.component.v24_sy_hs_voltage" name="Component-V24-Sy-Hs-Voltage" sequence="2062" subType="ACTUAL" timestamp="2025-08-15T01:25:44Z">24.002899</Voltage>
+        </Samples>
+    </ComponentStream>
+    <ComponentStream component="Controller" name="Controller" componentId="asset_60000-1025F08022207.controller">
+        <Events>
+            <Message dataItemId="asset_60000-1025F08022207.controller.fpga_version" name="Controller-Fpga-Version" sequence="791" timestamp="2025-08-15T01:22:24Z">19e</Message>
+            <Message dataItemId="asset_60000-1025F08022207.controller.ip_address" name="Controller-Ip-Address" sequence="829" timestamp="2025-08-15T01:23:22Z">10.83.70.110</Message>
+            <Message dataItemId="asset_60000-1025F08022207.controller.mac_address" name="Controller-Mac-Address" sequence="775" timestamp="2025-08-15T01:22:24Z">00:00:00:00:00:00</Message>
+            <ClockTime dataItemId="asset_60000-1025F08022207.controller.software_release_date" name="Controller-Software-Release-Date" sequence="772" timestamp="2025-08-15T01:22:24Z"/>
+            <Message dataItemId="asset_60000-1025F08022207.controller.software_version" name="Controller-Software-Version" sequence="771" timestamp="2025-08-15T01:22:24Z">x1.0.2690-05c9bf55</Message>
+        </Events>
+    </ComponentStream>
+    <ComponentStream component="Door" name="Door" componentId="asset_60000-1025F08022207.door">
+        <Events>
+            <Message dataItemId="asset_60000-1025F08022207.door.safety_switch_left_bottom" name="Door-Safety-Switch-Left-Bottom" sequence="793" timestamp="2025-08-15T01:22:24Z">0</Message>
+            <Message dataItemId="asset_60000-1025F08022207.door.safety_switch_left_top" name="Door-Safety-Switch-Left-Top" sequence="796" timestamp="2025-08-15T01:22:24Z">0</Message>
+            <Message dataItemId="asset_60000-1025F08022207.door.safety_switch_right_bottom" name="Door-Safety-Switch-Right-Bottom" sequence="795" timestamp="2025-08-15T01:22:24Z">0</Message>
+            <Message dataItemId="asset_60000-1025F08022207.door.safety_switch_right_top" name="Door-Safety-Switch-Right-Top" sequence="794" timestamp="2025-08-15T01:22:24Z">0</Message>
+            <Message dataItemId="asset_60000-1025F08022207.door.status" name="Door-Status" sequence="792" timestamp="2025-08-15T01:22:24Z">0</Message>
+        </Events>
+    </ComponentStream>
+    <ComponentStream component="Heater" name="Heater" componentId="asset_60000-1025F08022207.heater">
+        <Samples>
+            <Temperature dataItemId="asset_60000-1025F08022207.heater.heater_channel_1_temperature" name="Heater-Heater-Channel-1-Temperature" sequence="2032" timestamp="2025-08-15T01:25:42Z">23.824047</Temperature>
+            <Temperature dataItemId="asset_60000-1025F08022207.heater.heater_channel_2_temperature" name="Heater-Heater-Channel-2-Temperature" sequence="2033" timestamp="2025-08-15T01:25:42Z">24.475395</Temperature>
+        </Samples>
+    </ComponentStream>
+</DeviceStream>
