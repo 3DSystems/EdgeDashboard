@@ -20,7 +20,11 @@
 
 export const singleValueFieldNamesByKey = {
   printerName: ["device.printer_name", "printer_name"],
-  jobName: ["build.build_jobname", "build.job_data.build_filename"],
+  jobName: [
+    "build.build_jobname",
+    "build.build_job_name",
+    "build.job_data.build_filename",
+  ],
   resinTemp: ["device.resin_temperature", "vat.temperature"],
   chamberTemp: [
     "part_bed.temperature",
