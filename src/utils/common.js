@@ -28,6 +28,11 @@ export const printerModelByCode = {
   5555: "Edge PC",
   60000: "PostCure 1050",
   32009: "DMP Flex 350 Triple",
+  34502: "Figure4 135",
+  20003: "NextDent 300",
+  20004: "MJP 300W",
+  20005: "MJP 300W Plus",
+  30008: "SLA 825",
 };
 
 export const printerModelMap = {
@@ -38,6 +43,11 @@ export const printerModelMap = {
   EdgePC: "5555",
   PostCure1050: "60000",
   DMPFlex350Triple: "32009",
+  Figure4_135: "34502",
+  NextDent300: "20003",
+  MJP300W: "20004",
+  MJP300WPlus: "20005",
+  SLA825: "30008",
 };
 
 export const printer31006StateMap = {
