@@ -29,9 +29,9 @@ export const printerModelByCode = {
   60000: "PostCure 1050",
   32009: "DMP Flex 350 Triple",
   34502: "Figure4 135",
-  20003: "NextDent 300",
+  20004: "NextDent 300",
   20004: "MJP 300W",
-  20005: "MJP 300W Plus",
+  20004: "MJP 300W Plus",
   30008: "SLA 825",
 };
 
@@ -44,11 +44,15 @@ export const printerModelMap = {
   PostCure1050: "60000",
   DMPFlex350Triple: "32009",
   Figure4_135: "34502",
-  NextDent300: "20003",
+  NextDent300: "20004",
   MJP300W: "20004",
-  MJP300WPlus: "20005",
+  MJP300WPlus: "20004",
   SLA825: "30008",
 };
+
+export function requiresProbeModel(printerCode) {
+  return ["20004"].includes(String(printerCode));
+}
 
 export const printer31006StateMap = {
   0: "Unknown",

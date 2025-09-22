@@ -24,6 +24,7 @@ import { parsePrinterXML } from "./utils/xmlUtils";
 import environment from "./utils/environment";
 import DataItemModal from "./components/DataItemModal";
 import { printerModelMap } from "./utils/common.js";
+import { useProbeModels } from "./hooks/useProbeModels";
 
 const App = () => {
   const [expandedCardId, setExpandedCardId] = useState(null);
@@ -35,6 +36,7 @@ const App = () => {
     const match = p.deviceStreamName?.match(/asset_(\d+)-/);
     return match?.[1] === printerModelMap.EdgePC;
   });
+  const probeModels = useProbeModels();
 
   const fetchData = async () => {
     try {
@@ -46,7 +48,7 @@ const App = () => {
         },
       });
       const xmlText = await response.text();
-      const parsedPrinters = parsePrinterXML(xmlText);
+      const parsedPrinters = parsePrinterXML(xmlText, { probeModels });
       setPrinters(parsedPrinters);
     } catch (err) {
       console.error("Failed to fetch or parse XML", err);

@@ -24,6 +24,7 @@ import {
   printerModelByCode,
   printerModelMap,
   printer31006StateMap,
+  requiresProbeModel,
 } from "./common.js";
 
 export const formatStatusText = (text) => {
@@ -82,11 +83,28 @@ export const getJsonJobData = (msgValue) => {
   }
 };
 
+export const getPrinterModelByDeviceId = (
+  printerCode,
+  probeModels,
+  deviceStreamName
+) => {
+  let printerModel = printerModelByCode[printerCode];
+  if (requiresProbeModel(printerCode)) {
+    const override = probeModels[deviceStreamName];
+    if (override && typeof override === "string" && override.trim()) {
+      printerModel = override.trim();
+    }
+  }
+
+  return printerModel;
+};
+
 // parsePrinterXML transforms MTConnect XML data into a usable array of printer objects
-export const parsePrinterXML = (xmlText) => {
+export const parsePrinterXML = (xmlText, opts = {}) => {
   const parser = new DOMParser();
   const xml = parser.parseFromString(xmlText, "application/xml");
   const deviceStreams = xml.querySelectorAll("DeviceStream");
+  const probeModels = opts.probeModels || {};
 
   return [...deviceStreams]
     .map((stream) => {
@@ -96,7 +114,11 @@ export const parsePrinterXML = (xmlText) => {
 
       if (!printerModelByCode[printerCode]) return null;
 
-      const printerModel = printerModelByCode[printerCode];
+      let printerModel = getPrinterModelByDeviceId(
+        printerCode,
+        probeModels,
+        deviceStreamName
+      );
 
       const componentStreams = [...stream.querySelectorAll("ComponentStream")];
       const modalDataItems = componentStreams.map((cs) => {
