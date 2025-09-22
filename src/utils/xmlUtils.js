@@ -295,9 +295,19 @@ export const parsePrinterXML = (xmlText, opts = {}) => {
         return progress;
       };
 
+      const getPrinterName = () => {
+        let printerName = getFieldValue("printerName");
+
+        if (printerCode === printerModelMap.DMPFlex350Triple) {
+          printerName = getFieldValue("serialNumber");
+        }
+
+        return printerName;
+      };
+
       return {
         printerModel,
-        printerName: getFieldValue("printerName"),
+        printerName: getPrinterName(),
         deviceStreamName,
         jobName: getFieldValue("jobName"),
         resinTemp: getFieldValue("resinTemp"),

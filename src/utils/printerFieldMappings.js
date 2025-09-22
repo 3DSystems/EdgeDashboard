@@ -51,6 +51,7 @@ export const singleValueFieldNamesByKey = {
   ],
   progress: ["build.progress", "build.job_data.build_progress"],
   jobData: ["build.job_data"],
+  serialNumber: ["serial_number"],
 };
 
 export const multiValueFieldNamesByKey = {
