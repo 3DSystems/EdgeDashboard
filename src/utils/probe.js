@@ -32,7 +32,7 @@ function parseProbeXmlToMap(xml) {
 
 export function fetchProbeOnce() {
   if (!probePromise) {
-    probePromise = fetch(`/printerData12.xml?_=${Date.now()}`, {
+    probePromise = fetch(`/mtconnect/probe?_=${Date.now()}`, {
       cache: "no-store",
       headers: {
         "Cache-Control": "no-cache",
