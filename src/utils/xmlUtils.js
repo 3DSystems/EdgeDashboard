@@ -88,12 +88,14 @@ export const getPrinterModelByDeviceId = (
   probeModels,
   deviceStreamName
 ) => {
-  let printerModel = printerModelByCode[printerCode];
+  let printerModel = "";
   if (requiresProbeModel(printerCode)) {
     const override = probeModels[deviceStreamName];
     if (override && typeof override === "string" && override.trim()) {
       printerModel = override.trim();
     }
+  } else {
+    printerModel = printerModelByCode[printerCode];
   }
 
   return printerModel;

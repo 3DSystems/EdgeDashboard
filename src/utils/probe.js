@@ -51,3 +51,21 @@ export function fetchProbeOnce() {
   }
   return probePromise;
 }
+
+export function fetchProbe() {
+  return fetch(`/mtconnect/probe?_=${Date.now()}`, { 
+    cache: "no-store",
+    headers: {
+      "Cache-Control": "no-cache",
+    },
+  })
+    .then(async (r) => {
+      if (!r.ok) throw new Error(`/probe failed: ${r.status} ${r.statusText}`);
+      const text = await r.text();
+      return parseProbeXmlToMap(text);
+    })
+    .catch((err) => {
+      console.error("[probe] fetch failed:", err);
+      return {}; // fail-safe
+    });
+}
