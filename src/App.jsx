@@ -46,16 +46,15 @@ const App = () => {
   }, [probeModels]);
   
 
-  const fetchFallbackProbeModels = async () => {
-    try {
-      fetchProbe().then((m) => {
-       setProbleModelsAll(m);
-       console.log("Fetched fallback probe models");
-    });
-    } catch (error) {
-      console.error("Failed to fetch fallback probe models", error);
-    }
-  };
+ const fetchFallbackProbeModels = async () => {
+  try {
+    const models = await fetchProbe();
+    setProbleModelsAll(models);
+    console.log("Fetched fallback probe models");
+  } catch (error) {
+    console.error("Failed to fetch fallback probe models", error);
+  }
+};
 
   const fetchData = async () => {
     try {
