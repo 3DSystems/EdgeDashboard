@@ -17,7 +17,7 @@
  * This component serves as the control center of the UI.
  */
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { usePolling } from "./utils/usePolling";
 import PrinterCard from "./components/PrinterCard";
 import { parsePrinterXML } from "./utils/xmlUtils";
@@ -25,6 +25,7 @@ import environment from "./utils/environment";
 import DataItemModal from "./components/DataItemModal";
 import { printerModelMap } from "./utils/common.js";
 import { useProbeModels } from "./hooks/useProbeModels";
+import { fetchProbe } from "./utils/probe";
 
 const App = () => {
   const [expandedCardId, setExpandedCardId] = useState(null);
@@ -37,6 +38,23 @@ const App = () => {
     return match?.[1] === printerModelMap.EdgePC;
   });
   const probeModels = useProbeModels();
+  const [probeModelsAll, setProbleModelsAll] = useState();
+  const hasApiFailed = useRef(false);
+  
+  useEffect(() => {
+    setProbleModelsAll(probeModels);
+  }, [probeModels]);
+  
+
+ const fetchFallbackProbeModels = async () => {
+  try {
+    const models = await fetchProbe();
+    setProbleModelsAll(models);
+    console.log("Fetched fallback probe models");
+  } catch (error) {
+    console.error("Failed to fetch fallback probe models", error);
+  }
+};
 
   const fetchData = async () => {
     try {
@@ -47,12 +65,28 @@ const App = () => {
           "Cache-Control": "no-cache",
         },
       });
-      const xmlText = await response.text();
-      const parsedPrinters = parsePrinterXML(xmlText, { probeModels });
-      setPrinters(parsedPrinters);
+
+      if (response.ok) {
+        const xmlText = await response.text();
+        const parsedPrinters = parsePrinterXML(xmlText, {
+          probeModels: probeModelsAll,
+        });
+        setPrinters(parsedPrinters);
+
+        if (hasApiFailed.current) {
+          console.log("Fetch succeeded after failure — calling fallback");
+          await fetchFallbackProbeModels();
+          hasApiFailed.current = false; // Reset flag
+        }
+      } else {
+        console.warn("Fetch failed with status", response.status);
+        hasApiFailed.current = true;
+      }
+
     } catch (err) {
       console.error("Failed to fetch or parse XML", err);
       setHasError(true);
+      hasApiFailed.current = true;
     } finally {
       setIsLoading(false);
     }
