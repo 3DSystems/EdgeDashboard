@@ -307,6 +307,20 @@ export const parsePrinterXML = (xmlText, opts = {}) => {
         return printerName;
       };
 
+      const formatEpochToLocalDateTime = (epochSeconds) => {
+        const seconds = parseInt(epochSeconds, 10);
+        if (isNaN(seconds)) return "";
+
+        const date = new Date(seconds * 1000); // Convert to milliseconds
+
+        const day = String(date.getDate()).padStart(2, "0");
+        const month = String(date.getMonth() + 1).padStart(2, "0");
+        const hours = String(date.getHours()).padStart(2, "0");
+        const minutes = String(date.getMinutes()).padStart(2, "0");
+
+        return `${day}/${month} ${hours}:${minutes}`;
+      };
+
       return {
         printerModel,
         printerName: getPrinterName(),
@@ -314,9 +328,9 @@ export const parsePrinterXML = (xmlText, opts = {}) => {
         jobName: getFieldValue("jobName"),
         resinTemp: getFieldValue("resinTemp"),
         chamberTemp: getFieldValue("chamberTemp"),
-        startTime: getStartTime(),
+        startTime: formatEpochToLocalDateTime(getFieldValue("startTime")),
         timeRemaining: formatSecondsToHHMM(getFieldValue("timeRemaining")),
-        endTime: formatTimeToHHMM(getFieldValue("endTime")),
+        endTime: formatEpochToLocalDateTime(getFieldValue("endTime")),
         buildState: getFieldValue("buildState"),
         printerState: resolvePrinterState(
           printerCode,

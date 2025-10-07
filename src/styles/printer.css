@@ -178,13 +178,38 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.3);
 }
 
-.progress-bar-fill {
-  background-image: linear-gradient(to right, #0069d9, #007bff);
-  height: 100%;
-  border-radius: 7px;
-  transition: width 0.5s ease-in-out;
-  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2);
+/* Neon-style progress bar for /newui cards */
+.progress-bar-container {
+  position: relative;
+  height: 12px;
+  background: #1a1d22;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.6);
 }
+
+.progress-bar-fill {
+  height: 100%;
+  border-radius: 8px;
+  transition: width 0.35s ease;
+}
+
+/* Neon gradients by printer state */
+.progress-bar-fill.completed {
+  background: linear-gradient(90deg, #00d4ff, #00f0a0);
+  box-shadow: 0 0 8px #00f7ff, 0 0 12px #00ffa6;
+}
+
+.progress-bar-fill.printing {
+  background: linear-gradient(90deg, #0c7041, #0ef);
+  box-shadow: 0 0 8px #00ff87, 0 0 12px #0ef;
+}
+
+.progress-bar-fill.aborted {
+  background: linear-gradient(90deg, #ff0044, #ff2e89);
+  box-shadow: 0 0 8px #ff2e89, 0 0 12px #ff0044;
+}
+
 
 .full-span {
   grid-column: 1 / -1;
@@ -282,4 +307,469 @@ body {
   100% {
     transform: rotate(360deg);
   }
+}
+
+/* ---- Left Sidebar Icon Menu ---- */
+.app-shell {
+  display: flex;
+  min-height: 100vh;
+  background: #f3f4f6;
+}
+
+.sidebar {
+  width: 72px;
+  background: #111827; /* slate-900 */
+  color: #e5e7eb; /* gray-200 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px 8px;
+  gap: 12px;
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.menu-btn {
+  width: 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 6px;
+  border: none;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: background 120ms ease, color 120ms ease, transform 80ms ease;
+}
+.menu-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #10b981;
+}
+.menu-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.menu-btn:active {
+  transform: translateY(1px);
+}
+.menu-active {
+  outline: 2px solid rgba(255, 255, 255, 0.18);
+  outline-offset: -2px;
+}
+
+.menu-icon {
+  width: 22px;
+  height: 22px;
+  display: block;
+  filter: invert(1); /* makes black SVGs appear white */
+}
+
+.menu-label {
+  font-size: 10px;
+  line-height: 1;
+  text-align: center;
+  user-select: none;
+}
+
+.content {
+  flex: 1;
+  min-width: 0;
+  padding: 16px;
+}
+
+/* ---- Settings Page ---- */
+.settings-wrap {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.settings-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.settings-title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.settings-save-btn {
+  appearance: none;
+  border: none;
+  background: #2563eb; /* blue-600 */
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: filter 120ms ease;
+}
+.settings-save-btn:hover {
+  filter: brightness(1.05);
+}
+.settings-save-btn:active {
+  filter: brightness(0.95);
+}
+
+/* ---- Settings layout with reference image ---- */
+.settings-body {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+/* Table container: vertical scroll only (no horizontal) */
+.settings-table-wrap {
+  flex: 1;
+  overflow-x: hidden; /* kill horizontal scrollbar */
+  overflow-y: auto;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background: #fff;
+}
+
+/* Table */
+.settings-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  table-layout: fixed; /* prevents cells from growing past container */
+}
+
+.settings-table thead th {
+  text-align: left;
+  background: #f9fafb;
+  color: #111827;
+  padding: 10px 12px;
+  border-bottom: 1px solid #e5e7eb;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.settings-table tbody td {
+  padding: 8px 12px;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+/* Column widths: Region fixed, input flexes */
+.settings-table thead th:nth-child(1),
+.settings-table tbody td:nth-child(1) {
+  width: 200px; /* was 220; a bit tighter to help responsiveness */
+  white-space: nowrap;
+}
+.settings-table thead th:nth-child(2),
+.settings-table tbody td:nth-child(2) {
+  width: auto;
+  overflow: hidden;
+}
+
+/* Make the second column flexible */
+.settings-table td:nth-child(2) {
+  width: 100%;
+}
+
+/* Input takes full width but leaves padding on the right */
+.settings-input {
+  display: block;
+  width: calc(100% - 12px); /* leave ~12px space on right */
+  box-sizing: border-box;
+  padding: 8px 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  outline: none;
+  background: #fff;
+}
+.settings-input:focus {
+  border-color: rgb(23, 202, 74);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* Reference image */
+.settings-image-wrap {
+  flex: 0 0 280px;
+  text-align: center;
+}
+.settings-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+.settings-image-caption {
+  font-size: 12px;
+  color: #6b7280;
+  margin-top: 6px;
+}
+
+/* Stack table & image on small screens */
+@media (max-width: 900px) {
+  .settings-body {
+    flex-direction: column;
+  }
+  .settings-image-wrap {
+    width: 100%;
+    flex: 0 0 auto;
+  }
+  .settings-table thead th:nth-child(1),
+  .settings-table tbody td:nth-child(1) {
+    width: 160px;
+  }
+  .settings-input {
+    inline-size: clamp(160px, 80vw, 520px);
+  }
+}
+
+/* --- Modal-like title section for /newui cards --- */
+.simpleui-modal-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background: #1f242b;               /* slightly darker than card body */
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.simpleui-modal-title__text {
+  color: #f5f7fb;
+  font-size: 14px;
+  font-weight: 800;                   /* same bold feel as modal titles */
+  letter-spacing: 0.2px;
+}
+
+/* status pill inside the title bar */
+.simpleui-modal-badge {
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 4px 10px;
+  line-height: 1;
+  border-radius: 9999px;
+  color: #fff;
+  background: rgba(255,255,255,0.18); /* translucent, like modal actions */
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+.simpleui-modal-badge--completed { box-shadow: 0 0 0 1px rgba(16,185,129,.25) inset; }
+.simpleui-modal-badge--aborted   { box-shadow: 0 0 0 1px rgba(244,63,94,.25) inset; }
+.simpleui-modal-badge--printing  { box-shadow: 0 0 0 1px rgba(34,197,94,.25) inset; }
+
+/* body helpers */
+.simpleui-card-body { background: transparent; }
+.simpleui-pill {
+  border: 1px solid rgba(255,255,255,.08);
+  background: rgba(255,255,255,.05);
+  border-radius: 10px;
+  padding: 6px 10px;
+  font-size: 12px;
+  color: #e5e7eb;
+}
+
+/* --- Modal-style title header for /newui cards --- */
+.simpleui-modal-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background: #1e2329; /* same tone as modal headers */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.simpleui-modal-title__text {
+  color: #f8fafc;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+}
+
+/* colorful status chip */
+.simpleui-modal-badge {
+  color: #fff;
+  font-weight: 700;
+  font-size: 11.5px;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  line-height: 1;
+  text-transform: capitalize;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+/* body */
+.simpleui-card-body {
+  background: #252a31;
+  padding: 14px 16px 16px;
+}
+
+/* labels & layout */
+.simpleui-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.simpleui-label {
+  font-weight: 700;
+  color: #e5e7eb;
+}
+
+.simpleui-value {
+  color: #d1d5db;
+}
+
+/* pills */
+.simpleui-pills {
+  display: flex;
+  gap: 8px;
+  margin: 12px 0;
+  flex-wrap: wrap;
+}
+
+.simpleui-pill {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 6px 10px;
+  font-size: 12px;
+  color: #e5e7eb;
+}
+
+/* footer meta */
+.simpleui-meta {
+  display: grid;
+  gap: 4px;
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+.simpleui-meta__label {
+  opacity: 0.9;
+}
+
+.simpleui-meta__value {
+  color: #d1d5db;
+}
+
+/* --- Modal-style title header for /newui cards --- */
+.simpleui-modal-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background: #1e2329; /* like modal title bar */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.simpleui-modal-title__text {
+  color: #f8fafc;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+}
+
+/* colorful chip */
+.simpleui-modal-badge {
+  color: #fff;
+  font-weight: 700;
+  font-size: 11.5px;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  line-height: 1;
+  text-transform: capitalize;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+/* body */
+.simpleui-card-body {
+  background: #252a31;
+  padding: 14px 16px 16px;
+}
+
+/* row layout */
+.simpleui-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+.simpleui-label {
+  font-weight: 700;
+  color: #e5e7eb;
+}
+.simpleui-value {
+  color: #d1d5db;
+}
+
+/* pills */
+.simpleui-pills {
+  display: flex;
+  gap: 8px;
+  margin: 12px 0;
+  flex-wrap: wrap;
+}
+.simpleui-pill {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 6px 10px;
+  font-size: 12px;
+  color: #e5e7eb;
+}
+
+/* footer meta */
+.simpleui-meta {
+  display: grid;
+  gap: 4px;
+  font-size: 12px;
+  color: #9ca3af;
+}
+.simpleui-meta__label {
+  opacity: 0.9;
+}
+.simpleui-meta__value {
+  color: #d1d5db;
+}
+/* Dimmed icon effect inside pills */
+.simpleui-pill svg {
+  transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+.simpleui-pill:hover svg {
+  opacity: 1;
+  color: #e5e7eb; /* light up slightly on hover */
+}
+/* Truncate long job names in /newui cards */
+/* Truncate long job names but keep them left aligned */
+.simpleui-jobname {
+  color: #d1d5db;
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: right;      /* 👈 left aligned */
+  margin-left: 6px;      /* small gap after “Job:” label */
+  display: inline-block;
+  max-width: 75%;        /* keeps truncation consistent */
+}
+/* Make Progress label & value match Started/Ended date style */
+.simpleui-row--progress {
+  font-size: 12px;
+  color: #9ca3af;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.simpleui-row--progress span {
+  font-weight: 400;       /* normal weight like footer */
+  color: #d1d5db;         /* same tone as footer value */
 }

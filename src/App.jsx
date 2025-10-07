@@ -1,20 +1,12 @@
 /**
  * App.jsx
  *
- * This is the root React component of the application.
- * It is responsible for:
- *  - Fetching MTConnect XML data and converting it into usable printer objects.
- *  - Managing global UI state (loading, error, expanded card).
- *  - Polling the backend periodically for updates using a custom polling hook.
- *  - Rendering a list of <PrinterCard /> components, one for each device.
- *  - Showing a loading spinner, error message, or fallback text depending on the app state.
- *
- * Core Dependencies:
- *  - parsePrinterXML: Parses MTConnect XML into structured data.
- *  - usePolling: Custom hook for auto-refreshing the data.
- *  - environment.js: Reads config like polling interval and agent host.
- *
- * This component serves as the control center of the UI.
+ * Root component that:
+ *  - Fetches MTConnect XML and builds printer objects
+ *  - Polls periodically
+ *  - Renders either:
+ *      a) existing PrinterCard grid (default), OR
+ *      b) new compact /newui page using renamed fields
  */
 
 import React, { useEffect, useRef, useState } from "react";
@@ -27,43 +19,45 @@ import { printerModelMap } from "./utils/common.js";
 import { useProbeModels } from "./hooks/useProbeModels";
 import { fetchProbe } from "./utils/probe";
 
+// NEW: import the new page that shows compact cards
+import NewUIPage from "./components/NewUIPage";
+
 const App = () => {
   const [expandedCardId, setExpandedCardId] = useState(null);
   const [printers, setPrinters] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [hasError, setHasError] = useState(false);
   const [showModal, setShowModal] = useState(false);
+
   const model5555Printer = printers.find((p) => {
     const match = p.deviceStreamName?.match(/asset_(\d+)-/);
     return match?.[1] === printerModelMap.EdgePC;
   });
+
   const probeModels = useProbeModels();
   const [probeModelsAll, setProbleModelsAll] = useState();
   const hasApiFailed = useRef(false);
-  
+
   useEffect(() => {
     setProbleModelsAll(probeModels);
   }, [probeModels]);
-  
 
- const fetchFallbackProbeModels = async () => {
-  try {
-    const models = await fetchProbe();
-    setProbleModelsAll(models);
-    console.log("Fetched fallback probe models");
-  } catch (error) {
-    console.error("Failed to fetch fallback probe models", error);
-  }
-};
+  const fetchFallbackProbeModels = async () => {
+    try {
+      const models = await fetchProbe();
+      setProbleModelsAll(models);
+      console.log("Fetched fallback probe models");
+    } catch (error) {
+      console.error("Failed to fetch fallback probe models", error);
+    }
+  };
 
   const fetchData = async () => {
     try {
       setHasError(false);
       const response = await fetch(`/mtconnect/current?_=${Date.now()}`, {
         cache: "no-store",
-        headers: {
-          "Cache-Control": "no-cache",
-        },
+        headers: { "Cache-Control": "no-cache" },
       });
 
       if (response.ok) {
@@ -76,13 +70,12 @@ const App = () => {
         if (hasApiFailed.current) {
           console.log("Fetch succeeded after failure — calling fallback");
           await fetchFallbackProbeModels();
-          hasApiFailed.current = false; // Reset flag
+          hasApiFailed.current = false;
         }
       } else {
         console.warn("Fetch failed with status", response.status);
         hasApiFailed.current = true;
       }
-
     } catch (err) {
       console.error("Failed to fetch or parse XML", err);
       setHasError(true);
@@ -98,6 +91,10 @@ const App = () => {
   }, []);
 
   usePolling(fetchData, environment.API_POLLING_IN_MS);
+
+  // ---- Route switch (no router needed) ----
+  const isNewUI =
+    typeof window !== "undefined" && window.location.pathname === "/v2";
 
   if (isLoading) {
     return (
@@ -167,6 +164,12 @@ const App = () => {
     );
   }
 
+  // ------ /newui compact page ------
+  if (isNewUI) {
+    return <NewUIPage printers={printers} />;
+  }
+
+  // ------ default (existing) layout ------
   return (
     <>
       {model5555Printer && (
