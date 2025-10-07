@@ -314,7 +314,7 @@ export const parsePrinterXML = (xmlText, opts = {}) => {
         jobName: getFieldValue("jobName"),
         resinTemp: getFieldValue("resinTemp"),
         chamberTemp: getFieldValue("chamberTemp"),
-        startTime: getStartTime(),
+        startTime: formatTimeToHHMM(getFieldValue("startTime")),//getStartTime(),
         timeRemaining: formatSecondsToHHMM(getFieldValue("timeRemaining")),
         endTime: formatTimeToHHMM(getFieldValue("endTime")),
         buildState: getFieldValue("buildState"),
