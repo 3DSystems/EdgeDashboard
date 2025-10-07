@@ -13,6 +13,10 @@ export default function NewUIPage({ printers = [] }) {
       style={{ minHeight: "100vh", background: "#111827", color: "#e5e7eb" }}
     >
       <div style={{ maxWidth: 1200, margin: "0 auto", padding: "24px 16px" }}>
+        <h1 style={{ marginBottom: 16, fontSize: 18, fontWeight: 700 }}>
+          MTConnect Printer Dashboard
+        </h1>
+
         <div
           style={{
             display: "grid",
