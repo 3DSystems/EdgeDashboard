@@ -77,11 +77,17 @@ export default function PrinterSimpleCard({
         padding: 0,
         overflow: "hidden",
         borderRadius: 12,
+        background: "#343434"
       }}
     >
       {/* === Modal-style Title Section === */}
-      <div className="simpleui-modal-title">
-        <div className="simpleui-modal-title__text">{printerName}</div>
+      <div className="simpleui-modal-title" 
+        style={{ 
+          background: "#343434",
+
+        }}
+      >
+        <div className="simpleui-modal-title__text" >{printerName}</div>
         {printerState && (
           <span
             className="simpleui-modal-badge"
@@ -93,10 +99,15 @@ export default function PrinterSimpleCard({
       </div>
 
       {/* === Card Body === */}
-      <div className="simpleui-card-body">
+      <div className="simpleui-card-body" style={{ background: "#252525"}}>
         {/* Job */}
-        <div className="simpleui-row">
-          <span className="simpleui-label">Job:</span>
+        <div className="simpleui-row" style={{ justifyContent: 'left' }}>
+          <span 
+            className="simpleui-label"
+            style={{
+              color: "rgba(255,255,255, 0.7)"
+            }}
+          >Job:</span> 
           <span className="simpleui-jobname" title={jobName}>
             {jobName}
           </span>
@@ -104,8 +115,8 @@ export default function PrinterSimpleCard({
 
         {/* Progress */}
         <div className="simpleui-row--progress">
-          <span>Progress:</span>
-          <span>{pct}%</span>
+          <span style={{ fontWeight: 500, color: "rgba(255,255,255, 0.5)" }}>Progress:</span>
+          <span style={{ fontWeight: 500, color: "rgba(255,255,255, 0.5)" }}>{pct}%</span>
         </div>
 
         <div className="progress-bar-container" style={{ height: 12 }}>
@@ -138,14 +149,14 @@ export default function PrinterSimpleCard({
         <div className="simpleui-meta">
           {
             <div>
-              <span className="simpleui-meta__label">Started: </span>
-              <span className="simpleui-meta__value">{startTime}</span>
+              <span className="simpleui-meta__label" style={{ fontWeight: 500, color: "rgba(255,255,255, 0.4)" }}>Started: </span>
+              <span className="simpleui-meta__value" style={{ fontWeight: 500, color: "rgba(255,255,255, 0.5)" }}>{startTime}</span>
             </div>
           }
           {
             <div>
-              <span className="simpleui-meta__label">Ended: </span>
-              <span className="simpleui-meta__value">{endTime}</span>
+              <span className="simpleui-meta__label" style={{ fontWeight: 500, color: "rgba(255,255,255, 0.4)" }}>Ended: </span>
+              <span className="simpleui-meta__value" style={{ fontWeight: 500, color: "rgba(255,255,255, 0.5)" }}>{endTime}</span>
             </div>
           }
         </div>

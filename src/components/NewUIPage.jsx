@@ -10,18 +10,27 @@ import { printerModelMap } from "../utils/common"; // same path you used in App.
 export default function NewUIPage({ printers = [] }) {
   return (
     <main
-      style={{ minHeight: "100vh", background: "#111827", color: "#e5e7eb" }}
+      style={{ minHeight: "100vh", 
+      // background: "#111827", 
+      background: "#1e1e1e", 
+      color: "#e5e7eb" }}
     >
-      <div style={{ maxWidth: 1200, margin: "0 auto", padding: "24px 16px" }}>
+      <div 
+        // style={{ maxWidth: 1200, margin: "0 auto", padding: "24px 16px" }}
+        style={{ margin: "0 auto", padding: "24px 16px" }}
+      >
         <h1 style={{ marginBottom: 16, fontSize: 18, fontWeight: 700 }}>
           MTConnect Printer Dashboard
         </h1>
 
         <div
           style={{
-            display: "grid",
+            // display: "grid",
+            display: "flex",
             gap: 16,
-            gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))",
+            flexWrap: "wrap",
+            // justifyContent: "space-between"
+            // gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))",
           }}
         >
           {printers

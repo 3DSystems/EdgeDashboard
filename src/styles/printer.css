@@ -566,7 +566,7 @@ body {
 .simpleui-pill {
   border: 1px solid rgba(255,255,255,.08);
   background: rgba(255,255,255,.05);
-  border-radius: 10px;
+  border-radius: 6px;
   padding: 6px 10px;
   font-size: 12px;
   color: #e5e7eb;
@@ -604,7 +604,7 @@ body {
 /* body */
 .simpleui-card-body {
   background: #252a31;
-  padding: 14px 16px 16px;
+  padding: 12px 16px 20px;
 }
 
 /* labels & layout */
@@ -635,7 +635,7 @@ body {
 .simpleui-pill {
   border: 1px solid rgba(255, 255, 255, 0.08);
   background: rgba(255, 255, 255, 0.05);
-  border-radius: 10px;
+  border-radius: 6px;
   padding: 6px 10px;
   font-size: 12px;
   color: #e5e7eb;
@@ -689,7 +689,7 @@ body {
 /* body */
 .simpleui-card-body {
   background: #252a31;
-  padding: 14px 16px 16px;
+  padding: 12px 16px 20px;
 }
 
 /* row layout */
@@ -719,7 +719,7 @@ body {
   align-items: center;
   border: 1px solid rgba(255, 255, 255, 0.08);
   background: rgba(255, 255, 255, 0.05);
-  border-radius: 10px;
+  border-radius: 6px;
   padding: 6px 10px;
   font-size: 12px;
   color: #e5e7eb;
@@ -754,11 +754,14 @@ body {
   flex: 1;
   white-space: nowrap;
   overflow: hidden;
+  
   text-overflow: ellipsis;
-  text-align: right;      /* 👈 left aligned */
+  /* text-align: right;      👈 left aligned */
+  color: rgba(255,255,255, 0.5);
+  font-weight: 500;
   margin-left: 6px;      /* small gap after “Job:” label */
   display: inline-block;
-  max-width: 75%;        /* keeps truncation consistent */
+  max-width: 95%;        /* keeps truncation consistent */
 }
 /* Make Progress label & value match Started/Ended date style */
 .simpleui-row--progress {
@@ -767,6 +770,7 @@ body {
   display: flex;
   justify-content: space-between;
   margin-bottom: 6px;
+  margin-top: 8px;
 }
 
 .simpleui-row--progress span {
