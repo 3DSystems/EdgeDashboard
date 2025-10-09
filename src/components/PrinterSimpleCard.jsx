@@ -1,8 +1,9 @@
 import React from "react";
+import { printerStateColor, printerStateType } from "../utils/common";
 
 /* Muted gray icons for pills */
 const iconStyle = {
-  marginRight: 6,
+  marginRight: 4,
   opacity: 0.7,
   color: "#cbd5e1", // Tailwind gray-400 tone
 };
@@ -46,15 +47,37 @@ export default function PrinterSimpleCard({
     : progress;
 
   const getChipColor = (state) => {
-    switch (state) {
-      case "Completed":
-        return { background: "#0096d6" }; // blue
-      case "Aborted":
-        return { background: "#d93025" }; // red
-      case "Printing":
-      default:
-        return { background: "#0c7041" }; // green
+    switch(state) {
+      case printerStateType.idle: {
+        return { background: printerStateColor.idle, 
+          // color: 'black' 
+        }
+      }
+      case printerStateType.printing: {
+        return { background: printerStateColor.printing }
+      }
+      case printerStateType.completed: {
+        return { background: printerStateColor.completed, 
+          // color: 'black' 
+        }
+      }
+      case printerStateType.aborted: {
+        return { background: printerStateColor.aborted }
+      }
+      default: {
+        return { background: printerStateColor.all }
+      }
+
     }
+    // switch (state) {
+    //   case "Completed":
+    //     return { background: "#0096d6" }; // blue
+    //   case "Aborted":
+    //     return { background: "#d93025" }; // red
+    //   case "Printing":
+    //   default:
+    //     return { background: "#0c7041" }; // green
+    // }
   };
 
   const getBarColor = (state) => {
@@ -68,12 +91,33 @@ export default function PrinterSimpleCard({
     }
   };
 
+  const getNameForPrinterState = (state) => {
+    switch(state) {
+      case printerStateType.idle: {
+        return "Idle"
+      }
+      case printerStateType.printing: {
+        return "Printing"
+      }
+      case printerStateType.completed: {
+        return "Completed"
+      }
+      case printerStateType.aborted: {
+        return "Aborted"
+      }
+      default: {
+        return state
+      }
+
+    }
+  }
+
   return (
     <article
       className="status-card"
       style={{
-        width: 360,
-        maxWidth: 360,
+        width: 295,
+        maxWidth: 295,
         padding: 0,
         overflow: "hidden",
         borderRadius: 12,
@@ -84,42 +128,42 @@ export default function PrinterSimpleCard({
       <div className="simpleui-modal-title" 
         style={{ 
           background: "#343434",
-
+          minheight: '38px'
         }}
       >
-        <div className="simpleui-modal-title__text" >{printerName}</div>
+        <div className="simpleui-modal-title__text font-s" >{printerName}</div>
         {printerState && (
           <span
-            className="simpleui-modal-badge"
+            className="simpleui-modal-badge font-s"
             style={getChipColor(printerState)}
           >
-            {printerState}
+            {getNameForPrinterState(printerState)}
           </span>
         )}
       </div>
 
       {/* === Card Body === */}
-      <div className="simpleui-card-body" style={{ background: "#252525"}}>
+      <div className="simpleui-card-body" style={{ background: "#252525", height: '100%'}}>
         {/* Job */}
         <div className="simpleui-row" style={{ justifyContent: 'left' }}>
           <span 
-            className="simpleui-label"
+            className="simpleui-label font-s"
             style={{
               color: "rgba(255,255,255, 0.7)"
             }}
           >Job:</span> 
-          <span className="simpleui-jobname" title={jobName}>
+          <span className="simpleui-jobname font-s" title={jobName}>
             {jobName}
           </span>
         </div>
 
         {/* Progress */}
-        <div className="simpleui-row--progress">
+        <div className="simpleui-row--progress font-s">
           <span style={{ fontWeight: 500, color: "rgba(255,255,255, 0.5)" }}>Progress:</span>
           <span style={{ fontWeight: 500, color: "rgba(255,255,255, 0.5)" }}>{pct}%</span>
         </div>
 
-        <div className="progress-bar-container" style={{ height: 12 }}>
+        <div className="progress-bar-container" style={{ height: 8 }}>
           <div
             className="progress-bar-fill"
             style={{
@@ -133,12 +177,12 @@ export default function PrinterSimpleCard({
 
         {/* Pills with muted icons */}
         <div className="simpleui-pills">
-          <div className="simpleui-pill">
+          <div className="simpleui-pill font-s p-xxs" style={{color: "rgba(255,255,255, 0.5)"}}>
             <ClockIcon />
             {printerState === "Completed" ? "Complete" : timeRemaining ?? "—"}
           </div>
           {material && (
-            <div className="simpleui-pill">
+            <div className="simpleui-pill font-s p-xxs" style={{color: "rgba(255,255,255, 0.5)"}}>
               <DropletIcon />
               {material}
             </div>
@@ -149,14 +193,14 @@ export default function PrinterSimpleCard({
         <div className="simpleui-meta">
           {
             <div>
-              <span className="simpleui-meta__label" style={{ fontWeight: 500, color: "rgba(255,255,255, 0.4)" }}>Started: </span>
-              <span className="simpleui-meta__value" style={{ fontWeight: 500, color: "rgba(255,255,255, 0.5)" }}>{startTime}</span>
+              <span className="simpleui-meta__label font-s" style={{ fontWeight: 500, color: "rgba(255,255,255, 0.4)" }}>Started: </span>
+              <span className="simpleui-meta__value font-s" style={{ fontWeight: 500, color: "rgba(255,255,255, 0.5)" }}>{startTime}</span>
             </div>
           }
           {
             <div>
-              <span className="simpleui-meta__label" style={{ fontWeight: 500, color: "rgba(255,255,255, 0.4)" }}>Ended: </span>
-              <span className="simpleui-meta__value" style={{ fontWeight: 500, color: "rgba(255,255,255, 0.5)" }}>{endTime}</span>
+              <span className="simpleui-meta__label font-s" style={{ fontWeight: 500, color: "rgba(255,255,255, 0.4)" }}>Ended: </span>
+              <span className="simpleui-meta__value font-s" style={{ fontWeight: 500, color: "rgba(255,255,255, 0.5)" }}>{endTime}</span>
             </div>
           }
         </div>

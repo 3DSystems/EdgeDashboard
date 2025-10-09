@@ -75,3 +75,25 @@ export const printer31006StateMap = {
   45: "Maintenance",
   46: "Draining",
 };
+
+export const printerStateColor = {
+  idle: "#FFC50E",
+  printing: "#198A56",
+  completed: "#0DC8F1",
+  aborted: "#E63444",
+}
+
+export const printerStateType = {
+  idle: "Engine_System_IdleState",
+  printing: "Engine_System_BuildState",
+  completed: "Engine_System_CompletedState",
+  aborted: "Engine_System_AbortedState",
+}
+
+export const filterType = {
+  all: 0,
+  printing: 1,
+  completed: 2,
+  aborted: 3,
+  idle: 4,
+}
