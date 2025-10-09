@@ -128,7 +128,8 @@ export default function PrinterSimpleCard({
       <div className="simpleui-modal-title" 
         style={{ 
           background: "#343434",
-          minheight: '38px'
+          height: '32px',
+          boxSizing: 'border-box'
         }}
       >
         <div className="simpleui-modal-title__text font-s" >{printerName}</div>
