@@ -543,7 +543,7 @@ body {
 .simpleui-modal-title__text {
   color: #f5f7fb;
   font-size: 14px;
-  font-weight: 800;                   /* same bold feel as modal titles */
+  font-weight: 700;                   /* same bold feel as modal titles */
   letter-spacing: 0.2px;
 }
 
@@ -588,7 +588,7 @@ body {
 .simpleui-modal-title__text {
   color: #f8fafc;
   font-size: 14px;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: 0.3px;
 }
 
@@ -674,7 +674,7 @@ body {
 .simpleui-modal-title__text {
   color: #f8fafc;
   font-size: 14px;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: 0.3px;
 }
 
@@ -879,4 +879,21 @@ body {
   height: 32px;
   display: flex;
   align-items: center;
+}
+
+.filter-search input {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  outline: none;
+  /* height: 100%; */
+  border-radius: 16px;
+  padding: 0.7rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.6);
+  background: transparent;
+}
+
+.separator {
+  background-color: #343434;
+  width: 1px;
+  margin-inline: 0.5rem;
 }

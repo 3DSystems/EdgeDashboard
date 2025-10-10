@@ -53,7 +53,6 @@ export default function NewUIPage({ printers = [] }) {
     return () => setSelectedChip(value)
   }
 
-  console.log(printers)
 
 
   const filteredPrinters = useMemo(() => {
@@ -112,11 +111,15 @@ export default function NewUIPage({ printers = [] }) {
               fontSize: 18, 
               fontWeight: 700 
             }}>
-              MTConnect Printer Dashboard
+              Printer Dashboard
             </h1>
         </div>
 
         <div class="filter-container">
+          <div class="filter-search">
+            <input type="text" placeholder="Search by Technology" />
+          </div>
+          <div className="separator"></div>
           <div 
             onClick={getChipSelectHandler(filterType.all)} 
             class={`filter-chip filter-chip-all ${selectedChip === filterType.all ? 'filter-chip-active' : ''}`}>

@@ -132,7 +132,10 @@ export default function PrinterSimpleCard({
           boxSizing: 'border-box'
         }}
       >
-        <div className="simpleui-modal-title__text font-s" >{printerName}</div>
+        <div 
+          className="simpleui-modal-title__text font-s" 
+          style={{color: "rgba(255,255,255, 0.7)"}}  
+        >{printerName}</div>
         {printerState && (
           <span
             className="simpleui-modal-badge font-s"
