@@ -1,0 +1,19 @@
+.view-type-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.view-svg-container {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    /* padding: 0.25rem; */
+}
+
+.view-svg-container.active-type {
+    /* border-bottom: 1px solid white; */
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    color: black;
+}
