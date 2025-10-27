@@ -286,7 +286,14 @@ export const parsePrinterXML = (xmlText, opts = {}) => {
         if (
           printerCode === printerModelMap.SLA750 ||
           printerCode === printerModelMap.SLA750Dual ||
-          printerCode === printerModelMap.DMPFlex350Triple
+          printerCode === printerModelMap.DMPFlex350Triple ||
+          printerCode === printerModelMap.DMPFactory350 ||
+          printerCode === printerModelMap.DMPFactory350Dual ||
+          printerCode === printerModelMap.DMPFactory500 ||
+          printerCode === printerModelMap.DMPFlex350 ||
+          printerCode === printerModelMap.DMPFlex350Dual ||
+          printerCode === printerModelMap.DMPFlex350Triple ||
+          printerCode === printerModelMap.SLA825
         ) {
           const val = parseFloat(progress);
           if (!isNaN(val)) {
