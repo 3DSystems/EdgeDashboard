@@ -300,9 +300,13 @@ const ComponentStreamModal = ({
                                 }),
                               }}
                             >
-                              {msg.dataItemId
-                                ? msg?.dataItemId?.split(".")?.pop()
-                                : msg?.name}
+                              {
+                                msg.dataItemId 
+                                  ? (msg.dataItemId.indexOf('.') > -1 // Check if a dot exists
+                                    ? msg.dataItemId.slice(msg.dataItemId.indexOf('.') + 1) // Get everything AFTER the first dot
+                                    : msg.dataItemId) // No dot found, so just use the whole string
+                                  : msg.name // No dataItemId, so fall back to name
+                              }
                             </td>
                             <td
                               style={{

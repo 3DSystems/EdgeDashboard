@@ -52,6 +52,29 @@ export const formatTimeToHHMM = (timeString) => {
       });
 };
 
+export const formatDateHHMM = (timeString) => {
+  if (!timeString || timeString === "0") return timeString;
+
+  let parsed;
+  if (/^\d+$/.test(timeString)) {
+    const seconds = parseInt(timeString, 10);
+    if (seconds === 0) return timeString;
+    parsed = new Date(seconds * 1000);
+  } else {
+    parsed = new Date(timeString);
+  }
+
+  return isNaN(parsed)
+    ? timeString
+    : parsed.toLocaleTimeString([], {
+        month: "numeric", // Changed from weekday
+        day: "numeric",   // Added this
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: false,
+      });
+};
+
 export const formatSecondsToHHMM = (timeString) => {
   if (!timeString || timeString === "0") return "00:00";
 
@@ -274,7 +297,7 @@ export const parsePrinterXML = (xmlText, opts = {}) => {
             startTime = startTimeRaw;
           }
         } else {
-          startTime = formatTimeToHHMM(startTimeRaw);
+          startTime = formatDateHHMM(startTimeRaw);
         }
 
         return startTime;
@@ -323,7 +346,7 @@ export const parsePrinterXML = (xmlText, opts = {}) => {
         chamberTemp: getFieldValue("chamberTemp"),
         startTime: getStartTime(),
         timeRemaining: formatSecondsToHHMM(getFieldValue("timeRemaining")),
-        endTime: formatTimeToHHMM(getFieldValue("endTime")),
+        endTime: formatDateHHMM(getFieldValue("endTime")),
         buildState: getFieldValue("buildState"),
         printerState: resolvePrinterState(
           printerCode,
