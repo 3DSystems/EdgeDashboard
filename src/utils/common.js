@@ -39,8 +39,10 @@ export const printerModelByCode = {
   32004: "DMP Factory 350",
   32005: "DMP Factory 500",
   30002: "Projet 6000",
-  30002: "Projet 7000"
-
+  30002: "Projet 7000",
+  20000: "MJP 2500",
+  20000: "MJP 2500W",
+  30001: "ProX 800"
 };
 
 export const printerModelMap = {
@@ -62,12 +64,15 @@ export const printerModelMap = {
   DMPFactory350 : "32004",
   DMPFactory500 : "32005",
   Projet6000 : "30002",
-  Projet7000 : "30002"
+  Projet7000 : "30002",
+  MJP2500: "20000",
+  MJP2500W: "20000",
+  ProX800: "30001" 
   
 };
 
 export function requiresProbeModel(printerCode) {
-  return ["20004","30002","32004","32003"].includes(String(printerCode));
+  return ["20004","30002","32004","32003","20000"].includes(String(printerCode));
 }
 
 export const printer31006StateMap = {
