@@ -55,24 +55,24 @@ export const formatTimeToHHMM = (timeString) => {
 export const formatDateHHMM = (timeString) => {
   if (!timeString || timeString === "0") return timeString;
 
-  let parsed;
-  if (/^\d+$/.test(timeString)) {
-    const seconds = parseInt(timeString, 10);
+  let date;
+
+  if (/^\d+$/.test(timeString.toString())) {
+    const seconds = parseInt(timeString.toString(), 10);
     if (seconds === 0) return timeString;
-    parsed = new Date(seconds * 1000);
+    date = new Date(seconds * 1000);
   } else {
-    parsed = new Date(timeString);
+    date = new Date(timeString);
   }
 
-  return isNaN(parsed)
-    ? timeString
-    : parsed.toLocaleTimeString([], {
-        month: "numeric", // Changed from weekday
-        day: "numeric",   // Added this
-        hour: "2-digit",
-        minute: "2-digit",
-        hour12: false,
-      });
+  if (isNaN(date.getTime())) return timeString;
+
+  const month = date.getMonth() + 1; // 1-12
+  const day = date.getDate();
+  const hours = date.getHours().toString().padStart(2, "0");
+  const minutes = date.getMinutes().toString().padStart(2, "0");
+
+  return `${month}/${day}, ${hours}:${minutes}`;
 };
 
 export const formatSecondsToHHMM = (timeString) => {
@@ -90,7 +90,7 @@ export const formatSecondsToHHMM = (timeString) => {
 
   return `${String(hours).padStart(2, "0")}:${String(minutes).padStart(
     2,
-    "0"
+    "0",
   )}`;
 };
 
@@ -109,7 +109,7 @@ export const getJsonJobData = (msgValue) => {
 export const getPrinterModelByDeviceId = (
   printerCode,
   probeModels,
-  deviceStreamName
+  deviceStreamName,
 ) => {
   let printerModel = "";
   if (requiresProbeModel(printerCode)) {
@@ -142,7 +142,7 @@ export const parsePrinterXML = (xmlText, opts = {}) => {
       let printerModel = getPrinterModelByDeviceId(
         printerCode,
         probeModels,
-        deviceStreamName
+        deviceStreamName,
       );
 
       const componentStreams = [...stream.querySelectorAll("ComponentStream")];
@@ -169,7 +169,7 @@ export const parsePrinterXML = (xmlText, opts = {}) => {
 
       const flatMessages = modalDataItems.flatMap((cs) => cs.messages);
       const dataItemMap = Object.fromEntries(
-        flatMessages.map((item) => [item.key, item])
+        flatMessages.map((item) => [item.key, item]),
       );
 
       // getFieldValue returns the first matching value for a given field key
@@ -199,7 +199,7 @@ export const parsePrinterXML = (xmlText, opts = {}) => {
             for (const key of validKeys) {
               const nestedKey = key.replace(
                 `${singleValueFieldNamesByKey.jobData}.`,
-                ""
+                "",
               );
               if (jobData[nestedKey] !== undefined) return jobData[nestedKey];
             }
@@ -248,7 +248,7 @@ export const parsePrinterXML = (xmlText, opts = {}) => {
             } catch (err) {
               console.warn(
                 "Invalid job_data while reading current_height",
-                err
+                err,
               );
             }
           }
@@ -272,7 +272,7 @@ export const parsePrinterXML = (xmlText, opts = {}) => {
             } catch (err) {
               console.warn(
                 "Invalid job_data while reading current_height",
-                err
+                err,
               );
             }
           }
@@ -344,13 +344,13 @@ export const parsePrinterXML = (xmlText, opts = {}) => {
         jobName: getFieldValue("jobName"),
         resinTemp: getFieldValue("resinTemp"),
         chamberTemp: getFieldValue("chamberTemp"),
-        startTime: getStartTime(),
+        startTime: formatDateHHMM(getFieldValue("startTime")),
         timeRemaining: formatSecondsToHHMM(getFieldValue("timeRemaining")),
         endTime: formatDateHHMM(getFieldValue("endTime")),
         buildState: getFieldValue("buildState"),
         printerState: resolvePrinterState(
           printerCode,
-          getFieldValue("printerState")
+          getFieldValue("printerState"),
         ),
         manualOpState: getFieldValue("manualOpState"),
         material: getMaterial(),
