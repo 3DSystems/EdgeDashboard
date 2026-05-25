@@ -24,6 +24,8 @@ export const printerModelByCode = {
   30100: "PSLA 270",
   30007: "SLA 750 DUAL",
   30005: "SLA 750",
+  30007: "SLA 750 Dual Pro",
+  30005: "SLA 750 Pro",
   31006: "SLS 380",
   5555: "Edge PC",
   60000: "PostCure 1050",
@@ -34,7 +36,7 @@ export const printerModelByCode = {
   20004: "MJP 300W Plus",
   30008: "SLA 825",
   32003: "DMP Factory 350 Dual",
-  32003:"DMP Flex 350 Dual",
+  32003: "DMP Flex 350 Dual",
   32004: "DMP Flex 350",
   32004: "DMP Factory 350",
   32005: "DMP Factory 500",
@@ -42,12 +44,14 @@ export const printerModelByCode = {
   30002: "Projet 7000",
   20000: "MJP 2500",
   20000: "MJP 2500W",
-  30001: "ProX 800"
+  30001: "ProX 800",
 };
 
 export const printerModelMap = {
   SLA750: "30005",
   SLA750Dual: "30007",
+  SLA750Pro: "30005",
+  SLA750DualPro: "30007",
   SLS380: "31006",
   PSLA270: "30100",
   EdgePC: "5555",
@@ -58,21 +62,28 @@ export const printerModelMap = {
   MJP300W: "20004",
   MJP300WPlus: "20004",
   SLA825: "30008",
-  DMPFactory350Dual : "32003",
-  DMPFlex350Dual : "32003",
-  DMPFlex350 : "32004",
-  DMPFactory350 : "32004",
-  DMPFactory500 : "32005",
-  Projet6000 : "30002",
-  Projet7000 : "30002",
+  DMPFactory350Dual: "32003",
+  DMPFlex350Dual: "32003",
+  DMPFlex350: "32004",
+  DMPFactory350: "32004",
+  DMPFactory500: "32005",
+  Projet6000: "30002",
+  Projet7000: "30002",
   MJP2500: "20000",
   MJP2500W: "20000",
-  ProX800: "30001" 
-  
+  ProX800: "30001",
 };
 
 export function requiresProbeModel(printerCode) {
-  return ["20004","30002","32004","32003","20000"].includes(String(printerCode));
+  return [
+    "20004",
+    "30002",
+    "32004",
+    "32003",
+    "20000",
+    "30005",
+    "30007",
+  ].includes(String(printerCode));
 }
 
 export const printer31006StateMap = {

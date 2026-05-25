@@ -287,7 +287,9 @@ export const parsePrinterXML = (xmlText, opts = {}) => {
 
         if (
           printerCode === printerModelMap.SLA750 ||
-          printerCode === printerModelMap.SLA750Dual
+          printerCode === printerModelMap.SLA750Dual ||
+          printerCode === printerModelMap.SLA750DualPro ||
+          printerCode === printerModelMap.SLA750Pro
         ) {
           const seconds = parseInt(startTimeRaw, 10);
           if (!isNaN(seconds)) {
@@ -309,6 +311,8 @@ export const parsePrinterXML = (xmlText, opts = {}) => {
         if (
           printerCode === printerModelMap.SLA750 ||
           printerCode === printerModelMap.SLA750Dual ||
+          printerCode === printerModelMap.SLA750DualPro ||
+          printerCode === printerModelMap.SLA750Pro ||
           printerCode === printerModelMap.DMPFlex350Triple ||
           printerCode === printerModelMap.DMPFactory350 ||
           printerCode === printerModelMap.DMPFactory350Dual ||
