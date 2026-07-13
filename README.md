@@ -1,6 +1,6 @@
 # 🖨️ Edge Dashboard
 
-This application displays the real-time status of Printers using MTConnect XML data.
+EdgeDashboard is a React-based web application designed to provide a comprehensive dashboard for real-time monitoring and management of printer data. It specifically leverages MTConnect XML data streamed from an MTConnect Agent, translating machine-generated information into an intuitive user interface for enhanced operational visibility and control over edge devices.
 
 ---
 
