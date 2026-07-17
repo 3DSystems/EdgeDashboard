@@ -17,7 +17,7 @@
  * This component serves as the control center of the UI.
  */
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import { usePolling } from "./utils/usePolling";
 import PrinterCard from "./components/PrinterCard";
 import { parsePrinterXML } from "./utils/xmlUtils";
@@ -47,7 +47,7 @@ const App = () => {
     setProbleModelsAll(probeModels);
   }, [probeModels]);
 
-  const fetchFallbackProbeModels = async () => {
+  const fetchFallbackProbeModels = useCallback(async () => {
     try {
       const models = await fetchProbe();
       setProbleModelsAll(models);
@@ -55,9 +55,9 @@ const App = () => {
     } catch (error) {
       console.error("Failed to fetch fallback probe models", error);
     }
-  };
+  }, []);
 
-  const fetchData = async () => {
+  const fetchData = useCallback(async () => {
     try {
       setHasError(false);
       // Cache-busting query string avoids stale XML from intermediate caches.
@@ -92,12 +92,12 @@ const App = () => {
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [fetchFallbackProbeModels, probeModelsAll]);
 
   useEffect(() => {
     setIsLoading(true);
     fetchData();
-  }, []);
+  }, [fetchData]);
 
   usePolling(fetchData, environment.API_POLLING_IN_MS);
 

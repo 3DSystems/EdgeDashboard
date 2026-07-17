@@ -51,7 +51,7 @@ const ComponentStreamModal = ({
   useEffect(() => {
     const cleanup = closeOnOutsideClick(modalRef, onClose);
     return cleanup;
-  }, []);
+  }, [onClose]);
 
   const toggleCard = (index) => {
     setExpandedCards((prev) => {

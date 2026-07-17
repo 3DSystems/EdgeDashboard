@@ -110,6 +110,7 @@ const PrinterCard = ({
               <span style={{ fontSize: "1.2em" }}>
                 <img
                   src={expanded ? ICONS.collapse : ICONS.expand}
+                  alt={expanded ? "Collapse" : "Expand"}
                   className="icon icon-block"
                 />
               </span>
@@ -124,7 +125,11 @@ const PrinterCard = ({
                 aria-label="component-streams"
                 style={{ fontSize: "1.2em" }}
               >
-                <img src={ICONS.details} className="icon icon-block" />
+                <img
+                  src={ICONS.details}
+                  alt="Detail Data"
+                  className="icon icon-block"
+                />
               </span>
             </button>
           </div>
@@ -154,6 +159,7 @@ const PrinterCard = ({
           <img
             title="Resin Temperature"
             src={ICONS.resinTemp}
+            alt="Resin Temperature"
             className="icon icon-block"
           />
           <span className="data-value" title="Resin Temperature">
@@ -166,6 +172,7 @@ const PrinterCard = ({
           <img
             title={getRightTempTitle(deviceStreamName)}
             src={ICONS.chamberTemp}
+            alt={getRightTempTitle(deviceStreamName)}
             className="icon icon-block"
           />
           <span
@@ -179,7 +186,11 @@ const PrinterCard = ({
         </div>
         <div className="progress-section full-span">
           <div className="layer-info">
-            <img src={ICONS.layers} className="icon icon-inline" />
+            <img
+              src={ICONS.layers}
+              alt="Layer Progress"
+              className="icon icon-inline"
+            />
             <span title={getLeftLayerTitle(deviceStreamName)}>
               {currentLayer}
             </span>
@@ -211,6 +222,7 @@ const PrinterCard = ({
           <img
             title="Start Time"
             src={ICONS.startTime}
+            alt="Start Time"
             className="icon icon-block"
           />
           <span className="data-value" title="Start Time">
@@ -221,6 +233,7 @@ const PrinterCard = ({
           <img
             title="Time Remaining"
             src={ICONS.timeRemaining}
+            alt="Time Remaining"
             className="icon icon-block"
           />
           <span className="data-value" title="Time Remaining">
@@ -231,6 +244,7 @@ const PrinterCard = ({
           <img
             title="End Time"
             src={ICONS.endTime}
+            alt="End Time"
             className="icon icon-block"
           />
           <span className="data-value" title="End Time">
@@ -242,6 +256,7 @@ const PrinterCard = ({
           <img
             title="Material"
             src={ICONS.material}
+            alt="Material"
             className="icon icon-block"
           />
           <div
@@ -294,6 +309,7 @@ const PrinterCard = ({
             <img
               title="Printer State"
               src={ICONS.printerState}
+              alt="Printer State"
               className="icon icon-block"
             />
             <span className="data-value" title="Printer State">
@@ -304,6 +320,7 @@ const PrinterCard = ({
             <img
               title="Build State"
               src={ICONS.buildState}
+              alt="Build State"
               className="icon icon-block"
             />
             <span className="data-value" title="Build State">
@@ -314,6 +331,7 @@ const PrinterCard = ({
             <img
               title="Manual Op State"
               src={ICONS.manualOpState}
+              alt="Manual Operation State"
               className="icon icon-block"
             />
             <span className="data-value" title="Manual Op State">
