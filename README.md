@@ -1,114 +1,89 @@
-# 🖨️ Edge Dashboard
+# Edge Dashboard
 
-EdgeDashboard is a React-based web application designed to provide a comprehensive dashboard for real-time monitoring and management of printer data. It specifically leverages MTConnect XML data streamed from an MTConnect Agent, translating machine-generated information into an intuitive user interface for enhanced operational visibility and control over edge devices.
+Edge Dashboard is a React application for monitoring MTConnect printer data in near real time. It polls MTConnect endpoints, parses XML into normalized printer objects, and presents device status in a dashboard UI.
 
----
+## Quick Start
 
-## 🚀 Development Setup
+1. Install Node.js LTS (18 or newer recommended).
+2. Install dependencies:
+   npm install
+3. Create your local environment file from the template:
+   copy .env.example .env
+4. Update values in .env for your MTConnect host and port.
+5. Start development server:
+   npm start
 
-Follow the steps below to set up the project for local development.
+The app runs at http://localhost:3000.
 
-### 1. **Install Node.js and npm**
+## Environment Variables
 
-Make sure you have **Node.js (v16+)** and **npm** installed.
+The app uses Create React App environment variables (must start with REACT_APP_):
 
-#### On macOS or Linux:
-```bash
-curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
-sudo apt-get install -y nodejs
-```
+- REACT_APP_MTCONNECT_HOST: MTConnect host used by dev proxy.
+- REACT_APP_MTCONNECT_PORT: MTConnect port used by dev proxy.
+- REACT_APP_API_POLLING_IN_MS: Polling interval in milliseconds.
 
-#### On Windows:
-1. Download the latest LTS version from: https://nodejs.org
-2. Run the installer (includes npm by default)
+Use .env.example as your starting point.
 
-#### Verify installation:
-```bash
-node -v
-npm -v
-```
----
+## Development Proxy vs Production
 
-### 2. **Clone the Repository**
-```bash
-git clone <your-repo-url>
-cd <project-directory>
-```
+In development, src/setupProxy.js proxies requests from:
 
----
+- /mtconnect/current
+- /mtconnect/probe
 
-### 3. **Install Dependencies**
+to:
 
-```bash
-npm install
-```
+- http://REACT_APP_MTCONNECT_HOST:REACT_APP_MTCONNECT_PORT
 
----
+This proxy is only active with npm start.
 
-### 4. **Set Environment Variables**
-Set the MTCONNECT agent HOST and PORT in .env file
+For production deployment with Nginx reverse proxy, see NginxDeployment.md.
 
-```
-REACT_APP_MTCONNECT_HOST=<ip>
-REACT_APP_MTCONNECT_PORT=<port>
-REACT_APP_API_POLLING_IN_MS=5000
-```
----
+## Scripts
 
-### 5. **Start the Development Server**
-```bash
-npm start
-```
-
-This will launch the React app at [http://localhost:3000](http://localhost:3000).
-
----
-
-### 6. **Development Tips**
-- Keep polling intervals reasonable (`REACT_APP_API_POLLING_IN_MS`) to avoid unnecessary load. By default its 5 second.
-- Use [Prettier](https://prettier.io/) for consistent formatting.
-- Commit in logical units with meaningful messages.
-
+- npm start: Start local dev server.
+- npm run build: Create production build in build.
+- npm test: Run tests.
 
 ## Project Structure
 
-```
 src/
-├── components/           # UI components like PrinterCard, ComponentStreamModal
-├── utils/                # XML parsing, polling hooks, icon paths, field mappings
-├── styles/               # CSS files
-├── App.jsx               # Root component
-├── index.js              # Entry point
+- App.jsx: Root component, polling and data orchestration.
+- setupProxy.js: Development-only API proxy.
+- components/: Dashboard and modal UI components.
+- hooks/: Custom hooks.
+- styles/: CSS.
+- utils/: XML parsing, mappings, helpers, polling utilities.
+
 public/
-├── icons/                # Local SVG icon assets
-├── index.html            # App root HTML
-```
+- index.html: App host page.
+- icons/: Icon assets.
+- printerData*.xml: Sample XML payloads used for local reference/testing.
 
 ## Features
 
-```
-- Printer cards display real-time MTConnect metrics
-- Exclusive card expansion with animated slide-down
-- Modal view for complete ComponentStream data
-- Inline JSON modal for parsed job data
-- Auto-polling using custom `usePolling` hook
-- Full dark theme with gradient styles
-```
+- Real-time printer cards using MTConnect XML data.
+- Auto polling with configurable interval.
+- Component stream detail modal.
+- JSON detail modal for data items.
+- Model-aware parsing behavior through mapping utilities.
 
-## `printerFieldMappings.js`
+## printerFieldMappings.js
 
 ### Overview
+
 - This file exports field mapping tables that tell the parser where to read values from in MTConnect data items.
-- `singleValueFieldNamesByKey` maps one UI field to a list of possible source keys, checked in order.
-- `multiValueFieldNamesByKey` maps one UI field to multiple source keys so all matching values can be collected.
+- singleValueFieldNamesByKey maps one UI field to a list of possible source keys, checked in order.
+- multiValueFieldNamesByKey maps one UI field to multiple source keys so all matching values can be collected.
 
 ### Runtime Behavior
-- `parsePrinterXML` in `src/utils/xmlUtils.js` uses these mappings to build the printer object shown in the UI.
+
+- parsePrinterXML in [src/utils/xmlUtils.js](src/utils/xmlUtils.js) uses these mappings to build the printer object shown in the UI.
 - For single-value fields, the parser returns the first key that exists in the configured order.
 - For multi-value fields, the parser reads every configured key that exists and returns the collected values.
 
-
-## `xmlUtils.js`
+## xmlUtils.js
 
 ### Overview
 
@@ -149,35 +124,54 @@ Primary runtime usage:
 
 ## Special Cases and Behavior Notes
 
-1. **Unknown model filtering**
+1. Unknown model filtering
 - Only DeviceStream entries whose printer code exists in printerModelByCode are returned.
 - Unknown codes are skipped.
 
-2. **Field fallback from job_data JSON**
+2. Field fallback from job_data JSON
 - When direct mapped keys are missing, getFieldValue can read nested values from build.job_data JSON.
 
-3. **SLS 380 state mapping**
+3. SLS 380 state mapping
 - For model 31006, numeric printer_state values are mapped to text using printer31006StateMap.
 - For all other models, printer_state is passed through as-is.
 
-4. **SLS 380 current layer and material overrides**
+4. SLS 380 current layer and material overrides
 - Current layer can come from job_data.current_height.
 - Material can come from job_data.material.
 
-5. **Progress scaling by model**
+5. Progress scaling by model
 - Some models publish progress as fraction (0-1). For those models, parser multiplies by 100.
 - All other models are treated as already-percent values and are returned unchanged.
 
-6. **Model-specific printer name override**
+6. Model-specific printer name override
 - For DMP Flex 350 Triple, serial number is used as display printer name.
 
-7. **Time parsing supports two formats**
+7. Time parsing supports two formats
 - Time helpers support both ISO date strings and epoch-seconds.
 
-8. **Duration rounding behavior**
+8. Duration rounding behavior
 - formatSecondsToHHMM rounds minute remainder upward using ceiling.
 - Example: 59 seconds becomes 00:01.
 
-9. **Unused internal helper**
+9. Unused internal helper
 - getStartTime is defined inside parsePrinterXML.
 - The final returned startTime currently uses formatDateHHMM(getFieldValue("startTime")) directly.
+
+## Security and Repo Hygiene
+
+- Do not commit .env files with internal hosts or sensitive values.
+- .env is git-ignored; use .env.example for shared configuration shape.
+
+If .env was previously committed, remove it from tracking while keeping your local file:
+
+git rm --cached .env
+
+## License
+
+This project is licensed under Apache 2.0. See LICENSE.
+
+## Contributing
+
+1. Create a feature branch.
+2. Keep commits small and focused.
+3. Open a pull request with a clear summary and test notes.
