@@ -276,7 +276,6 @@ const ComponentStreamModal = ({
                       boxShadow:
                         "0 12px 24px rgba(0, 0, 0, 0.35), 0 4px 8px rgba(0, 0, 0, 0.2),inset 0 1px 1px rgba(255, 255, 255, 0.1),inset 0 -1px 1px rgba(0, 0, 0, 0.3)",
                       border: "1px solid rgba(255, 255, 255, 0.05)",
-                      boxSizing: "border-box",
                       transition: "padding-bottom 0.5s ease-in-out",
                     }}
                   >
