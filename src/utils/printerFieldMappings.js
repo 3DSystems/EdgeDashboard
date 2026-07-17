@@ -1,21 +1,16 @@
 /**
- * printerFieldMappings.js
+ * Defines which MTConnect data item keys map to each UI field.
  *
- * Defines the mapping between logical UI fields (e.g. "jobName", "material") and
- * the corresponding MTConnect dataItemId keys.
+ * Exports:
+ * - singleValueFieldNamesByKey:
+ *   Maps one UI field to an ordered list of possible keys.
+ *   The parser uses the first key that exists and has a value.
  *
- * Structure:
- *   fieldNamesByKey = {
- *     fieldName: [array of possible dataItemId suffixes]
- *   }
+ * - multiValueFieldNamesByKey:
+ *   Maps one UI field to multiple keys.
+ *   The parser collects values from all matching keys.
  *
- * Example:
- *   fieldNamesByKey.material = ["mqg.material_name", "mqg.mdm_bottle_barcode"]
- *
- * Also exports:
- *   - printerModelByCode: Maps printer numeric codes to user-friendly model names
- *
- * Used primarily in xmlUtils.js for resolving raw MTConnect XML into UI-ready fields.
+ * This mapping is used by parsePrinterXML in src/utils/xmlUtils.js.
  */
 
 export const singleValueFieldNamesByKey = {
