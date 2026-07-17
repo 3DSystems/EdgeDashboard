@@ -50,5 +50,10 @@ export const singleValueFieldNamesByKey = {
 };
 
 export const multiValueFieldNamesByKey = {
-  material: ["mqg.material_name", "vat.material","stock.material_name", "build.job_data.material"],
+  material: [
+    "mqg.material_name",
+    "vat.material",
+    "stock.material_name",
+    "build.job_data.material",
+  ],
 };

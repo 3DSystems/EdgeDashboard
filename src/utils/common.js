@@ -1,3 +1,10 @@
+/**
+ * Shared model metadata and UI label helpers.
+ *
+ * Model code is parsed from DeviceStream names like asset_<code>-...
+ * and used to select model-specific labels/behavior across the app.
+ */
+
 export const getRightTempTitle = (deviceStreamName) => {
   const match = deviceStreamName?.match(/asset_(\d+)-/);
   const model = match?.[1];
@@ -75,6 +82,7 @@ export const printerModelMap = {
 };
 
 export function requiresProbeModel(printerCode) {
+  // These codes represent families where final model name comes from /probe metadata.
   return [
     "20004",
     "30002",

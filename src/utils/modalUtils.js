@@ -15,10 +15,12 @@
 
 export const closeOnOutsideClick = (ref, callback) => {
   const handler = (e) => {
+    // Fire callback only when click target is outside the modal root element.
     if (ref.current && !ref.current.contains(e.target)) {
       callback();
     }
   };
   document.addEventListener("mousedown", handler);
+  // Return disposer so caller can remove listener on unmount.
   return () => document.removeEventListener("mousedown", handler);
 };

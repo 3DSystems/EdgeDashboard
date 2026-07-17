@@ -1,3 +1,11 @@
+/**
+ * DataItemModal
+ *
+ * Lightweight modal used for Edge-PC key/value data.
+ * It renders flattened data items and trims MTConnect prefixes from dataItemId
+ * so values are easier to read during troubleshooting.
+ */
+
 import React from "react";
 import ICONS from "../utils/iconPaths"; // Ensure this path is correct
 
@@ -64,6 +72,7 @@ const DataItemModal = ({ dataItems, onClose }) => {
 
       <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
         {dataItems.map(({ dataItemId, value }) => {
+          // Drop the leading namespace segment (before first dot) for cleaner labels.
           const trimmedKey = dataItemId.includes(".")
             ? dataItemId.split(".").slice(1).join(".")
             : dataItemId;
@@ -79,9 +88,7 @@ const DataItemModal = ({ dataItems, onClose }) => {
               }}
             >
               <span>{trimmedKey}</span>
-              <span style={{ color: "#cccccc" }}>
-                {value}
-              </span>
+              <span style={{ color: "#cccccc" }}>{value}</span>
             </div>
           );
         })}

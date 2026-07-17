@@ -7,7 +7,7 @@
  * Environment variables must start with `REACT_APP_` to be recognized by Create React App.
  *
  * Exports:
- *  - API_POLLING_MS: Number (default 5000) - polling interval in milliseconds
+ *  - API_POLLING_IN_MS: Number (default 5000) - polling interval in milliseconds
  *  - MTCONNECT_HOST: String - HOST for MTConnect Agent
  *  - MTCONNECT_PORT: String - PORT for MTConnect Agent
  */

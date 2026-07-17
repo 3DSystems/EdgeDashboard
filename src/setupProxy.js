@@ -24,6 +24,6 @@ module.exports = function (app) {
       target,
       changeOrigin: true,
       pathRewrite: { "^/mtconnect": "" },
-    })
+    }),
   );
 };

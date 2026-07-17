@@ -27,7 +27,11 @@ import React, { useState } from "react";
 import ComponentStreamModal from "./ComponentStreamModal";
 import { getJsonJobData, formatStatusText } from "../utils/xmlUtils";
 import ICONS from "../utils/iconPaths";
-import { getLeftLayerTitle, getRightLayerTitle, getRightTempTitle } from "../utils/common";
+import {
+  getLeftLayerTitle,
+  getRightLayerTitle,
+  getRightTempTitle,
+} from "../utils/common";
 
 const PrinterCard = ({
   printerModel,
@@ -185,6 +189,7 @@ const PrinterCard = ({
             </span>
           </div>
           <span className="progress-percentage" title="Progress">
+            {/* Keep one decimal precision for stable display while values stream in. */}
             {!isNaN(parseFloat(progress))
               ? `${Math.floor(parseFloat(progress) * 10) / 10} %`
               : progress}
@@ -194,6 +199,7 @@ const PrinterCard = ({
               className="progress-bar-fill"
               title="Progress"
               style={{
+                // Width is clamped to numeric values only to avoid invalid CSS values.
                 width: !isNaN(parseFloat(progress))
                   ? `${Math.floor(parseFloat(progress) * 10) / 10}%`
                   : "0%",
@@ -248,6 +254,7 @@ const PrinterCard = ({
             }}
           >
             {Array.isArray(material) ? (
+              // Some printers publish multiple materials; render one row per value.
               material.map((m, i) => (
                 <span
                   key={i}
@@ -338,6 +345,7 @@ const PrinterCard = ({
           >
             Job Data
           </h4>
+          {/* Pretty-print JSON payload for easier diagnostics during live monitoring. */}
           <pre className="job-data-json">
             {JSON.stringify(getJsonJobData(jobData), null, 2)}
           </pre>
