@@ -139,15 +139,15 @@ public/
 
 ```mermaid
 flowchart LR
-  A[Browser UI] --> B[/mtconnect/current]
-  A --> C[/mtconnect/probe]
-  B --> D[Dev Proxy setupProxy.js]
-  C --> D
-  D --> E[MTConnect Agent]
-  E --> F[XML Payload]
-  F --> G[parsePrinterXML]
-  G --> H[Normalized Printer Objects]
-  H --> I[PrinterCard and Modals]
+  ui["Browser UI"] --> current["/mtconnect/current"]
+  ui --> probe["/mtconnect/probe"]
+  current --> proxy["Dev Proxy (setupProxy.js)"]
+  probe --> proxy
+  proxy --> agent["MTConnect Agent"]
+  agent --> xml["XML Payload"]
+  xml --> parser["parsePrinterXML"]
+  parser --> model["Normalized Printer Objects"]
+  model --> views["PrinterCard and Modals"]
 ```
 
 ## Printer Field Mappings
