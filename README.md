@@ -1,19 +1,81 @@
 # Edge Dashboard
 
+![Node](https://img.shields.io/badge/Node-18%2B-339933?logo=node.js&logoColor=white) ![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=000) ![License](https://img.shields.io/badge/License-Apache%202.0-blue)
+
 Edge Dashboard is a React application for monitoring MTConnect printer data in near real time. It polls MTConnect endpoints, parses XML into normalized printer objects, and presents device status in a dashboard UI.
+
+## Start Here
+
+- New contributor: [Quick Start](#quick-start)
+- Environment setup: [Environment Variables](#environment-variables)
+- Runtime architecture: [Data Flow](#data-flow)
+- Parsing internals: [Printer Field Mappings](#printer-field-mappings) and [XML Utilities](#xml-utilities)
+- Common issues: [Troubleshooting](#troubleshooting)
+
+## Table of Contents
+
+- [Quick Start](#quick-start)
+- [Environment Variables](#environment-variables)
+- [Development Proxy vs Production](#development-proxy-vs-production)
+- [Scripts](#scripts)
+- [Project Structure](#project-structure)
+- [Features](#features)
+- [Data Flow](#data-flow)
+- [Printer Field Mappings](#printer-field-mappings)
+- [XML Utilities](#xml-utilities)
+- [Special Cases and Behavior Notes](#special-cases-and-behavior-notes)
+- [Troubleshooting](#troubleshooting)
+- [Security and Repo Hygiene](#security-and-repo-hygiene)
+- [License](#license)
+- [Contributing](#contributing)
 
 ## Quick Start
 
-1. Install Node.js LTS (18 or newer recommended).
-2. Install dependencies:
-   npm install
-3. Create your local environment file from the template:
-   copy .env.example .env
-4. Update values in .env for your MTConnect host and port.
-5. Start development server:
-   npm start
+### Setup Checklist
+
+- [ ] Install Node.js LTS (18 or newer recommended)
+- [ ] Install dependencies
+- [ ] Create local .env from template
+- [ ] Set MTConnect host/port values
+- [ ] Run the development server
+
+### Commands
+
+```bash
+npm install
+```
+
+<details>
+<summary>Create local .env file (expand by OS)</summary>
+
+On Windows (PowerShell or cmd):
+
+```bash
+copy .env.example .env
+```
+
+On macOS/Linux:
+
+```bash
+cp .env.example .env
+```
+
+</details>
+
+```bash
+npm start
+```
 
 The app runs at http://localhost:3000.
+
+<details>
+<summary>Quick health check after startup</summary>
+
+1. Open http://localhost:3000.
+2. Confirm printer cards render.
+3. If empty/error, check [Troubleshooting](#troubleshooting).
+
+</details>
 
 ## Environment Variables
 
@@ -23,7 +85,11 @@ The app uses Create React App environment variables (must start with REACT_APP_)
 - REACT_APP_MTCONNECT_PORT: MTConnect port used by dev proxy.
 - REACT_APP_API_POLLING_IN_MS: Polling interval in milliseconds.
 
-Use .env.example as your starting point.
+Use .env.example as your starting point. It includes sensible defaults:
+
+- REACT_APP_MTCONNECT_HOST=localhost
+- REACT_APP_MTCONNECT_PORT=5000
+- REACT_APP_API_POLLING_IN_MS=5000
 
 ## Development Proxy vs Production
 
@@ -38,7 +104,7 @@ to:
 
 This proxy is only active with npm start.
 
-For production deployment with Nginx reverse proxy, see NginxDeployment.md.
+For production deployment with Nginx reverse proxy, see [NginxDeployment.md](NginxDeployment.md).
 
 ## Scripts
 
@@ -69,7 +135,24 @@ public/
 - JSON detail modal for data items.
 - Model-aware parsing behavior through mapping utilities.
 
-## printerFieldMappings.js
+## Data Flow
+
+```mermaid
+flowchart LR
+  A[Browser UI] --> B[/mtconnect/current]
+  A --> C[/mtconnect/probe]
+  B --> D[Dev Proxy setupProxy.js]
+  C --> D
+  D --> E[MTConnect Agent]
+  E --> F[XML Payload]
+  F --> G[parsePrinterXML]
+  G --> H[Normalized Printer Objects]
+  H --> I[PrinterCard and Modals]
+```
+
+## Printer Field Mappings
+
+File: [src/utils/printerFieldMappings.js](src/utils/printerFieldMappings.js)
 
 ### Overview
 
@@ -83,7 +166,9 @@ public/
 - For single-value fields, the parser returns the first key that exists in the configured order.
 - For multi-value fields, the parser reads every configured key that exists and returns the collected values.
 
-## xmlUtils.js
+## XML Utilities
+
+File: [src/utils/xmlUtils.js](src/utils/xmlUtils.js)
 
 ### Overview
 
@@ -102,6 +187,9 @@ Primary runtime usage:
 3. [src/components/ComponentStreamModal.jsx](src/components/ComponentStreamModal.jsx) uses underscore formatting for detailed data display.
 
 ### Function Reference
+
+<details>
+<summary>Expand full function reference table</summary>
 
 | Function | Type | Purpose | Input | Output | Used In |
 |---|---|---|---|---|---|
@@ -122,40 +210,108 @@ Primary runtime usage:
 | getProgress | Internal | For listed models, treats progress as 0-1 fraction and multiplies by 100. For other models, uses value as-is (already percent). | none | numeric or original progress value | Internal to parsePrinterXML |
 | getPrinterName | Internal | Uses serial number as display name for specific model. | none | printer name string | Internal to parsePrinterXML |
 
+</details>
+
 ## Special Cases and Behavior Notes
 
-1. Unknown model filtering
+<details>
+<summary>1. Unknown model filtering</summary>
+
 - Only DeviceStream entries whose printer code exists in printerModelByCode are returned.
 - Unknown codes are skipped.
 
-2. Field fallback from job_data JSON
+</details>
+
+<details>
+<summary>2. Field fallback from job_data JSON</summary>
+
 - When direct mapped keys are missing, getFieldValue can read nested values from build.job_data JSON.
 
-3. SLS 380 state mapping
+</details>
+
+<details>
+<summary>3. SLS 380 state mapping</summary>
+
 - For model 31006, numeric printer_state values are mapped to text using printer31006StateMap.
 - For all other models, printer_state is passed through as-is.
 
-4. SLS 380 current layer and material overrides
+</details>
+
+<details>
+<summary>4. SLS 380 current layer and material overrides</summary>
+
 - Current layer can come from job_data.current_height.
 - Material can come from job_data.material.
 
-5. Progress scaling by model
+</details>
+
+<details>
+<summary>5. Progress scaling by model</summary>
+
 - Some models publish progress as fraction (0-1). For those models, parser multiplies by 100.
 - All other models are treated as already-percent values and are returned unchanged.
 
-6. Model-specific printer name override
+</details>
+
+<details>
+<summary>6. Model-specific printer name override</summary>
+
 - For DMP Flex 350 Triple, serial number is used as display printer name.
 
-7. Time parsing supports two formats
+</details>
+
+<details>
+<summary>7. Time parsing supports two formats</summary>
+
 - Time helpers support both ISO date strings and epoch-seconds.
 
-8. Duration rounding behavior
+</details>
+
+<details>
+<summary>8. Duration rounding behavior</summary>
+
 - formatSecondsToHHMM rounds minute remainder upward using ceiling.
 - Example: 59 seconds becomes 00:01.
 
-9. Unused internal helper
+</details>
+
+<details>
+<summary>9. Unused internal helper</summary>
+
 - getStartTime is defined inside parsePrinterXML.
 - The final returned startTime currently uses formatDateHHMM(getFieldValue("startTime")) directly.
+
+</details>
+
+## Troubleshooting
+
+<details>
+<summary>Failed to load printers</summary>
+
+Verify MTConnect host/port in .env and confirm the MTConnect agent is reachable.
+
+</details>
+
+<details>
+<summary>No printer found</summary>
+
+Confirm the /mtconnect/current endpoint returns DeviceStream entries with known model codes.
+
+</details>
+
+<details>
+<summary>Proxy issues during development</summary>
+
+Restart npm start after changing .env, because setupProxy reads environment values at server startup.
+
+</details>
+
+<details>
+<summary>Build output serving stale data</summary>
+
+Confirm reverse proxy caching behavior and MTConnect upstream health in your Nginx configuration.
+
+</details>
 
 ## Security and Repo Hygiene
 
@@ -164,11 +320,13 @@ Primary runtime usage:
 
 If .env was previously committed, remove it from tracking while keeping your local file:
 
+```bash
 git rm --cached .env
+```
 
 ## License
 
-This project is licensed under Apache 2.0. See LICENSE.
+This project is licensed under Apache 2.0. See [LICENSE](LICENSE).
 
 ## Contributing
 
