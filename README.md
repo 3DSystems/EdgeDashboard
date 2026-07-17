@@ -1,8 +1,8 @@
 # Edge Dashboard
 
-![Node](https://img.shields.io/badge/Node-18%2B-339933?logo=node.js&logoColor=white) ![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=000) ![License](https://img.shields.io/badge/License-TBD-lightgrey)
+![Node](https://img.shields.io/badge/Node-18%2B-339933?logo=node.js&logoColor=white) ![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=000) ![License](https://img.shields.io/badge/License-Apache%202.0-blue)
 
-Edge Dashboard is a React application for monitoring MTConnect printer data in near real time. It polls MTConnect endpoints, parses XML into normalized printer objects, and presents device status in a dashboard UI.
+EdgeDashboard is a React-based web application designed to provide a comprehensive dashboard for real-time monitoring and management of printer data. It specifically leverages MTConnect XML data streamed from an MTConnect Agent, translating machine-generated information into an intuitive user interface for enhanced operational visibility and control over edge devices.
 
 ## Start Here
 
@@ -326,9 +326,7 @@ git rm --cached .env
 
 ## License
 
-License is currently not finalized.
-
-Placeholder: `TBD` (to be decided before public release).
+This project is licensed under Apache License 2.0. See [LICENSE](LICENSE).
 
 ## Contributing
 
