@@ -40,6 +40,7 @@ const ComponentStreamModal = ({
   printerModel,
 }) => {
   const [expandedCards, setExpandedCards] = useState({});
+  // Stores the selected message source used to open the nested JSON modal.
   const [jsonSource, setJsonSource] = useState({
     component: null,
     message: null,
@@ -50,7 +51,7 @@ const ComponentStreamModal = ({
   useEffect(() => {
     const cleanup = closeOnOutsideClick(modalRef, onClose);
     return cleanup;
-  }, []);
+  }, [onClose]);
 
   const toggleCard = (index) => {
     setExpandedCards((prev) => {
@@ -71,9 +72,10 @@ const ComponentStreamModal = ({
   const jsonModalData = useMemo(() => {
     if (!jsonSource.component || !jsonSource.message) return null;
 
+    // jobData may exist in any component stream, so scan all streams and pick first valid value.
     for (const stream of componentStreams) {
       const match = stream.messages?.find(
-        (m) => m.key === singleValueFieldNamesByKey?.jobData[0] && m.value
+        (m) => m.key === singleValueFieldNamesByKey?.jobData[0] && m.value,
       );
       if (match) {
         try {
@@ -97,6 +99,7 @@ const ComponentStreamModal = ({
     if (allExpanded) {
       setExpandedCards({});
     } else {
+      // Use index-keyed map to track expanded state per card for O(1) toggles.
       const all = {};
       componentStreams.forEach((_, i) => (all[i] = true));
       setExpandedCards(all);
@@ -191,6 +194,7 @@ const ComponentStreamModal = ({
         >
           {componentStreams.map((cs, index) => {
             const isExpanded = Boolean(expandedCards[index]);
+            // Prefer component title when name contains asset identifier to keep header readable.
             const cardTitle =
               (cs.name && cs.name.includes("asset_") && cs.component) ||
               cs.name;
@@ -272,7 +276,6 @@ const ComponentStreamModal = ({
                       boxShadow:
                         "0 12px 24px rgba(0, 0, 0, 0.35), 0 4px 8px rgba(0, 0, 0, 0.2),inset 0 1px 1px rgba(255, 255, 255, 0.1),inset 0 -1px 1px rgba(0, 0, 0, 0.3)",
                       border: "1px solid rgba(255, 255, 255, 0.05)",
-                      boxSizing: "border-box",
                       transition: "padding-bottom 0.5s ease-in-out",
                     }}
                   >
@@ -301,10 +304,12 @@ const ComponentStreamModal = ({
                               }}
                             >
                               {
-                                msg.dataItemId 
-                                  ? (msg.dataItemId.indexOf('.') > -1 // Check if a dot exists
-                                    ? msg.dataItemId.slice(msg.dataItemId.indexOf('.') + 1) // Get everything AFTER the first dot
-                                    : msg.dataItemId) // No dot found, so just use the whole string
+                                msg.dataItemId
+                                  ? msg.dataItemId.indexOf(".") > -1 // Check if a dot exists
+                                    ? msg.dataItemId.slice(
+                                        msg.dataItemId.indexOf(".") + 1,
+                                      ) // Get everything AFTER the first dot
+                                    : msg.dataItemId // No dot found, so just use the whole string
                                   : msg.name // No dataItemId, so fall back to name
                               }
                             </td>
@@ -319,7 +324,7 @@ const ComponentStreamModal = ({
                               }}
                             >
                               {singleValueFieldNamesByKey?.jobData?.includes(
-                                msg.key
+                                msg.key,
                               ) ? (
                                 <button
                                   onClick={() =>

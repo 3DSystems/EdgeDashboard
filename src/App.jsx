@@ -17,7 +17,7 @@
  * This component serves as the control center of the UI.
  */
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import { usePolling } from "./utils/usePolling";
 import PrinterCard from "./components/PrinterCard";
 import { parsePrinterXML } from "./utils/xmlUtils";
@@ -33,32 +33,34 @@ const App = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [hasError, setHasError] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  // Edge-PC devices are shown in a dedicated modal instead of the regular card list.
   const model5555Printer = printers.find((p) => {
     const match = p.deviceStreamName?.match(/asset_(\d+)-/);
     return match?.[1] === printerModelMap.EdgePC;
   });
   const probeModels = useProbeModels();
   const [probeModelsAll, setProbleModelsAll] = useState();
+  // Tracks API outage/recovery so probe model metadata can be refreshed after reconnect.
   const hasApiFailed = useRef(false);
-  
+
   useEffect(() => {
     setProbleModelsAll(probeModels);
   }, [probeModels]);
-  
 
- const fetchFallbackProbeModels = async () => {
-  try {
-    const models = await fetchProbe();
-    setProbleModelsAll(models);
-    console.log("Fetched fallback probe models");
-  } catch (error) {
-    console.error("Failed to fetch fallback probe models", error);
-  }
-};
+  const fetchFallbackProbeModels = useCallback(async () => {
+    try {
+      const models = await fetchProbe();
+      setProbleModelsAll(models);
+      console.log("Fetched fallback probe models");
+    } catch (error) {
+      console.error("Failed to fetch fallback probe models", error);
+    }
+  }, []);
 
-  const fetchData = async () => {
+  const fetchData = useCallback(async () => {
     try {
       setHasError(false);
+      // Cache-busting query string avoids stale XML from intermediate caches.
       const response = await fetch(`/mtconnect/current?_=${Date.now()}`, {
         cache: "no-store",
         headers: {
@@ -73,6 +75,7 @@ const App = () => {
         });
         setPrinters(parsedPrinters);
 
+        // If API recovered from a failure, refresh /probe to repopulate model overrides.
         if (hasApiFailed.current) {
           console.log("Fetch succeeded after failure — calling fallback");
           await fetchFallbackProbeModels();
@@ -82,7 +85,6 @@ const App = () => {
         console.warn("Fetch failed with status", response.status);
         hasApiFailed.current = true;
       }
-
     } catch (err) {
       console.error("Failed to fetch or parse XML", err);
       setHasError(true);
@@ -90,12 +92,12 @@ const App = () => {
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [fetchFallbackProbeModels, probeModelsAll]);
 
   useEffect(() => {
     setIsLoading(true);
     fetchData();
-  }, []);
+  }, [fetchData]);
 
   usePolling(fetchData, environment.API_POLLING_IN_MS);
 
@@ -203,11 +205,12 @@ const App = () => {
       {showModal && (
         <DataItemModal
           onClose={() => setShowModal(false)}
+          // Flatten ComponentStream messages so Edge-PC detail modal stays key/value focused.
           dataItems={model5555Printer.modalDataItems.flatMap((c) =>
             c.messages.map((m) => ({
               dataItemId: m.dataItemId,
               value: m.value,
-            }))
+            })),
           )}
         />
       )}
@@ -216,6 +219,7 @@ const App = () => {
         {printers
           .filter((p) => {
             const match = p.deviceStreamName?.match(/asset_(\d+)-/);
+            // Exclude Edge-PC from normal cards because it uses a dedicated modal entry point.
             return match?.[1] !== printerModelMap.EdgePC;
           })
           .map((data) => {

@@ -1,19 +1,13 @@
 /**
- * xmlUtils.js
+ * XML utility helpers for Edge Dashboard.
  *
- * Utility functions for parsing MTConnect XML into usable data structures for the frontend.
+ * Responsibilities:
+ * - Parse MTConnect DeviceStream XML into normalized printer objects.
+ * - Resolve field values using configured key mappings.
+ * - Normalize status, date/time, duration, and JSON values for UI rendering.
+ * - Apply model-specific parsing rules where data payloads differ.
  *
- * Core Functions:
- *  - formatTimeToHHMM: Converts ISO or numeric timestamp to human-readable "HH:MM" format
- *  - getJsonJobData: Safely parses a JSON string into an object, or returns fallback value
- *  - parsePrinterXML: Converts <DeviceStream> XML nodes into structured printer objects
- *    including modalDataItems and field-based key-value extraction.
- *
- * Field Mapping:
- *  - Uses `fieldNamesByKey` from `printerFieldMappings.js` to determine which dataItemIds
- *    map to which display fields (e.g. jobName, chamberTemp, material, etc.)
- *
- * This file serves as the primary XML -> JS parser layer for MTConnect integration in the UI.
+ * Main entry point: parsePrinterXML(xmlText, opts).
  */
 
 import {
@@ -27,10 +21,19 @@ import {
   requiresProbeModel,
 } from "./common.js";
 
+/**
+ * formatStatusText(text)
+ * Replaces underscores with underscore + newline for multi-line status labels.
+ */
 export const formatStatusText = (text) => {
   return text?.replace(/_/g, "_\n") ?? text;
 };
 
+/**
+ * formatTimeToHHMM(timeString)
+ * Converts ISO time or epoch-seconds into HH:MM (24-hour).
+ * Returns original input when empty, zero, or invalid.
+ */
 export const formatTimeToHHMM = (timeString) => {
   if (!timeString || timeString === "0") return timeString;
 
@@ -52,6 +55,11 @@ export const formatTimeToHHMM = (timeString) => {
       });
 };
 
+/**
+ * formatDateHHMM(timeString)
+ * Converts ISO time or epoch-seconds into M/D, HH:MM.
+ * Returns original input when empty, zero, or invalid.
+ */
 export const formatDateHHMM = (timeString) => {
   if (!timeString || timeString === "0") return timeString;
 
@@ -75,6 +83,12 @@ export const formatDateHHMM = (timeString) => {
   return `${month}/${day}, ${hours}:${minutes}`;
 };
 
+/**
+ * formatSecondsToHHMM(timeString)
+ * Converts duration in seconds into HH:MM.
+ * Returns 00:00 for empty/zero/negative input.
+ * Returns original input when value cannot be parsed as a number.
+ */
 export const formatSecondsToHHMM = (timeString) => {
   if (!timeString || timeString === "0") return "00:00";
 
@@ -94,10 +108,21 @@ export const formatSecondsToHHMM = (timeString) => {
   )}`;
 };
 
+/**
+ * formatUnderscoreText(text)
+ * Splits underscore-separated text with line breaks.
+ * Returns empty string for null/undefined input.
+ */
 export const formatUnderscoreText = (text) => {
   return text?.split("_").join("_\n") ?? "";
 };
 
+/**
+ * getJsonJobData(msgValue)
+ * Safely parses JSON text and returns parsed object.
+ * Returns null for empty input.
+ * Returns original value (or Invalid JSON) if parsing fails.
+ */
 export const getJsonJobData = (msgValue) => {
   try {
     return msgValue ? JSON.parse(msgValue) : null;
@@ -106,6 +131,12 @@ export const getJsonJobData = (msgValue) => {
   }
 };
 
+/**
+ * getPrinterModelByDeviceId(printerCode, probeModels, deviceStreamName)
+ * Resolves printer model display name.
+ * For probe-driven models, uses probeModels override by DeviceStream name.
+ * For other models, uses static printer code mapping.
+ */
 export const getPrinterModelByDeviceId = (
   printerCode,
   probeModels,
@@ -124,7 +155,11 @@ export const getPrinterModelByDeviceId = (
   return printerModel;
 };
 
-// parsePrinterXML transforms MTConnect XML data into a usable array of printer objects
+/**
+ * parsePrinterXML(xmlText, opts)
+ * Parses MTConnect XML and returns normalized printer objects for the dashboard.
+ * Each object includes UI fields, raw modal data, and a key-addressable dataItem map.
+ */
 export const parsePrinterXML = (xmlText, opts = {}) => {
   const parser = new DOMParser();
   const xml = parser.parseFromString(xmlText, "application/xml");
@@ -183,6 +218,11 @@ export const parsePrinterXML = (xmlText, opts = {}) => {
       //   return "";
       // };
 
+      /**
+       * getFieldValue(field)
+       * Returns the first matching value for a logical field from single-value mappings.
+       * Also supports fallback lookup from build.job_data JSON when available.
+       */
       const getFieldValue = (field) => {
         const validKeys = singleValueFieldNamesByKey[field] || [];
         for (const key of validKeys) {
@@ -211,7 +251,11 @@ export const parsePrinterXML = (xmlText, opts = {}) => {
         return "";
       };
 
-      // getAllFieldValues returns an array of values matching field keys
+      /**
+       * getAllFieldValues(field)
+       * Returns all matching values for a logical field from multi-value mappings.
+       * Returns a single value when only one match is found.
+       */
       const getAllFieldValues = (field) => {
         const validKeys = multiValueFieldNamesByKey[field] || [];
         const values = [];
@@ -227,12 +271,21 @@ export const parsePrinterXML = (xmlText, opts = {}) => {
         return values.length === 1 ? values[0] : values;
       };
 
+      /**
+       * resolvePrinterState(printerCode, rawState)
+       * For SLS 380, maps numeric state codes to readable state text.
+       * For non-SLS 380 models, returns rawState unchanged.
+       */
       const resolvePrinterState = (printerCode, rawState) => {
         if (printerCode !== printerModelMap.SLS380) return rawState;
         const numeric = parseInt(rawState);
         return printer31006StateMap[numeric] || rawState;
       };
 
+      /**
+       * getCurrentLayer()
+       * Resolves current layer value, including SLS 380 current_height override from job_data.
+       */
       const getCurrentLayer = () => {
         let currentLayer = getFieldValue("currentLayer");
 
@@ -257,6 +310,10 @@ export const parsePrinterXML = (xmlText, opts = {}) => {
         return currentLayer;
       };
 
+      /**
+       * getMaterial()
+       * Resolves material value(s), including SLS 380 material override from job_data.
+       */
       const getMaterial = () => {
         let material = getAllFieldValues("material");
 
@@ -281,6 +338,11 @@ export const parsePrinterXML = (xmlText, opts = {}) => {
         return material;
       };
 
+      /**
+       * getStartTime()
+       * Converts start time with SLA 750-family specific rules.
+       * Note: currently defined but not used in final return mapping.
+       */
       const getStartTime = () => {
         let startTimeRaw = getFieldValue("startTime");
         let startTime;
@@ -305,6 +367,11 @@ export const parsePrinterXML = (xmlText, opts = {}) => {
         return startTime;
       };
 
+      /**
+       * getProgress()
+       * For listed models, converts 0-1 fractional progress to percent.
+       * For non-listed models, returns progress as-is.
+       */
       const getProgress = () => {
         let progress = getFieldValue("progress");
 
@@ -331,6 +398,10 @@ export const parsePrinterXML = (xmlText, opts = {}) => {
         return progress;
       };
 
+      /**
+       * getPrinterName()
+       * Uses serial number as display name for DMP Flex 350 Triple.
+       */
       const getPrinterName = () => {
         let printerName = getFieldValue("printerName");
 
